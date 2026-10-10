@@ -1,0 +1,172 @@
+{
+"era": {
+"from": 241,
+"to": 250,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 242,
+"structure": {
+"id": "mer_har_21",
+"type": "harbor",
+"name": "Harbor of Arcadius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+431.9,
+180.3
+],
+[
+425.1,
+165.8
+],
+[
+435.1,
+161.2
+],
+[
+441.9,
+175.7
+]
+]
+},
+"label": "Harbor of Arcadius II"
+},
+"why": "A new harbor named for Arcadius II takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 246,
+"structure": {
+"id": "mer_road_51",
+"type": "road",
+"name": "Street of Heraclius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+441.9,
+462.0
+],
+[
+446.6,
+481.6
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Heraclius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 246,
+"structure": {
+"id": "mer_dis_51",
+"type": "district",
+"name": "Quarter of Heraclius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+466.7,
+458.2
+],
+[
+418.1,
+469.9
+],
+[
+426.5,
+504.9
+],
+[
+475.1,
+493.3
+],
+[
+466.7,
+458.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Heraclius III."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 247,
+"structure": {
+"id": "mer_church_11",
+"type": "church",
+"name": "St Acacius of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+583.8,
+448.3
+],
+[
+579.0,
+446.7
+],
+[
+580.1,
+443.8
+],
+[
+584.8,
+445.5
+]
+]
+}
+},
+"why": "Sailors build a small church for St Acacius."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Probus",
+"reasons": [
+"mer_warehouse_20: footprint leaves dry land (7 sq units in water)",
+"mer_warehouse_20: overlaps standing mer_har_21 (Harbor of Arcadius II)"
+]
+},
+{
+"what": "Spice Row IV",
+"reasons": [
+"mer_market_20: overlaps standing mer_har_21 (Harbor of Arcadius II)",
+"mer_market_20: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Quarter of Maurice III",
+"reasons": [
+"mer_dis_50: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

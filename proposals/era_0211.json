@@ -1,0 +1,286 @@
+{
+"era": {
+"from": 211,
+"to": 220,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 212,
+"structure": {
+"id": "mer_har_18",
+"type": "harbor",
+"name": "Harbor of Modestus",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+479.3,
+268.1
+],
+[
+476.4,
+252.4
+],
+[
+487.3,
+250.4
+],
+[
+490.1,
+266.2
+]
+]
+},
+"label": "Harbor of Modestus"
+},
+"why": "A new harbor named for Modestus takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 213,
+"structure": {
+"id": "mer_road_45",
+"type": "road",
+"name": "Street of Zeno III",
+"geom": {
+"type": "line",
+"coords": [
+[
+492.0,
+320.0
+],
+[
+493.7,
+285.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Zeno III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 213,
+"structure": {
+"id": "mer_dis_45",
+"type": "district",
+"name": "Quarter of Zeno III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+478.9,
+261.5
+],
+[
+476.6,
+307.4
+],
+[
+508.6,
+309.0
+],
+[
+510.4,
+273.0
+],
+[
+506.5,
+273.3
+],
+[
+506.3,
+273.4
+],
+[
+506.1,
+273.3
+],
+[
+505.9,
+273.3
+],
+[
+499.2,
+272.0
+],
+[
+499.0,
+272.0
+],
+[
+484.0,
+267.4
+],
+[
+483.8,
+267.3
+],
+[
+483.6,
+267.2
+],
+[
+483.4,
+267.1
+],
+[
+483.3,
+267.0
+],
+[
+483.2,
+266.9
+],
+[
+483.0,
+266.8
+],
+[
+482.9,
+266.6
+],
+[
+479.4,
+261.5
+],
+[
+478.9,
+261.5
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Zeno III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 216,
+"structure": {
+"id": "mer_road_46",
+"type": "road",
+"name": "Street of Anastasius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+335.2,
+482.5
+],
+[
+330.7,
+437.6
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Anastasius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 216,
+"structure": {
+"id": "mer_dis_46",
+"type": "district",
+"name": "Quarter of Anastasius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+353.8,
+417.2
+],
+[
+304.0,
+422.2
+],
+[
+307.6,
+458.0
+],
+[
+357.3,
+453.0
+],
+[
+353.8,
+417.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Anastasius III."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 217,
+"structure": {
+"id": "mer_church_9",
+"type": "church",
+"name": "St Pantaleon of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+422.9,
+445.6
+],
+[
+421.7,
+440.7
+],
+[
+424.6,
+440.1
+],
+[
+425.8,
+444.9
+]
+]
+}
+},
+"why": "Sailors build a small church for St Pantaleon."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Modestus",
+"reasons": [
+"mer_warehouse_18: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Grain Exchange III",
+"reasons": [
+"mer_market_18: overlaps standing mer_har_18 (Harbor of Modestus)",
+"mer_market_18: no road within 25 units; nobody could reach it"
+]
+}
+]
+}
+]
+}

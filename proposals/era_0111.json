@@ -1,0 +1,411 @@
+{
+"era": {
+"from": 111,
+"to": 120,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 112,
+"structure": {
+"id": "mer_har_8",
+"type": "harbor",
+"name": "Harbor of Justinian",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+601.5,
+317.7
+],
+[
+602.4,
+333.7
+],
+[
+591.4,
+334.3
+],
+[
+590.5,
+318.4
+]
+]
+},
+"label": "Harbor of Justinian"
+},
+"why": "A new harbor named for Justinian takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 113,
+"structure": {
+"id": "mer_road_19",
+"type": "road",
+"name": "Street of Philoxenus",
+"geom": {
+"type": "line",
+"coords": [
+[
+600.0,
+360.0
+],
+[
+589.4,
+357.6
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Philoxenus."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 113,
+"structure": {
+"id": "mer_dis_19",
+"type": "district",
+"name": "Quarter of Philoxenus",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+574.4,
+377.1
+],
+[
+606.3,
+374.5
+],
+[
+605.5,
+364.1
+],
+[
+601.8,
+361.8
+],
+[
+601.7,
+361.7
+],
+[
+601.5,
+361.5
+],
+[
+601.4,
+361.4
+],
+[
+601.2,
+361.2
+],
+[
+601.1,
+361.0
+],
+[
+598.5,
+356.0
+],
+[
+595.5,
+357.2
+],
+[
+595.3,
+357.3
+],
+[
+595.1,
+357.3
+],
+[
+594.9,
+357.4
+],
+[
+594.7,
+357.4
+],
+[
+594.5,
+357.4
+],
+[
+594.3,
+357.3
+],
+[
+594.1,
+357.3
+],
+[
+594.0,
+357.2
+],
+[
+593.9,
+357.3
+],
+[
+593.7,
+357.3
+],
+[
+593.5,
+357.4
+],
+[
+593.3,
+357.4
+],
+[
+593.1,
+357.4
+],
+[
+584.9,
+356.7
+],
+[
+584.7,
+356.7
+],
+[
+584.5,
+356.6
+],
+[
+584.3,
+356.6
+],
+[
+584.1,
+356.5
+],
+[
+584.0,
+356.4
+],
+[
+583.8,
+356.3
+],
+[
+583.7,
+356.1
+],
+[
+582.4,
+354.9
+],
+[
+576.7,
+356.9
+],
+[
+576.5,
+357.0
+],
+[
+576.3,
+357.0
+],
+[
+576.1,
+357.0
+],
+[
+575.9,
+357.0
+],
+[
+575.7,
+357.0
+],
+[
+575.5,
+357.0
+],
+[
+575.3,
+356.9
+],
+[
+575.1,
+356.8
+],
+[
+575.0,
+356.7
+],
+[
+574.8,
+356.6
+],
+[
+572.9,
+355.2
+],
+[
+572.8,
+355.1
+],
+[
+572.7,
+355.0
+],
+[
+574.4,
+377.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Philoxenus."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 116,
+"structure": {
+"id": "mer_road_22",
+"type": "road",
+"name": "Street of Theodosius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+429.5,
+464.9
+],
+[
+422.9,
+437.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Theodosius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 116,
+"structure": {
+"id": "mer_dis_22",
+"type": "district",
+"name": "Quarter of Theodosius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+443.0,
+414.0
+],
+[
+394.4,
+425.7
+],
+[
+402.8,
+460.7
+],
+[
+451.4,
+449.0
+],
+[
+443.0,
+414.0
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Theodosius II."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 117,
+"structure": {
+"id": "mer_church_3",
+"type": "church",
+"name": "St Euphemia of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+431.5,
+441.5
+],
+[
+430.3,
+436.6
+],
+[
+433.3,
+435.9
+],
+[
+434.4,
+440.8
+]
+]
+}
+},
+"why": "Sailors build a small church for St Euphemia."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Justinian",
+"reasons": [
+"mer_warehouse_8: footprint leaves dry land (17 sq units in water)",
+"mer_warehouse_8: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Spice Row II",
+"reasons": [
+"mer_market_8: footprint leaves dry land (40 sq units in water)",
+"mer_market_8: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Quarter of Probus",
+"reasons": [
+"mer_dis_20: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Arcadius II",
+"reasons": [
+"mer_dis_21: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

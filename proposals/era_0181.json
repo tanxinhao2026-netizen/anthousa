@@ -1,0 +1,172 @@
+{
+"era": {
+"from": 181,
+"to": 190,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 182,
+"structure": {
+"id": "mer_har_15",
+"type": "harbor",
+"name": "Harbor of Sophia",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+465.0,
+169.0
+],
+[
+468.3,
+184.6
+],
+[
+457.5,
+186.9
+],
+[
+454.2,
+171.3
+]
+]
+},
+"label": "Harbor of Sophia"
+},
+"why": "A new harbor named for Sophia takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 186,
+"structure": {
+"id": "mer_road_39",
+"type": "road",
+"name": "Street of Philoxenus II",
+"geom": {
+"type": "line",
+"coords": [
+[
+345.3,
+481.5
+],
+[
+346.6,
+494.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Philoxenus II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 186,
+"structure": {
+"id": "mer_dis_39",
+"type": "district",
+"name": "Quarter of Philoxenus II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+369.7,
+474.4
+],
+[
+319.9,
+479.4
+],
+[
+323.5,
+515.2
+],
+[
+373.3,
+510.2
+],
+[
+369.7,
+474.4
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Philoxenus II."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 187,
+"structure": {
+"id": "mer_church_7",
+"type": "church",
+"name": "St Thomas of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+622.6,
+455.2
+],
+[
+617.6,
+454.9
+],
+[
+617.8,
+451.9
+],
+[
+622.8,
+452.2
+]
+]
+}
+},
+"why": "Sailors build a small church for St Thomas."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Sophia",
+"reasons": [
+"mer_warehouse_15: footprint leaves dry land (31 sq units in water)",
+"mer_warehouse_15: overlaps standing mer_har_15 (Harbor of Sophia)"
+]
+},
+{
+"what": "Silk Stoa III",
+"reasons": [
+"mer_market_15: footprint leaves dry land (40 sq units in water)",
+"mer_market_15: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Quarter of Modestus II",
+"reasons": [
+"mer_dis_38: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

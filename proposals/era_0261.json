@@ -1,0 +1,319 @@
+{
+"era": {
+"from": 261,
+"to": 270,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 262,
+"structure": {
+"id": "mer_har_23",
+"type": "harbor",
+"name": "Harbor of Marcian II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+513.8,
+274.5
+],
+[
+497.8,
+273.5
+],
+[
+498.5,
+262.5
+],
+[
+514.5,
+263.6
+]
+]
+},
+"label": "Harbor of Marcian II"
+},
+"why": "A new harbor named for Marcian II takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 263,
+"structure": {
+"id": "mer_warehouse_21",
+"type": "warehouse",
+"name": "Warehouses of Arcadius II",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+509.7,
+284.9
+],
+[
+510.0,
+276.9
+],
+[
+514.0,
+277.1
+],
+[
+513.7,
+285.1
+]
+]
+}
+},
+"why": "Warehouses crowd the new quay."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 264,
+"structure": {
+"id": "mer_market_21",
+"type": "market",
+"name": "Silk Stoa IV",
+"dna": {
+"motif": "market_row",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+487.7,
+276.5
+],
+[
+488.1,
+268.5
+],
+[
+493.1,
+268.8
+],
+[
+492.7,
+276.8
+]
+]
+}
+},
+"why": "Stalls and shops follow the ships."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 263,
+"structure": {
+"id": "mer_road_53",
+"type": "road",
+"name": "Street of Eudoxia III",
+"geom": {
+"type": "line",
+"coords": [
+[
+493.3,
+294.3
+],
+[
+514.1,
+295.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Eudoxia III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 263,
+"structure": {
+"id": "mer_dis_53",
+"type": "district",
+"name": "Quarter of Eudoxia III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+497.0,
+317.6
+],
+[
+529.0,
+319.1
+],
+[
+529.8,
+302.5
+],
+[
+527.5,
+298.2
+],
+[
+527.4,
+298.1
+],
+[
+527.4,
+297.9
+],
+[
+527.3,
+297.7
+],
+[
+527.3,
+297.5
+],
+[
+527.3,
+297.4
+],
+[
+527.3,
+297.2
+],
+[
+527.3,
+297.0
+],
+[
+527.9,
+293.0
+],
+[
+515.3,
+282.0
+],
+[
+515.1,
+281.8
+],
+[
+515.0,
+281.7
+],
+[
+514.8,
+281.5
+],
+[
+514.7,
+281.3
+],
+[
+512.3,
+276.0
+],
+[
+512.2,
+275.8
+],
+[
+512.2,
+275.6
+],
+[
+512.2,
+275.4
+],
+[
+512.1,
+275.3
+],
+[
+512.1,
+275.1
+],
+[
+512.2,
+273.6
+],
+[
+511.2,
+272.9
+],
+[
+506.5,
+273.3
+],
+[
+506.3,
+273.4
+],
+[
+506.1,
+273.3
+],
+[
+505.9,
+273.3
+],
+[
+499.2,
+272.0
+],
+[
+499.2,
+272.0
+],
+[
+497.0,
+317.6
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Eudoxia III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Quarter of Ariadne III",
+"reasons": [
+"mer_dis_54: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Sophia III",
+"reasons": [
+"mer_dis_55: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aetius III",
+"reasons": [
+"mer_dis_56: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

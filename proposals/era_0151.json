@@ -1,0 +1,106 @@
+{
+"era": {
+"from": 151,
+"to": 160,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 152,
+"structure": {
+"id": "mer_har_12",
+"type": "harbor",
+"name": "Harbor of Pulcheria",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+509.4,
+217.9
+],
+[
+525.2,
+220.5
+],
+[
+523.4,
+231.4
+],
+[
+507.6,
+228.7
+]
+]
+},
+"label": "Harbor of Pulcheria"
+},
+"why": "A new harbor named for Pulcheria takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 156,
+"structure": {
+"id": "mer_dis_30",
+"type": "district",
+"name": "Quarter of Maurice II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+456.5,
+363.7
+],
+[
+429.4,
+321.7
+],
+[
+399.2,
+341.2
+],
+[
+426.2,
+383.2
+],
+[
+456.5,
+363.7
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Maurice II."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Pulcheria",
+"reasons": [
+"mer_warehouse_12: footprint leaves dry land (32 sq units in water)",
+"mer_warehouse_12: overlaps standing mer_har_12 (Harbor of Pulcheria)"
+]
+},
+{
+"what": "Grain Exchange II",
+"reasons": [
+"mer_market_12: footprint leaves dry land (40 sq units in water)",
+"mer_market_12: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Quarter of Tiberius II",
+"reasons": [
+"the quarter would be at sea"
+]
+}
+]
+}
+]
+}

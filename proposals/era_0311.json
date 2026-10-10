@@ -1,0 +1,60 @@
+{
+"era": {
+"from": 311,
+"to": 320,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 316,
+"structure": {
+"id": "mer_dis_64",
+"type": "district",
+"name": "Quarter of Leo IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+445.6,
+413.3
+],
+[
+435.2,
+364.4
+],
+[
+400.0,
+371.8
+],
+[
+410.3,
+420.8
+],
+[
+445.6,
+413.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Leo IV."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"mer_har_28: overlaps standing harbor_prosphorion (Prosphorion Harbor)",
+"mer_har_28: overlaps standing mer_har_16 (Harbor of Aetius)"
+]
+}
+]
+}
+]
+}

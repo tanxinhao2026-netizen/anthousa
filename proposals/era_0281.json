@@ -1,0 +1,85 @@
+{
+"era": {
+"from": 281,
+"to": 290,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 286,
+"structure": {
+"id": "mer_road_59",
+"type": "road",
+"name": "Street of Philoxenus III",
+"geom": {
+"type": "line",
+"coords": [
+[
+281.5,
+488.2
+],
+[
+275.7,
+440.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Philoxenus III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 286,
+"structure": {
+"id": "mer_dis_59",
+"type": "district",
+"name": "Quarter of Philoxenus III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+298.4,
+419.3
+],
+[
+248.7,
+425.3
+],
+[
+253.0,
+461.0
+],
+[
+302.7,
+455.1
+],
+[
+298.4,
+419.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Philoxenus III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"mer_har_25: overlaps standing harbor_prosphorion (Prosphorion Harbor)",
+"mer_har_25: overlaps standing harbor_neorion (Neorion Harbor)"
+]
+}
+]
+}
+]
+}

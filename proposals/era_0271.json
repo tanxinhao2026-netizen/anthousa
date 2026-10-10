@@ -1,0 +1,333 @@
+{
+"era": {
+"from": 271,
+"to": 280,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 272,
+"structure": {
+"id": "mer_har_24",
+"type": "harbor",
+"name": "Harbor of Leo II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+459.6,
+244.8
+],
+[
+455.5,
+229.3
+],
+[
+466.2,
+226.5
+],
+[
+470.2,
+242.0
+]
+]
+},
+"label": "Harbor of Leo II"
+},
+"why": "A new harbor named for Leo II takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 273,
+"structure": {
+"id": "mer_road_57",
+"type": "road",
+"name": "Street of Aspar III",
+"geom": {
+"type": "line",
+"coords": [
+[
+493.7,
+285.2
+],
+[
+474.4,
+261.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Aspar III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 273,
+"structure": {
+"id": "mer_dis_57",
+"type": "district",
+"name": "Quarter of Aspar III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+457.3,
+283.3
+],
+[
+489.3,
+284.9
+],
+[
+490.1,
+269.2
+],
+[
+484.0,
+267.4
+],
+[
+483.8,
+267.3
+],
+[
+483.6,
+267.2
+],
+[
+483.4,
+267.1
+],
+[
+483.3,
+267.0
+],
+[
+483.2,
+266.9
+],
+[
+483.0,
+266.8
+],
+[
+482.9,
+266.6
+],
+[
+478.8,
+260.7
+],
+[
+478.7,
+260.5
+],
+[
+478.6,
+260.3
+],
+[
+478.5,
+260.1
+],
+[
+478.4,
+260.0
+],
+[
+478.4,
+259.8
+],
+[
+478.4,
+259.6
+],
+[
+478.4,
+259.4
+],
+[
+478.5,
+258.0
+],
+[
+478.5,
+257.8
+],
+[
+478.6,
+257.6
+],
+[
+478.6,
+257.4
+],
+[
+478.7,
+257.2
+],
+[
+478.8,
+257.1
+],
+[
+478.9,
+256.9
+],
+[
+479.0,
+256.8
+],
+[
+480.4,
+255.1
+],
+[
+477.8,
+250.5
+],
+[
+476.9,
+251.0
+],
+[
+476.7,
+251.1
+],
+[
+476.5,
+251.1
+],
+[
+476.3,
+251.2
+],
+[
+476.1,
+251.2
+],
+[
+475.9,
+251.2
+],
+[
+475.7,
+251.2
+],
+[
+475.5,
+251.2
+],
+[
+475.3,
+251.1
+],
+[
+468.6,
+248.7
+],
+[
+468.4,
+248.7
+],
+[
+468.2,
+248.6
+],
+[
+468.1,
+248.5
+],
+[
+464.9,
+246.1
+],
+[
+464.7,
+246.0
+],
+[
+464.6,
+245.9
+],
+[
+464.5,
+245.7
+],
+[
+459.5,
+238.8
+],
+[
+457.3,
+283.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Aspar III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 276,
+"structure": {
+"id": "mer_dis_58",
+"type": "district",
+"name": "Quarter of Modestus III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+317.1,
+497.7
+],
+[
+360.2,
+523.1
+],
+[
+378.4,
+492.1
+],
+[
+335.4,
+466.7
+],
+[
+317.1,
+497.7
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Modestus III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Theodosius II",
+"reasons": [
+"mer_warehouse_22: footprint leaves dry land (32 sq units in water)",
+"mer_warehouse_22: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Timber Yard Market IV",
+"reasons": [
+"mer_market_22: footprint leaves dry land (40 sq units in water)",
+"mer_market_22: no road within 25 units; nobody could reach it"
+]
+}
+]
+}
+]
+}

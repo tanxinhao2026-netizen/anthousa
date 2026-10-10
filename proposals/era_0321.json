@@ -1,0 +1,100 @@
+{
+"era": {
+"from": 321,
+"to": 330,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 325,
+"structure": {
+"id": "mer_cis_10",
+"type": "cistern",
+"name": "Cistern of Maurice",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+536.5,
+460.2
+],
+[
+536.8,
+469.2
+],
+[
+529.9,
+469.4
+],
+[
+529.5,
+460.4
+]
+]
+},
+"label": "Cistern of Maurice"
+},
+"why": "An open reservoir named for Maurice stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 326,
+"structure": {
+"id": "mer_dis_65",
+"type": "district",
+"name": "Quarter of Zeno IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+389.0,
+507.2
+],
+[
+395.7,
+457.6
+],
+[
+360.0,
+452.8
+],
+[
+353.3,
+502.3
+],
+[
+389.0,
+507.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Zeno IV."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"mer_har_29: overlaps standing mer_har_5 (Harbor of Zeno)"
+]
+}
+]
+}
+]
+}

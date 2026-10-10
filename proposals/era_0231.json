@@ -1,0 +1,356 @@
+{
+"era": {
+"from": 231,
+"to": 240,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 232,
+"structure": {
+"id": "mer_har_20",
+"type": "harbor",
+"name": "Harbor of Probus",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+530.6,
+296.3
+],
+[
+518.5,
+285.8
+],
+[
+525.7,
+277.5
+],
+[
+537.8,
+288.0
+]
+]
+},
+"label": "Harbor of Probus"
+},
+"why": "A new harbor named for Probus takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 233,
+"structure": {
+"id": "mer_warehouse_19",
+"type": "warehouse",
+"name": "Warehouses of Philoxenus",
+"dna": {
+"motif": "insula",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+514.4,
+290.4
+],
+[
+514.8,
+282.4
+],
+[
+518.8,
+282.6
+],
+[
+518.4,
+290.6
+]
+]
+}
+},
+"why": "Warehouses crowd the new quay."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 234,
+"structure": {
+"id": "mer_market_19",
+"type": "market",
+"name": "Fish Market IV",
+"dna": {
+"motif": "market_row",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+516.9,
+301.8
+],
+[
+517.2,
+293.8
+],
+[
+522.2,
+294.0
+],
+[
+521.8,
+302.0
+]
+]
+}
+},
+"why": "Stalls and shops follow the ships."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 233,
+"structure": {
+"id": "mer_road_48",
+"type": "road",
+"name": "Street of Justinian III",
+"geom": {
+"type": "line",
+"coords": [
+[
+544.9,
+339.0
+],
+[
+533.5,
+314.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justinian III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 233,
+"structure": {
+"id": "mer_dis_48",
+"type": "district",
+"name": "Quarter of Justinian III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+516.5,
+292.1
+],
+[
+506.7,
+322.5
+],
+[
+550.5,
+336.7
+],
+[
+553.6,
+326.9
+],
+[
+552.3,
+325.2
+],
+[
+540.5,
+317.9
+],
+[
+540.3,
+317.8
+],
+[
+540.1,
+317.6
+],
+[
+540.0,
+317.4
+],
+[
+533.3,
+309.1
+],
+[
+533.2,
+309.0
+],
+[
+533.1,
+308.8
+],
+[
+527.5,
+298.2
+],
+[
+527.4,
+298.1
+],
+[
+527.4,
+297.9
+],
+[
+527.3,
+297.7
+],
+[
+527.3,
+297.5
+],
+[
+527.3,
+297.4
+],
+[
+527.3,
+297.2
+],
+[
+527.3,
+297.0
+],
+[
+527.5,
+295.6
+],
+[
+516.5,
+292.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justinian III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 236,
+"structure": {
+"id": "mer_road_49",
+"type": "road",
+"name": "Street of Tiberius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+422.9,
+437.3
+],
+[
+425.2,
+417.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Tiberius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 236,
+"structure": {
+"id": "mer_dis_49",
+"type": "district",
+"name": "Quarter of Tiberius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+446.6,
+439.5
+],
+[
+435.0,
+390.9
+],
+[
+400.0,
+399.2
+],
+[
+411.6,
+447.9
+],
+[
+446.6,
+439.5
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Tiberius III."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 237,
+"structure": {
+"id": "mer_church_10",
+"type": "church",
+"name": "St Plato of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+497.4,
+432.9
+],
+[
+495.8,
+428.2
+],
+[
+498.7,
+427.2
+],
+[
+500.3,
+431.9
+]
+]
+}
+},
+"why": "Sailors build a small church for St Plato."
+}
+],
+"growth_floor": 150
+}

@@ -1,0 +1,337 @@
+{
+"era": {
+"from": 71,
+"to": 80,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 72,
+"structure": {
+"id": "mer_har_4",
+"type": "harbor",
+"name": "Harbor of Leo",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+598.3,
+358.3
+],
+[
+582.3,
+357.5
+],
+[
+582.9,
+346.5
+],
+[
+598.8,
+347.3
+]
+]
+},
+"label": "Harbor of Leo"
+},
+"why": "A new harbor named for Leo takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 73,
+"structure": {
+"id": "mer_warehouse_4",
+"type": "warehouse",
+"name": "Warehouses of Leo",
+"dna": {
+"motif": "insula",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+584.6,
+366.9
+],
+[
+584.0,
+358.9
+],
+[
+588.0,
+358.6
+],
+[
+588.6,
+366.5
+]
+]
+}
+},
+"why": "Warehouses crowd the new quay."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 74,
+"structure": {
+"id": "mer_market_4",
+"type": "market",
+"name": "Timber Yard Market",
+"dna": {
+"motif": "market_row",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+574.5,
+355.7
+],
+[
+582.5,
+355.2
+],
+[
+582.9,
+360.2
+],
+[
+574.9,
+360.7
+]
+]
+}
+},
+"why": "Stalls and shops follow the ships."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 73,
+"structure": {
+"id": "mer_road_9",
+"type": "road",
+"name": "Street of Tiberius",
+"geom": {
+"type": "line",
+"coords": [
+[
+569.8,
+370.1
+],
+[
+582.2,
+379.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Tiberius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 73,
+"structure": {
+"id": "mer_dis_9",
+"type": "district",
+"name": "Quarter of Tiberius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+558.2,
+364.7
+],
+[
+560.3,
+396.6
+],
+[
+606.2,
+393.6
+],
+[
+604.2,
+363.3
+],
+[
+601.8,
+361.8
+],
+[
+601.8,
+361.8
+],
+[
+558.2,
+364.7
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Tiberius."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 75,
+"structure": {
+"id": "mer_cis_4",
+"type": "cistern",
+"name": "Cistern of Leo",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+453.7,
+382.0
+],
+[
+446.2,
+387.0
+],
+[
+442.3,
+381.2
+],
+[
+449.8,
+376.2
+]
+]
+},
+"label": "Cistern of Leo"
+},
+"why": "An open reservoir named for Leo stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 76,
+"structure": {
+"id": "mer_road_10",
+"type": "road",
+"name": "Street of Maurice",
+"geom": {
+"type": "line",
+"coords": [
+[
+377.0,
+442.0
+],
+[
+379.9,
+413.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Maurice."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 76,
+"structure": {
+"id": "mer_dis_10",
+"type": "district",
+"name": "Quarter of Maurice",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+394.4,
+440.4
+],
+[
+401.1,
+390.8
+],
+[
+365.4,
+386.0
+],
+[
+358.7,
+435.6
+],
+[
+394.4,
+440.4
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Maurice."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 77,
+"structure": {
+"id": "mer_church_2",
+"type": "church",
+"name": "St John Studios of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+437.9,
+467.8
+],
+[
+433.1,
+468.9
+],
+[
+432.4,
+466.0
+],
+[
+437.2,
+464.9
+]
+]
+}
+},
+"why": "Sailors build a small church for St John Studios."
+}
+],
+"growth_floor": 150
+}

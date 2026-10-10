@@ -1,0 +1,273 @@
+{
+"era": {
+"from": 131,
+"to": 140,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 132,
+"structure": {
+"id": "mer_har_10",
+"type": "harbor",
+"name": "Harbor of Maurice",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+625.5,
+328.8
+],
+[
+641.1,
+332.7
+],
+[
+638.4,
+343.4
+],
+[
+622.9,
+339.5
+]
+]
+},
+"label": "Harbor of Maurice"
+},
+"why": "A new harbor named for Maurice takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 133,
+"structure": {
+"id": "mer_dis_25",
+"type": "district",
+"name": "Quarter of Zeno II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+602.9,
+384.0
+],
+[
+634.8,
+381.4
+],
+[
+634.2,
+373.4
+],
+[
+624.1,
+367.5
+],
+[
+617.5,
+369.3
+],
+[
+617.2,
+369.3
+],
+[
+617.0,
+369.3
+],
+[
+616.8,
+369.3
+],
+[
+616.6,
+369.3
+],
+[
+616.4,
+369.3
+],
+[
+616.2,
+369.2
+],
+[
+616.0,
+369.1
+],
+[
+612.8,
+367.5
+],
+[
+611.7,
+367.6
+],
+[
+611.5,
+367.6
+],
+[
+611.3,
+367.6
+],
+[
+611.1,
+367.6
+],
+[
+610.9,
+367.5
+],
+[
+610.7,
+367.5
+],
+[
+610.6,
+367.4
+],
+[
+610.4,
+367.3
+],
+[
+601.8,
+361.8
+],
+[
+601.7,
+361.7
+],
+[
+601.5,
+361.5
+],
+[
+601.4,
+361.4
+],
+[
+601.2,
+361.2
+],
+[
+601.1,
+361.0
+],
+[
+601.0,
+360.8
+],
+[
+602.9,
+384.0
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Zeno II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 136,
+"structure": {
+"id": "mer_dis_26",
+"type": "district",
+"name": "Quarter of Anastasius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+444.5,
+440.5
+],
+[
+395.9,
+452.2
+],
+[
+404.3,
+487.2
+],
+[
+452.9,
+475.5
+],
+[
+444.5,
+440.5
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Anastasius II."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 137,
+"structure": {
+"id": "mer_church_5",
+"type": "church",
+"name": "St Theodore of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+553.8,
+498.3
+],
+[
+552.5,
+503.1
+],
+[
+549.6,
+502.3
+],
+[
+550.9,
+497.4
+]
+]
+}
+},
+"why": "Sailors build a small church for St Theodore."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Maurice",
+"reasons": [
+"mer_warehouse_10: footprint leaves dry land (32 sq units in water)",
+"mer_warehouse_10: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Timber Yard Market II",
+"reasons": [
+"mer_market_10: footprint leaves dry land (15 sq units in water)",
+"mer_market_10: overlaps standing mer_har_7 (Harbor of Justin)"
+]
+}
+]
+}
+]
+}

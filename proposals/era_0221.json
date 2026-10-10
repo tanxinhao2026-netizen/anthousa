@@ -1,0 +1,60 @@
+{
+"era": {
+"from": 221,
+"to": 230,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 226,
+"structure": {
+"id": "mer_dis_47",
+"type": "district",
+"name": "Quarter of Justin III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+444.3,
+412.0
+],
+[
+434.0,
+363.1
+],
+[
+398.7,
+370.6
+],
+[
+409.1,
+419.5
+],
+[
+444.3,
+412.0
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justin III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"mer_har_19: overlaps standing harbor_prosphorion (Prosphorion Harbor)",
+"mer_har_19: overlaps standing harbor_neorion (Neorion Harbor)"
+]
+}
+]
+}
+]
+}

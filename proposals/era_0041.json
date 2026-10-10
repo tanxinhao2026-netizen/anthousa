@@ -1,0 +1,388 @@
+{
+"era": {
+"from": 41,
+"to": 50,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 42,
+"structure": {
+"id": "mer_har_1",
+"type": "harbor",
+"name": "Harbor of Arcadius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+576.8,
+351.3
+],
+[
+563.5,
+342.4
+],
+[
+569.6,
+333.3
+],
+[
+582.9,
+342.1
+]
+]
+},
+"label": "Harbor of Arcadius"
+},
+"why": "A new harbor named for Arcadius takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 43,
+"structure": {
+"id": "mer_warehouse_1",
+"type": "warehouse",
+"name": "Warehouses of Arcadius",
+"dna": {
+"motif": "insula",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+569.0,
+357.3
+],
+[
+568.5,
+349.4
+],
+[
+572.5,
+349.1
+],
+[
+573.0,
+357.1
+]
+]
+}
+},
+"why": "Warehouses crowd the new quay."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 44,
+"structure": {
+"id": "mer_market_1",
+"type": "market",
+"name": "Fish Market",
+"dna": {
+"motif": "market_row",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+560.5,
+361.1
+],
+[
+559.9,
+353.1
+],
+[
+564.9,
+352.7
+],
+[
+565.5,
+360.7
+]
+]
+}
+},
+"why": "Stalls and shops follow the ships."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 43,
+"structure": {
+"id": "mer_road_1",
+"type": "road",
+"name": "Street of Arcadius",
+"geom": {
+"type": "line",
+"coords": [
+[
+550.1,
+371.4
+],
+[
+569.8,
+370.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Arcadius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 43,
+"structure": {
+"id": "mer_dis_1",
+"type": "district",
+"name": "Quarter of Arcadius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+552.3,
+348.2
+],
+[
+555.4,
+394.1
+],
+[
+587.3,
+392.0
+],
+[
+584.9,
+356.7
+],
+[
+584.9,
+356.7
+],
+[
+584.7,
+356.7
+],
+[
+584.5,
+356.6
+],
+[
+584.3,
+356.6
+],
+[
+584.1,
+356.5
+],
+[
+584.0,
+356.4
+],
+[
+583.8,
+356.3
+],
+[
+583.7,
+356.1
+],
+[
+582.4,
+354.9
+],
+[
+576.7,
+356.9
+],
+[
+576.5,
+357.0
+],
+[
+576.3,
+357.0
+],
+[
+576.1,
+357.0
+],
+[
+575.9,
+357.0
+],
+[
+575.7,
+357.0
+],
+[
+575.5,
+357.0
+],
+[
+575.3,
+356.9
+],
+[
+575.1,
+356.8
+],
+[
+575.0,
+356.7
+],
+[
+574.8,
+356.6
+],
+[
+572.9,
+355.2
+],
+[
+572.8,
+355.1
+],
+[
+572.7,
+355.0
+],
+[
+572.5,
+354.8
+],
+[
+572.4,
+354.6
+],
+[
+572.3,
+354.5
+],
+[
+571.5,
+352.8
+],
+[
+571.5,
+352.6
+],
+[
+571.4,
+352.4
+],
+[
+571.4,
+352.2
+],
+[
+571.4,
+352.0
+],
+[
+571.4,
+351.8
+],
+[
+571.7,
+347.1
+],
+[
+571.5,
+346.9
+],
+[
+552.3,
+348.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Arcadius."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 45,
+"structure": {
+"id": "mer_cis_1",
+"type": "cistern",
+"name": "Cistern of Arcadius",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+500.5,
+368.8
+],
+[
+501.0,
+359.8
+],
+[
+508.0,
+360.2
+],
+[
+507.5,
+369.2
+]
+]
+},
+"label": "Cistern of Arcadius"
+},
+"why": "An open reservoir named for Arcadius stores the aqueduct's winter flow."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Quarter of Theodosius",
+"reasons": [
+"mer_dis_2: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Marcian",
+"reasons": [
+"mer_dis_3: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Leo",
+"reasons": [
+"mer_dis_4: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

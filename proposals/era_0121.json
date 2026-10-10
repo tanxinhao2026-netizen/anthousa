@@ -1,0 +1,213 @@
+{
+"era": {
+"from": 121,
+"to": 130,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 122,
+"structure": {
+"id": "mer_har_9",
+"type": "harbor",
+"name": "Harbor of Tiberius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+489.0,
+207.2
+],
+[
+477.3,
+218.1
+],
+[
+469.8,
+210.1
+],
+[
+481.5,
+199.2
+]
+]
+},
+"label": "Harbor of Tiberius"
+},
+"why": "A new harbor named for Tiberius takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 125,
+"structure": {
+"id": "mer_cis_7",
+"type": "cistern",
+"name": "Cistern of Justin",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+535.8,
+394.7
+],
+[
+535.2,
+385.8
+],
+[
+542.2,
+385.3
+],
+[
+542.8,
+394.3
+]
+]
+},
+"label": "Cistern of Justin"
+},
+"why": "An open reservoir named for Justin stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 126,
+"structure": {
+"id": "mer_road_24",
+"type": "road",
+"name": "Street of Leo II",
+"geom": {
+"type": "line",
+"coords": [
+[
+379.9,
+413.2
+],
+[
+383.6,
+413.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Leo II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 126,
+"structure": {
+"id": "mer_dis_24",
+"type": "district",
+"name": "Quarter of Leo II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+399.0,
+439.8
+],
+[
+404.0,
+390.0
+],
+[
+368.2,
+386.4
+],
+[
+363.2,
+436.2
+],
+[
+399.0,
+439.8
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Leo II."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 127,
+"structure": {
+"id": "mer_church_4",
+"type": "church",
+"name": "St Anastasia of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+443.3,
+480.9
+],
+[
+438.5,
+482.1
+],
+[
+437.8,
+479.2
+],
+[
+442.6,
+478.0
+]
+]
+}
+},
+"why": "Sailors build a small church for St Anastasia."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Tiberius",
+"reasons": [
+"mer_warehouse_9: footprint leaves dry land (32 sq units in water)",
+"mer_warehouse_9: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Silk Stoa II",
+"reasons": [
+"mer_market_9: footprint leaves dry land (34 sq units in water)",
+"mer_market_9: overlaps standing mer_har_9 (Harbor of Tiberius)"
+]
+},
+{
+"what": "Quarter of Marcian II",
+"reasons": [
+"the quarter would be at sea"
+]
+}
+]
+}
+]
+}

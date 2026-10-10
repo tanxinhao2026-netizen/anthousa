@@ -1,0 +1,265 @@
+{
+"era": {
+"from": 301,
+"to": 310,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 302,
+"structure": {
+"id": "mer_har_27",
+"type": "harbor",
+"name": "Harbor of Justin II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+410.3,
+156.1
+],
+[
+395.6,
+149.9
+],
+[
+399.8,
+139.8
+],
+[
+414.6,
+146.0
+]
+]
+},
+"label": "Harbor of Justin II"
+},
+"why": "A new harbor named for Justin II takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 303,
+"structure": {
+"id": "mer_road_62",
+"type": "road",
+"name": "Street of Theodosius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+474.4,
+261.1
+],
+[
+417.9,
+172.9
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Theodosius IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 303,
+"structure": {
+"id": "mer_dis_62",
+"type": "district",
+"name": "Quarter of Theodosius IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+391.0,
+164.9
+],
+[
+419.7,
+200.8
+],
+[
+435.3,
+188.3
+],
+[
+434.3,
+186.0
+],
+[
+434.3,
+185.9
+],
+[
+434.2,
+185.7
+],
+[
+434.2,
+185.5
+],
+[
+434.2,
+185.3
+],
+[
+434.1,
+183.2
+],
+[
+423.6,
+160.8
+],
+[
+423.5,
+160.8
+],
+[
+423.3,
+160.7
+],
+[
+423.2,
+160.7
+],
+[
+405.5,
+153.3
+],
+[
+391.0,
+164.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Theodosius IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 306,
+"structure": {
+"id": "mer_road_63",
+"type": "road",
+"name": "Street of Marcian IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+379.9,
+413.2
+],
+[
+362.1,
+378.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Marcian IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 306,
+"structure": {
+"id": "mer_dis_63",
+"type": "district",
+"name": "Quarter of Marcian IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+377.5,
+405.1
+],
+[
+382.5,
+355.4
+],
+[
+346.7,
+351.8
+],
+[
+341.7,
+401.5
+],
+[
+377.5,
+405.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Marcian IV."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 307,
+"structure": {
+"id": "mer_church_13",
+"type": "church",
+"name": "St Stephen of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+528.5,
+429.7
+],
+[
+523.6,
+430.7
+],
+[
+523.0,
+427.8
+],
+[
+527.8,
+426.8
+]
+]
+}
+},
+"why": "Sailors build a small church for St Stephen."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Leo II",
+"reasons": [
+"mer_warehouse_24: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Grain Exchange IV",
+"reasons": [
+"mer_market_24: no road within 25 units; nobody could reach it"
+]
+}
+]
+}
+]
+}

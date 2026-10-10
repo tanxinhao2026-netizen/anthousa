@@ -1,0 +1,212 @@
+{
+"era": {
+"from": 51,
+"to": 60,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 52,
+"structure": {
+"id": "mer_har_2",
+"type": "harbor",
+"name": "Harbor of Theodosius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+583.0,
+296.8
+],
+[
+586.9,
+312.3
+],
+[
+576.3,
+315.0
+],
+[
+572.3,
+299.5
+]
+]
+},
+"label": "Harbor of Theodosius"
+},
+"why": "A new harbor named for Theodosius takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 55,
+"structure": {
+"id": "mer_cis_2",
+"type": "cistern",
+"name": "Cistern of Theodosius",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+460.7,
+405.5
+],
+[
+455.8,
+397.9
+],
+[
+461.7,
+394.1
+],
+[
+466.6,
+401.7
+]
+]
+},
+"label": "Cistern of Theodosius"
+},
+"why": "An open reservoir named for Theodosius stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 56,
+"structure": {
+"id": "mer_road_6",
+"type": "road",
+"name": "Street of Anastasius",
+"geom": {
+"type": "line",
+"coords": [
+[
+469.3,
+373.3
+],
+[
+428.3,
+400.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Anastasius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 56,
+"structure": {
+"id": "mer_dis_6",
+"type": "district",
+"name": "Quarter of Anastasius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+453.2,
+413.4
+],
+[
+426.2,
+371.3
+],
+[
+395.9,
+390.8
+],
+[
+422.9,
+432.8
+],
+[
+453.2,
+413.4
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Anastasius."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 57,
+"structure": {
+"id": "mer_church_1",
+"type": "church",
+"name": "St Polyeuctus of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+638.4,
+432.4
+],
+[
+639.3,
+437.4
+],
+[
+636.4,
+437.9
+],
+[
+635.5,
+433.0
+]
+]
+}
+},
+"why": "Sailors build a small church for St Polyeuctus."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Theodosius",
+"reasons": [
+"mer_warehouse_2: footprint leaves dry land (24 sq units in water)",
+"mer_warehouse_2: overlaps standing mer_har_2 (Harbor of Theodosius)"
+]
+},
+{
+"what": "Spice Row",
+"reasons": [
+"mer_market_2: footprint leaves dry land (40 sq units in water)"
+]
+},
+{
+"what": "Quarter of Zeno",
+"reasons": [
+"the quarter would be at sea"
+]
+}
+]
+}
+]
+}

@@ -1,0 +1,87 @@
+{
+"era": {
+"from": 171,
+"to": 180,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 172,
+"structure": {
+"id": "mer_har_14",
+"type": "harbor",
+"name": "Harbor of Ariadne",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+581.1,
+253.5
+],
+[
+585.1,
+269.0
+],
+[
+574.4,
+271.7
+],
+[
+570.5,
+256.2
+]
+]
+},
+"label": "Harbor of Ariadne"
+},
+"why": "A new harbor named for Ariadne takes the grain ships the old quays turn away."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Ariadne",
+"reasons": [
+"mer_warehouse_14: footprint leaves dry land (32 sq units in water)",
+"mer_warehouse_14: overlaps standing mer_har_14 (Harbor of Ariadne)"
+]
+},
+{
+"what": "Spice Row III",
+"reasons": [
+"mer_market_14: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Quarter of Ariadne II",
+"reasons": [
+"mer_dis_34: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Sophia II",
+"reasons": [
+"mer_dis_35: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aetius II",
+"reasons": [
+"mer_dis_36: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aspar II",
+"reasons": [
+"mer_dis_37: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

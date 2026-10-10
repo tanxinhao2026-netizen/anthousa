@@ -1,0 +1,299 @@
+{
+"era": {
+"from": 81,
+"to": 90,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 82,
+"structure": {
+"id": "mer_har_5",
+"type": "harbor",
+"name": "Harbor of Zeno",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+541.8,
+321.0
+],
+[
+531.8,
+308.5
+],
+[
+540.4,
+301.6
+],
+[
+550.4,
+314.1
+]
+]
+},
+"label": "Harbor of Zeno"
+},
+"why": "A new harbor named for Zeno takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 83,
+"structure": {
+"id": "mer_warehouse_5",
+"type": "warehouse",
+"name": "Warehouses of Zeno",
+"dna": {
+"motif": "insula",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+529.4,
+320.2
+],
+[
+528.9,
+312.2
+],
+[
+532.9,
+311.9
+],
+[
+533.4,
+319.9
+]
+]
+}
+},
+"why": "Warehouses crowd the new quay."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 84,
+"structure": {
+"id": "mer_market_5",
+"type": "market",
+"name": "Wine Exchange",
+"dna": {
+"motif": "market_row",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+524.6,
+324.1
+],
+[
+532.6,
+324.4
+],
+[
+532.4,
+329.4
+],
+[
+524.4,
+329.1
+]
+]
+}
+},
+"why": "Stalls and shops follow the ships."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 83,
+"structure": {
+"id": "mer_road_11",
+"type": "road",
+"name": "Street of Heraclius",
+"geom": {
+"type": "line",
+"coords": [
+[
+548.0,
+340.0
+],
+[
+544.9,
+339.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Heraclius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 83,
+"structure": {
+"id": "mer_dis_11",
+"type": "district",
+"name": "Quarter of Heraclius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+527.4,
+317.2
+],
+[
+530.4,
+363.1
+],
+[
+562.4,
+360.9
+],
+[
+561.2,
+343.2
+],
+[
+560.1,
+342.7
+],
+[
+559.9,
+342.6
+],
+[
+559.7,
+342.5
+],
+[
+559.5,
+342.3
+],
+[
+557.1,
+340.0
+],
+[
+557.0,
+339.9
+],
+[
+556.9,
+339.7
+],
+[
+556.8,
+339.6
+],
+[
+554.3,
+335.3
+],
+[
+554.2,
+335.1
+],
+[
+554.1,
+335.0
+],
+[
+554.1,
+334.8
+],
+[
+554.0,
+334.6
+],
+[
+554.0,
+334.4
+],
+[
+554.0,
+334.2
+],
+[
+554.2,
+327.7
+],
+[
+552.3,
+325.2
+],
+[
+540.5,
+317.9
+],
+[
+540.3,
+317.8
+],
+[
+540.1,
+317.6
+],
+[
+540.0,
+317.4
+],
+[
+539.1,
+316.4
+],
+[
+527.4,
+317.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Heraclius."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Quarter of Pulcheria",
+"reasons": [
+"mer_dis_12: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Eudoxia",
+"reasons": [
+"mer_dis_13: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Ariadne",
+"reasons": [
+"mer_dis_14: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

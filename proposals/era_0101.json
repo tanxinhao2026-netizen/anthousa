@@ -1,0 +1,147 @@
+{
+"era": {
+"from": 101,
+"to": 110,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 102,
+"structure": {
+"id": "mer_har_7",
+"type": "harbor",
+"name": "Harbor of Justin",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+643.2,
+335.5
+],
+[
+655.0,
+324.7
+],
+[
+662.4,
+332.9
+],
+[
+650.6,
+343.7
+]
+]
+},
+"label": "Harbor of Justin"
+},
+"why": "A new harbor named for Justin takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 105,
+"structure": {
+"id": "mer_cis_6",
+"type": "cistern",
+"name": "Cistern of Anastasius",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+450.5,
+437.6
+],
+[
+441.7,
+439.8
+],
+[
+440.0,
+433.0
+],
+[
+448.8,
+430.8
+]
+]
+},
+"label": "Cistern of Anastasius"
+},
+"why": "An open reservoir named for Anastasius stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 106,
+"structure": {
+"id": "mer_dis_18",
+"type": "district",
+"name": "Quarter of Modestus",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+456.0,
+358.7
+],
+[
+429.0,
+316.6
+],
+[
+398.7,
+336.1
+],
+[
+425.7,
+378.1
+],
+[
+456.0,
+358.7
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Modestus."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Justin",
+"reasons": [
+"mer_warehouse_7: footprint leaves dry land (32 sq units in water)",
+"mer_warehouse_7: overlaps standing mer_har_7 (Harbor of Justin)"
+]
+},
+{
+"what": "Fish Market II",
+"reasons": [
+"mer_market_7: footprint leaves dry land (40 sq units in water)",
+"mer_market_7: overlaps standing mer_har_7 (Harbor of Justin)"
+]
+},
+{
+"what": "Quarter of Aspar",
+"reasons": [
+"the quarter would be at sea"
+]
+}
+]
+}
+]
+}

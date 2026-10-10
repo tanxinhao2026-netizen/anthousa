@@ -1,0 +1,84 @@
+{
+"era": {
+"from": 251,
+"to": 260,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 256,
+"structure": {
+"id": "mer_road_52",
+"type": "road",
+"name": "Street of Pulcheria III",
+"geom": {
+"type": "line",
+"coords": [
+[
+346.6,
+494.8
+],
+[
+350.5,
+497.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Pulcheria III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 256,
+"structure": {
+"id": "mer_dis_52",
+"type": "district",
+"name": "Quarter of Pulcheria III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+330.1,
+474.0
+],
+[
+335.0,
+523.7
+],
+[
+370.8,
+520.2
+],
+[
+365.9,
+470.5
+],
+[
+330.1,
+474.0
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Pulcheria III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"mer_har_22: overlaps standing mer_har_7 (Harbor of Justin)"
+]
+}
+]
+}
+]
+}

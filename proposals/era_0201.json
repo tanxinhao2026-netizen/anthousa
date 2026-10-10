@@ -1,0 +1,172 @@
+{
+"era": {
+"from": 201,
+"to": 210,
+"title": "新码头"
+},
+"actions": [
+{
+"op": "build",
+"faction": "merchants",
+"year": 202,
+"structure": {
+"id": "mer_har_17",
+"type": "harbor",
+"name": "Harbor of Aspar",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+557.7,
+243.0
+],
+[
+573.7,
+243.1
+],
+[
+573.6,
+254.1
+],
+[
+557.6,
+254.0
+]
+]
+},
+"label": "Harbor of Aspar"
+},
+"why": "A new harbor named for Aspar takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 206,
+"structure": {
+"id": "mer_road_44",
+"type": "road",
+"name": "Street of Leo III",
+"geom": {
+"type": "line",
+"coords": [
+[
+416.9,
+495.0
+],
+[
+406.6,
+497.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Leo III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 206,
+"structure": {
+"id": "mer_dis_44",
+"type": "district",
+"name": "Quarter of Leo III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+383.2,
+477.3
+],
+[
+394.9,
+526.0
+],
+[
+429.9,
+517.6
+],
+[
+418.3,
+469.0
+],
+[
+383.2,
+477.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Leo III."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 207,
+"structure": {
+"id": "mer_church_8",
+"type": "church",
+"name": "St Andrew of the Sailors",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+636.9,
+428.0
+],
+[
+637.8,
+432.9
+],
+[
+634.9,
+433.4
+],
+[
+633.9,
+428.5
+]
+]
+}
+},
+"why": "Sailors build a small church for St Andrew."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Warehouses of Aspar",
+"reasons": [
+"mer_warehouse_17: footprint leaves dry land (32 sq units in water)",
+"mer_warehouse_17: overlaps standing mer_har_14 (Harbor of Ariadne)"
+]
+},
+{
+"what": "Wine Exchange III",
+"reasons": [
+"mer_market_17: footprint leaves dry land (20 sq units in water)",
+"mer_market_17: overlaps standing mer_har_17 (Harbor of Aspar)"
+]
+},
+{
+"what": "Quarter of Marcian III",
+"reasons": [
+"the quarter would be at sea"
+]
+}
+]
+}
+]
+}
