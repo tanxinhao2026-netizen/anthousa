@@ -1,0 +1,330 @@
+{
+"era": {
+"from": 181,
+"to": 190,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 184,
+"structure": {
+"id": "his_cis_10",
+"type": "cistern",
+"name": "Cistern of Maurice",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+364.1,
+451.7
+],
+[
+354.2,
+450.4
+],
+[
+355.3,
+442.4
+],
+[
+365.2,
+443.8
+]
+]
+},
+"label": "Cistern of Maurice"
+},
+"why": "An open reservoir named for Maurice stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 185,
+"structure": {
+"id": "his_road_45",
+"type": "road",
+"name": "Street of Zeno III",
+"geom": {
+"type": "line",
+"coords": [
+[
+50.2,
+300.8
+],
+[
+57.3,
+249.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Zeno III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 185,
+"structure": {
+"id": "his_dis_45",
+"type": "district",
+"name": "Quarter of Zeno III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+92.6,
+276.6
+],
+[
+75.2,
+208.8
+],
+[
+21.9,
+222.5
+],
+[
+39.4,
+290.3
+],
+[
+92.6,
+276.6
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Zeno III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 185,
+"structure": {
+"id": "his_road_46",
+"type": "road",
+"name": "Street of Anastasius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+112.5,
+306.7
+],
+[
+142.4,
+297.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Anastasius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 185,
+"structure": {
+"id": "his_dis_46",
+"type": "district",
+"name": "Quarter of Anastasius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+178.8,
+323.3
+],
+[
+158.6,
+256.2
+],
+[
+106.0,
+272.1
+],
+[
+126.2,
+339.1
+],
+[
+178.8,
+323.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Anastasius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 185,
+"structure": {
+"id": "his_road_47",
+"type": "road",
+"name": "Street of Justin III",
+"geom": {
+"type": "line",
+"coords": [
+[
+56.4,
+500.2
+],
+[
+71.3,
+475.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justin III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 185,
+"structure": {
+"id": "his_dis_47",
+"type": "district",
+"name": "Quarter of Justin III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+106.3,
+502.6
+],
+[
+89.6,
+434.6
+],
+[
+36.2,
+447.8
+],
+[
+52.9,
+515.8
+],
+[
+106.3,
+502.6
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justin III."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 186,
+"structure": {
+"id": "his_church_8",
+"type": "church",
+"name": "St Irene",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+374.2,
+486.6
+],
+[
+375.0,
+480.6
+],
+[
+378.9,
+481.2
+],
+[
+378.1,
+487.1
+]
+]
+}
+},
+"why": "A parish church for St Irene serves the new streets."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 187,
+"structure": {
+"id": "his_baths_3",
+"type": "baths",
+"name": "Baths of Dagistheus",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+640.4,
+442.6
+],
+[
+632.4,
+442.1
+],
+[
+632.8,
+436.1
+],
+[
+640.8,
+436.7
+]
+]
+}
+},
+"why": "Public baths for a growing quarter."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_14: overlaps standing harbor_julian (Harbor of Julian)",
+"his_har_14: overlaps standing his_har_7 (Harbor of Justin)"
+]
+}
+]
+}
+]
+}

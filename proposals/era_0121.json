@@ -1,0 +1,376 @@
+{
+"era": {
+"from": 121,
+"to": 130,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 130,
+"structure": {
+"id": "his_cistern_3",
+"type": "cistern",
+"name": "Cistern of Aspar",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+469.2,
+299.2
+],
+[
+469.8,
+287.3
+],
+[
+481.8,
+287.9
+],
+[
+481.2,
+299.8
+]
+]
+},
+"label": "Cistern of Aspar"
+},
+"why": "General Aspar pays for a square reservoir on the fifth hill."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 124,
+"structure": {
+"id": "his_cis_6",
+"type": "cistern",
+"name": "Cistern of Anastasius",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+429.1,
+466.5
+],
+[
+419.4,
+468.8
+],
+[
+417.5,
+461.0
+],
+[
+427.2,
+458.7
+]
+]
+},
+"label": "Cistern of Anastasius"
+},
+"why": "An open reservoir named for Anastasius stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 122,
+"structure": {
+"id": "his_har_8",
+"type": "harbor",
+"name": "Harbor of Justinian",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+527.5,
+550.5
+],
+[
+507.5,
+550.1
+],
+[
+507.8,
+537.1
+],
+[
+527.8,
+537.5
+]
+]
+},
+"label": "Harbor of Justinian"
+},
+"why": "A new harbor named for Justinian takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 125,
+"structure": {
+"id": "his_road_27",
+"type": "road",
+"name": "Street of Justin II",
+"geom": {
+"type": "line",
+"coords": [
+[
+229.8,
+400.5
+],
+[
+239.8,
+381.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justin II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 125,
+"structure": {
+"id": "his_dis_27",
+"type": "district",
+"name": "Quarter of Justin II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+283.6,
+373.3
+],
+[
+221.5,
+340.8
+],
+[
+196.0,
+389.5
+],
+[
+258.0,
+422.0
+],
+[
+283.6,
+373.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justin II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 125,
+"structure": {
+"id": "his_road_28",
+"type": "road",
+"name": "Street of Justinian II",
+"geom": {
+"type": "line",
+"coords": [
+[
+111.0,
+400.5
+],
+[
+56.2,
+387.9
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justinian II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 125,
+"structure": {
+"id": "his_dis_28",
+"type": "district",
+"name": "Quarter of Justinian II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+99.5,
+377.6
+],
+[
+35.9,
+348.3
+],
+[
+12.9,
+398.3
+],
+[
+76.5,
+427.6
+],
+[
+99.5,
+377.6
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justinian II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 125,
+"structure": {
+"id": "his_road_29",
+"type": "road",
+"name": "Street of Tiberius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+140.8,
+414.2
+],
+[
+123.7,
+451.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Tiberius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 125,
+"structure": {
+"id": "his_dis_29",
+"type": "district",
+"name": "Quarter of Tiberius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+167.0,
+441.1
+],
+[
+103.4,
+411.8
+],
+[
+80.4,
+461.7
+],
+[
+144.0,
+491.0
+],
+[
+167.0,
+441.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Tiberius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 127,
+"structure": {
+"id": "his_baths_1",
+"type": "baths",
+"name": "Baths of Zeuxippus II",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+416.1,
+471.6
+],
+[
+418.0,
+479.4
+],
+[
+412.2,
+480.8
+],
+[
+410.3,
+473.0
+]
+]
+}
+},
+"why": "Public baths for a growing quarter."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Church of the Blachernae",
+"reasons": [
+"his_church_5: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Church of the Blachernae",
+"reasons": [
+"his_church_6: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Horrea Justinian",
+"reasons": [
+"his_granary_8: footprint leaves dry land (28 sq units in water)",
+"his_granary_8: overlaps standing his_har_8 (Harbor of Justinian)"
+]
+}
+]
+}
+]
+}

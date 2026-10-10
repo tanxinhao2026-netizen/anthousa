@@ -1,0 +1,166 @@
+{
+"era": {
+"from": 261,
+"to": 270,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 264,
+"structure": {
+"id": "his_cis_18",
+"type": "cistern",
+"name": "Cistern of Modestus",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+520.1,
+457.9
+],
+[
+520.5,
+467.9
+],
+[
+512.6,
+468.2
+],
+[
+512.1,
+458.2
+]
+]
+},
+"label": "Cistern of Modestus"
+},
+"why": "An open reservoir named for Modestus stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 265,
+"structure": {
+"id": "his_road_67",
+"type": "road",
+"name": "Street of Justin IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+37.0,
+192.9
+],
+[
+65.8,
+178.6
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justin IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 265,
+"structure": {
+"id": "his_dis_67",
+"type": "district",
+"name": "Quarter of Justin IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+48.9,
+219.8
+],
+[
+109.8,
+185.2
+],
+[
+82.6,
+137.4
+],
+[
+21.8,
+172.0
+],
+[
+48.9,
+219.8
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justin IV."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 266,
+"structure": {
+"id": "his_church_15",
+"type": "church",
+"name": "St Plato",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+336.6,
+453.1
+],
+[
+331.3,
+450.2
+],
+[
+333.2,
+446.7
+],
+[
+338.5,
+449.5
+]
+]
+}
+},
+"why": "A parish church for St Plato serves the new streets."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_22: overlaps standing his_har_2 (Harbor of Theodosius)"
+]
+}
+]
+}
+]
+}

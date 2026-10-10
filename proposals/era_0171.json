@@ -1,0 +1,247 @@
+{
+"era": {
+"from": 171,
+"to": 180,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 174,
+"structure": {
+"id": "his_cis_9",
+"type": "cistern",
+"name": "Cistern of Tiberius",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+454.5,
+392.8
+],
+[
+449.1,
+384.4
+],
+[
+455.8,
+380.0
+],
+[
+461.2,
+388.5
+]
+]
+},
+"label": "Cistern of Tiberius"
+},
+"why": "An open reservoir named for Tiberius stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 175,
+"structure": {
+"id": "his_road_42",
+"type": "road",
+"name": "Street of Theodosius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+61.8,
+585.3
+],
+[
+57.7,
+627.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Theodosius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 175,
+"structure": {
+"id": "his_dis_42",
+"type": "district",
+"name": "Quarter of Theodosius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+22.6,
+599.8
+],
+[
+39.3,
+667.8
+],
+[
+92.7,
+654.6
+],
+[
+76.0,
+586.6
+],
+[
+22.6,
+599.8
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Theodosius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 175,
+"structure": {
+"id": "his_road_43",
+"type": "road",
+"name": "Street of Marcian III",
+"geom": {
+"type": "line",
+"coords": [
+[
+59.0,
+355.7
+],
+[
+71.4,
+356.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Marcian III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 175,
+"structure": {
+"id": "his_dis_43",
+"type": "district",
+"name": "Quarter of Marcian III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+95.8,
+394.0
+],
+[
+101.8,
+324.3
+],
+[
+47.0,
+319.6
+],
+[
+41.0,
+389.3
+],
+[
+95.8,
+394.0
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Marcian III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 175,
+"structure": {
+"id": "his_road_44",
+"type": "road",
+"name": "Street of Leo III",
+"geom": {
+"type": "line",
+"coords": [
+[
+123.0,
+575.2
+],
+[
+127.7,
+618.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Leo III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 175,
+"structure": {
+"id": "his_dis_44",
+"type": "district",
+"name": "Quarter of Leo III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+92.6,
+591.1
+],
+[
+109.4,
+659.1
+],
+[
+162.8,
+645.9
+],
+[
+146.0,
+577.9
+],
+[
+92.6,
+591.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Leo III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_13: overlaps standing his_har_4 (Harbor of Leo)"
+]
+}
+]
+}
+]
+}

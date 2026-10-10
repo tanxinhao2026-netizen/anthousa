@@ -1,0 +1,355 @@
+{
+"era": {
+"from": 81,
+"to": 90,
+"title": "新城墙"
+},
+"actions": [
+{
+"op": "build",
+"faction": "army",
+"year": 84,
+"structure": {
+"id": "gate_his_0_0",
+"type": "gate",
+"name": "Gate of the Via Egnatia",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+260.0,
+489.1
+],
+[
+263.0,
+489.1
+],
+[
+263.0,
+492.1
+],
+[
+260.0,
+492.1
+]
+]
+},
+"dna": {
+"motif": "gatehouse",
+"materials": [
+"ashlar",
+"brick"
+],
+"ornament": 1,
+"scale": "civic"
+}
+},
+"why": "A gate where the Via Egnatia passes the new wall."
+},
+{
+"op": "build",
+"faction": "army",
+"year": 84,
+"structure": {
+"id": "his_wall_1",
+"type": "wall",
+"name": "Walls of Theodosius",
+"geom": {
+"type": "line",
+"coords": [
+[
+217.0,
+598.9
+],
+[
+269.5,
+569.5
+],
+[
+249.2,
+370.4
+],
+[
+343.0,
+258.0
+],
+[
+388.5,
+170.5
+],
+[
+403.4,
+150.8
+]
+]
+},
+"label": "Walls of Theodosius"
+},
+"why": "With the Goths a day's ride away, the regency builds a land wall two kilometres west of Constantine's."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 83,
+"structure": {
+"id": "his_aq_2",
+"type": "aqueduct",
+"name": "Aqueduct of Justinian",
+"geom": {
+"type": "line",
+"coords": [
+[
+137.3,
+135.4
+],
+[
+297.9,
+221.9
+],
+[
+407.2,
+261.5
+],
+[
+567.3,
+335.5
+]
+]
+},
+"label": "Aqueduct of Justinian"
+},
+"why": "A second channel from the Thracian hills doubles the city's water."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 82,
+"structure": {
+"id": "his_har_4",
+"type": "harbor",
+"name": "Harbor of Leo",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+600.0,
+515.4
+],
+[
+619.2,
+521.1
+],
+[
+615.5,
+533.6
+],
+[
+596.3,
+527.9
+]
+]
+},
+"label": "Harbor of Leo"
+},
+"why": "A new harbor named for Leo takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 85,
+"structure": {
+"id": "his_road_14",
+"type": "road",
+"name": "Street of Ariadne",
+"geom": {
+"type": "line",
+"coords": [
+[
+113.9,
+535.4
+],
+[
+52.9,
+550.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Ariadne."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 85,
+"structure": {
+"id": "his_dis_14",
+"type": "district",
+"name": "Quarter of Ariadne",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+74.2,
+511.5
+],
+[
+9.9,
+539.0
+],
+[
+31.5,
+589.6
+],
+[
+95.9,
+562.0
+],
+[
+74.2,
+511.5
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Ariadne."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 85,
+"structure": {
+"id": "his_road_15",
+"type": "road",
+"name": "Street of Sophia",
+"geom": {
+"type": "line",
+"coords": [
+[
+134.3,
+526.7
+],
+[
+120.9,
+495.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Sophia."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 85,
+"structure": {
+"id": "his_dis_15",
+"type": "district",
+"name": "Quarter of Sophia",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+142.2,
+456.3
+],
+[
+77.9,
+483.9
+],
+[
+99.5,
+534.5
+],
+[
+163.9,
+506.9
+],
+[
+142.2,
+456.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Sophia."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 85,
+"structure": {
+"id": "his_road_16",
+"type": "road",
+"name": "Street of Aetius",
+"geom": {
+"type": "line",
+"coords": [
+[
+377.0,
+442.0
+],
+[
+357.3,
+397.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Aetius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 85,
+"structure": {
+"id": "his_dis_16",
+"type": "district",
+"name": "Quarter of Aetius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+379.8,
+435.7
+],
+[
+389.2,
+366.3
+],
+[
+334.7,
+358.9
+],
+[
+325.3,
+428.3
+],
+[
+379.8,
+435.7
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Aetius."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Horrea Leo",
+"reasons": [
+"his_granary_4: footprint leaves dry land (45 sq units in water)",
+"his_granary_4: no road within 25 units; nobody could reach it"
+]
+}
+]
+}
+]
+}

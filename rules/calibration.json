@@ -147,5 +147,10 @@
   ],
   "max_slope": 0.1,
   "slope_why": "ploughland needs gentle ground: 80% of a field must slope under 10% (our judgement; terraces would allow more, not modelled)"
+ },
+ "dice": {
+  "fire_p": 0.28,
+  "basis": "estimate",
+  "why": "draft historical: unchanged odds, now a named rule"
  }
 }

@@ -1,0 +1,247 @@
+{
+"era": {
+"from": 151,
+"to": 160,
+"title": "海上粮路"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 155,
+"structure": {
+"id": "his_road_36",
+"type": "road",
+"name": "Street of Aetius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+53.2,
+550.4
+],
+[
+61.8,
+585.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Aetius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 155,
+"structure": {
+"id": "his_dis_36",
+"type": "district",
+"name": "Quarter of Aetius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+89.2,
+550.1
+],
+[
+21.3,
+567.0
+],
+[
+34.5,
+620.4
+],
+[
+102.4,
+603.5
+],
+[
+89.2,
+550.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Aetius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 155,
+"structure": {
+"id": "his_road_37",
+"type": "road",
+"name": "Street of Aspar II",
+"geom": {
+"type": "line",
+"coords": [
+[
+56.2,
+387.9
+],
+[
+60.3,
+340.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Aspar II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 155,
+"structure": {
+"id": "his_dis_37",
+"type": "district",
+"name": "Quarter of Aspar II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+100.6,
+321.0
+],
+[
+32.3,
+305.3
+],
+[
+20.0,
+358.9
+],
+[
+88.2,
+374.6
+],
+[
+100.6,
+321.0
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Aspar II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 155,
+"structure": {
+"id": "his_road_38",
+"type": "road",
+"name": "Street of Modestus II",
+"geom": {
+"type": "line",
+"coords": [
+[
+121.1,
+335.3
+],
+[
+107.9,
+291.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Modestus II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 155,
+"structure": {
+"id": "his_dis_38",
+"type": "district",
+"name": "Quarter of Modestus II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+152.3,
+288.6
+],
+[
+94.6,
+249.0
+],
+[
+63.5,
+294.3
+],
+[
+121.1,
+333.9
+],
+[
+152.3,
+288.6
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Modestus II."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 156,
+"structure": {
+"id": "his_church_7",
+"type": "church",
+"name": "St Theodore",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+336.1,
+421.4
+],
+[
+330.8,
+418.6
+],
+[
+332.7,
+415.1
+],
+[
+338.0,
+417.9
+]
+]
+}
+},
+"why": "A parish church for St Theodore serves the new streets."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_11: overlaps standing his_har_5 (Harbor of Zeno)"
+]
+}
+]
+}
+]
+}

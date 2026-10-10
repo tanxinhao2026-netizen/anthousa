@@ -1,0 +1,356 @@
+{
+"era": {
+"from": 61,
+"to": 70,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 64,
+"structure": {
+"id": "his_forum_1",
+"type": "forum",
+"name": "Forum of Theodosius",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+569.6,
+444.8
+],
+[
+556.4,
+440.1
+],
+[
+559.8,
+430.7
+],
+[
+573.0,
+435.4
+]
+]
+},
+"label": "Forum of Theodosius"
+},
+"why": "The emperor lays out a second great forum on the Mese, with a triumphal arch."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 63,
+"structure": {
+"id": "his_aq_1",
+"type": "aqueduct",
+"name": "Aqueduct of Theodosius",
+"geom": {
+"type": "line",
+"coords": [
+[
+94.6,
+252.2
+],
+[
+207.2,
+336.3
+],
+[
+320.4,
+386.2
+],
+[
+442.0,
+464.5
+]
+]
+},
+"label": "Aqueduct of Theodosius"
+},
+"why": "A second channel from the Thracian hills doubles the city's water."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 62,
+"structure": {
+"id": "his_har_2",
+"type": "harbor",
+"name": "Harbor of Theodosius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+668.7,
+514.3
+],
+[
+686.1,
+504.4
+],
+[
+692.5,
+515.7
+],
+[
+675.1,
+525.6
+]
+]
+},
+"label": "Harbor of Theodosius"
+},
+"why": "A new harbor named for Theodosius takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 65,
+"structure": {
+"id": "his_road_8",
+"type": "road",
+"name": "Street of Justinian",
+"geom": {
+"type": "line",
+"coords": [
+[
+377.0,
+442.0
+],
+[
+406.2,
+432.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justinian."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 65,
+"structure": {
+"id": "his_dis_8",
+"type": "district",
+"name": "Quarter of Justinian",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+428.8,
+470.4
+],
+[
+438.2,
+401.1
+],
+[
+383.7,
+393.7
+],
+[
+374.3,
+463.1
+],
+[
+428.8,
+470.4
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justinian."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 65,
+"structure": {
+"id": "his_road_9",
+"type": "road",
+"name": "Street of Tiberius",
+"geom": {
+"type": "line",
+"coords": [
+[
+375.6,
+452.3
+],
+[
+349.0,
+448.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Tiberius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 65,
+"structure": {
+"id": "his_dis_9",
+"type": "district",
+"name": "Quarter of Tiberius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+371.6,
+487.0
+],
+[
+381.0,
+417.7
+],
+[
+326.5,
+410.3
+],
+[
+317.1,
+479.7
+],
+[
+371.6,
+487.0
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Tiberius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 65,
+"structure": {
+"id": "his_road_10",
+"type": "road",
+"name": "Street of Maurice",
+"geom": {
+"type": "line",
+"coords": [
+[
+250.0,
+492.0
+],
+[
+232.6,
+503.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Maurice."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 65,
+"structure": {
+"id": "his_dis_10",
+"type": "district",
+"name": "Quarter of Maurice",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+264.1,
+472.0
+],
+[
+194.6,
+480.4
+],
+[
+201.1,
+535.0
+],
+[
+270.6,
+526.6
+],
+[
+264.1,
+472.0
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Maurice."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 66,
+"structure": {
+"id": "his_church_2",
+"type": "church",
+"name": "St John Studios",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+360.2,
+503.0
+],
+[
+360.8,
+508.9
+],
+[
+356.9,
+509.3
+],
+[
+356.2,
+503.4
+]
+]
+}
+},
+"why": "A parish church for St John Studios serves the new streets."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Horrea Theodosius",
+"reasons": [
+"his_granary_2: footprint leaves dry land (2 sq units in water)",
+"his_granary_2: overlaps standing his_har_2 (Harbor of Theodosius)"
+]
+}
+]
+}
+]
+}

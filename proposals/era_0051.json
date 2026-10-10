@@ -1,0 +1,299 @@
+{
+"era": {
+"from": 51,
+"to": 60,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 54,
+"structure": {
+"id": "his_cis_1",
+"type": "cistern",
+"name": "Cistern of Arcadius",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+389.5,
+450.5
+],
+[
+390.9,
+440.6
+],
+[
+398.8,
+441.7
+],
+[
+397.5,
+451.6
+]
+]
+},
+"label": "Cistern of Arcadius"
+},
+"why": "An open reservoir named for Arcadius stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 52,
+"structure": {
+"id": "his_har_1",
+"type": "harbor",
+"name": "Harbor of Arcadius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+503.9,
+509.4
+],
+[
+523.2,
+514.6
+],
+[
+519.8,
+527.2
+],
+[
+500.5,
+521.9
+]
+]
+},
+"label": "Harbor of Arcadius"
+},
+"why": "A new harbor named for Arcadius takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 53,
+"structure": {
+"id": "his_granary_1",
+"type": "granary",
+"name": "Horrea Arcadius",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+519.8,
+500.6
+],
+[
+520.3,
+509.5
+],
+[
+515.3,
+509.8
+],
+[
+514.8,
+500.9
+]
+]
+}
+},
+"why": "State granaries rise behind the new quays."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 55,
+"structure": {
+"id": "his_dis_5",
+"type": "district",
+"name": "Quarter of Zeno",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+474.1,
+345.2
+],
+[
+436.3,
+286.3
+],
+[
+390.0,
+316.1
+],
+[
+427.9,
+375.0
+],
+[
+474.1,
+345.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Zeno."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 55,
+"structure": {
+"id": "his_dis_6",
+"type": "district",
+"name": "Quarter of Anastasius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+449.2,
+429.6
+],
+[
+381.1,
+445.9
+],
+[
+394.0,
+499.4
+],
+[
+462.0,
+483.1
+],
+[
+449.2,
+429.6
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Anastasius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 55,
+"structure": {
+"id": "his_road_7",
+"type": "road",
+"name": "Street of Justin",
+"geom": {
+"type": "line",
+"coords": [
+[
+292.7,
+486.9
+],
+[
+293.6,
+494.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justin."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 55,
+"structure": {
+"id": "his_dis_7",
+"type": "district",
+"name": "Quarter of Justin",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+325.0,
+462.8
+],
+[
+255.5,
+471.1
+],
+[
+262.1,
+525.7
+],
+[
+331.6,
+517.4
+],
+[
+325.0,
+462.8
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justin."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 56,
+"structure": {
+"id": "his_church_1",
+"type": "church",
+"name": "St Polyeuctus",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+341.2,
+465.6
+],
+[
+335.2,
+466.2
+],
+[
+334.8,
+462.2
+],
+[
+340.8,
+461.6
+]
+]
+}
+},
+"why": "A parish church for St Polyeuctus serves the new streets."
+}
+],
+"growth_floor": 150
+}

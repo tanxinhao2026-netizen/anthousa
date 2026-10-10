@@ -1,0 +1,260 @@
+{
+"era": {
+"from": 191,
+"to": 200,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 194,
+"structure": {
+"id": "his_cis_11",
+"type": "cistern",
+"name": "Cistern of Heraclius",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+467.2,
+463.8
+],
+[
+457.5,
+466.3
+],
+[
+455.6,
+458.5
+],
+[
+465.3,
+456.1
+]
+]
+},
+"label": "Cistern of Heraclius"
+},
+"why": "An open reservoir named for Heraclius stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 195,
+"structure": {
+"id": "his_road_48",
+"type": "road",
+"name": "Street of Justinian III",
+"geom": {
+"type": "line",
+"coords": [
+[
+126.5,
+607.0
+],
+[
+160.8,
+603.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justinian III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 195,
+"structure": {
+"id": "his_dis_48",
+"type": "district",
+"name": "Quarter of Justinian III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+129.7,
+571.4
+],
+[
+137.2,
+641.0
+],
+[
+191.9,
+635.1
+],
+[
+184.3,
+565.5
+],
+[
+129.7,
+571.4
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justinian III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 195,
+"structure": {
+"id": "his_road_49",
+"type": "road",
+"name": "Street of Tiberius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+213.9,
+505.7
+],
+[
+211.4,
+484.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Tiberius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 195,
+"structure": {
+"id": "his_dis_49",
+"type": "district",
+"name": "Quarter of Tiberius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+242.8,
+453.1
+],
+[
+173.3,
+461.4
+],
+[
+179.9,
+516.0
+],
+[
+249.4,
+507.7
+],
+[
+242.8,
+453.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Tiberius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 195,
+"structure": {
+"id": "his_road_50",
+"type": "road",
+"name": "Street of Maurice III",
+"geom": {
+"type": "line",
+"coords": [
+[
+51.6,
+306.2
+],
+[
+64.6,
+302.9
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Maurice III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 195,
+"structure": {
+"id": "his_dis_50",
+"type": "district",
+"name": "Quarter of Maurice III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+100.0,
+329.9
+],
+[
+82.5,
+262.1
+],
+[
+29.2,
+275.9
+],
+[
+46.7,
+343.6
+],
+[
+100.0,
+329.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Maurice III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Saints Sergius and Bacchus",
+"reasons": [
+"his_church_9: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Saints Sergius and Bacchus",
+"reasons": [
+"his_church_10: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "harbor",
+"reasons": [
+"his_har_15: overlaps standing his_har_10 (Harbor of Maurice)",
+"his_har_15: overlaps standing his_har_12 (Harbor of Pulcheria)"
+]
+}
+]
+}
+]
+}

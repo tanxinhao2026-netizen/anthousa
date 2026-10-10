@@ -1,0 +1,282 @@
+{
+"era": {
+"from": 161,
+"to": 170,
+"title": "海上粮路"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 162,
+"structure": {
+"id": "his_cistern_4",
+"type": "cistern",
+"name": "Cistern of Mocius",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+364.2,
+383.5
+],
+[
+358.6,
+370.7
+],
+[
+369.5,
+365.8
+],
+[
+375.2,
+378.7
+]
+]
+},
+"label": "Cistern of Mocius"
+},
+"why": "Anastasius digs the largest open cistern of all on the seventh hill."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 162,
+"structure": {
+"id": "his_har_12",
+"type": "harbor",
+"name": "Harbor of Pulcheria",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+380.2,
+536.6
+],
+[
+393.4,
+551.6
+],
+[
+383.6,
+560.2
+],
+[
+370.4,
+545.2
+]
+]
+},
+"label": "Harbor of Pulcheria"
+},
+"why": "A new harbor named for Pulcheria takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 165,
+"structure": {
+"id": "his_road_39",
+"type": "road",
+"name": "Street of Philoxenus II",
+"geom": {
+"type": "line",
+"coords": [
+[
+177.2,
+405.2
+],
+[
+183.3,
+408.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Philoxenus II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 165,
+"structure": {
+"id": "his_dis_39",
+"type": "district",
+"name": "Quarter of Philoxenus II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+175.3,
+364.6
+],
+[
+142.7,
+426.6
+],
+[
+191.4,
+452.2
+],
+[
+224.0,
+390.2
+],
+[
+175.3,
+364.6
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Philoxenus II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 165,
+"structure": {
+"id": "his_road_40",
+"type": "road",
+"name": "Street of Probus II",
+"geom": {
+"type": "line",
+"coords": [
+[
+60.3,
+340.0
+],
+[
+50.2,
+300.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Probus II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 165,
+"structure": {
+"id": "his_dis_40",
+"type": "district",
+"name": "Quarter of Probus II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+74.6,
+338.1
+],
+[
+80.6,
+268.3
+],
+[
+25.8,
+263.6
+],
+[
+19.8,
+333.4
+],
+[
+74.6,
+338.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Probus II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 165,
+"structure": {
+"id": "his_road_41",
+"type": "road",
+"name": "Street of Arcadius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+178.1,
+485.1
+],
+[
+183.8,
+484.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Arcadius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 165,
+"structure": {
+"id": "his_dis_41",
+"type": "district",
+"name": "Quarter of Arcadius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+216.2,
+514.8
+],
+[
+205.8,
+445.6
+],
+[
+151.4,
+453.7
+],
+[
+161.8,
+523.0
+],
+[
+216.2,
+514.8
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Arcadius III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Horrea Pulcheria",
+"reasons": [
+"his_granary_11: footprint leaves dry land (45 sq units in water)",
+"his_granary_11: overlaps standing his_har_12 (Harbor of Pulcheria)"
+]
+}
+]
+}
+]
+}

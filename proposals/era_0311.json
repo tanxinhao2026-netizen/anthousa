@@ -1,0 +1,126 @@
+{
+"era": {
+"from": 311,
+"to": 320,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 314,
+"structure": {
+"id": "his_cis_22",
+"type": "cistern",
+"name": "Cistern of Theodosius II",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+482.6,
+397.7
+],
+[
+478.1,
+388.8
+],
+[
+485.3,
+385.2
+],
+[
+489.7,
+394.1
+]
+]
+},
+"label": "Cistern of Theodosius II"
+},
+"why": "An open reservoir named for Theodosius II stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 315,
+"structure": {
+"id": "his_road_70",
+"type": "road",
+"name": "Street of Maurice IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+142.4,
+297.7
+],
+[
+167.4,
+300.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Maurice IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 315,
+"structure": {
+"id": "his_dis_70",
+"type": "district",
+"name": "Quarter of Maurice IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+141.8,
+337.2
+],
+[
+208.9,
+317.0
+],
+[
+193.0,
+264.4
+],
+[
+126.0,
+284.5
+],
+[
+141.8,
+337.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Maurice IV."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_27: overlaps standing his_har_6 (Harbor of Anastasius)",
+"his_har_27: overlaps standing his_har_8 (Harbor of Justinian)"
+]
+}
+]
+}
+]
+}

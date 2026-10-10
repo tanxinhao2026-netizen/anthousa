@@ -1,0 +1,142 @@
+{
+"era": {
+"from": 291,
+"to": 300,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 294,
+"structure": {
+"id": "his_cis_20",
+"type": "cistern",
+"name": "Cistern of Probus",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+510.3,
+339.8
+],
+[
+520.2,
+339.5
+],
+[
+520.5,
+347.5
+],
+[
+510.5,
+347.8
+]
+]
+},
+"label": "Cistern of Probus"
+},
+"why": "An open reservoir named for Probus stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 295,
+"structure": {
+"id": "his_dis_69",
+"type": "district",
+"name": "Quarter of Tiberius IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+211.8,
+441.4
+],
+[
+281.4,
+449.0
+],
+[
+287.3,
+394.3
+],
+[
+217.7,
+386.7
+],
+[
+211.8,
+441.4
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Tiberius IV."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 296,
+"structure": {
+"id": "his_church_17",
+"type": "church",
+"name": "St Menas",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+355.0,
+468.6
+],
+[
+349.0,
+469.2
+],
+[
+348.6,
+465.3
+],
+[
+354.6,
+464.7
+]
+]
+}
+},
+"why": "A parish church for St Menas serves the new streets."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_25: overlaps standing harbor_julian (Harbor of Julian)",
+"his_har_25: overlaps standing his_har_7 (Harbor of Justin)"
+]
+}
+]
+}
+]
+}

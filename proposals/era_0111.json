@@ -1,0 +1,349 @@
+{
+"era": {
+"from": 111,
+"to": 120,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 114,
+"structure": {
+"id": "his_cis_5",
+"type": "cistern",
+"name": "Cistern of Zeno",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+362.1,
+441.8
+],
+[
+352.2,
+440.5
+],
+[
+353.3,
+432.6
+],
+[
+363.2,
+433.9
+]
+]
+},
+"label": "Cistern of Zeno"
+},
+"why": "An open reservoir named for Zeno stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 112,
+"structure": {
+"id": "his_har_7",
+"type": "harbor",
+"name": "Harbor of Justin",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+542.9,
+528.3
+],
+[
+531.7,
+511.7
+],
+[
+542.5,
+504.4
+],
+[
+553.7,
+521.0
+]
+]
+},
+"label": "Harbor of Justin"
+},
+"why": "A new harbor named for Justin takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 113,
+"structure": {
+"id": "his_granary_7",
+"type": "granary",
+"name": "Horrea Justin",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+555.0,
+501.1
+],
+[
+552.5,
+509.8
+],
+[
+547.7,
+508.4
+],
+[
+550.1,
+499.8
+]
+]
+}
+},
+"why": "State granaries rise behind the new quays."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 115,
+"structure": {
+"id": "his_road_24",
+"type": "road",
+"name": "Street of Leo II",
+"geom": {
+"type": "line",
+"coords": [
+[
+190.5,
+379.9
+],
+[
+166.3,
+426.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Leo II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 115,
+"structure": {
+"id": "his_dis_24",
+"type": "district",
+"name": "Quarter of Leo II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+210.1,
+417.9
+],
+[
+148.1,
+385.4
+],
+[
+122.6,
+434.2
+],
+[
+184.6,
+466.6
+],
+[
+210.1,
+417.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Leo II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 115,
+"structure": {
+"id": "his_road_25",
+"type": "road",
+"name": "Street of Zeno II",
+"geom": {
+"type": "line",
+"coords": [
+[
+236.4,
+456.7
+],
+[
+255.9,
+449.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Zeno II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 115,
+"structure": {
+"id": "his_dis_25",
+"type": "district",
+"name": "Quarter of Zeno II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+294.1,
+471.9
+],
+[
+269.0,
+406.6
+],
+[
+217.6,
+426.4
+],
+[
+242.8,
+491.7
+],
+[
+294.1,
+471.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Zeno II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 115,
+"structure": {
+"id": "his_road_26",
+"type": "road",
+"name": "Street of Anastasius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+166.3,
+426.0
+],
+[
+111.0,
+400.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Anastasius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 115,
+"structure": {
+"id": "his_dis_26",
+"type": "district",
+"name": "Quarter of Anastasius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+102.9,
+356.8
+],
+[
+70.4,
+418.7
+],
+[
+119.1,
+444.3
+],
+[
+151.6,
+382.3
+],
+[
+102.9,
+356.8
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Anastasius II."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 116,
+"structure": {
+"id": "his_church_4",
+"type": "church",
+"name": "St Anastasia",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+347.2,
+458.4
+],
+[
+341.9,
+455.6
+],
+[
+343.8,
+452.0
+],
+[
+349.1,
+454.9
+]
+]
+}
+},
+"why": "A parish church for St Anastasia serves the new streets."
+}
+],
+"growth_floor": 150
+}

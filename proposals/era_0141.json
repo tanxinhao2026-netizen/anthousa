@@ -1,0 +1,281 @@
+{
+"era": {
+"from": 141,
+"to": 150,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 144,
+"structure": {
+"id": "his_cis_8",
+"type": "cistern",
+"name": "Cistern of Justinian",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+488.4,
+404.3
+],
+[
+488.6,
+394.3
+],
+[
+496.6,
+394.5
+],
+[
+496.3,
+404.5
+]
+]
+},
+"label": "Cistern of Justinian"
+},
+"why": "An open reservoir named for Justinian stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 142,
+"structure": {
+"id": "his_har_10",
+"type": "harbor",
+"name": "Harbor of Maurice",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+388.9,
+554.8
+],
+[
+408.9,
+555.6
+],
+[
+408.4,
+568.6
+],
+[
+388.4,
+567.8
+]
+]
+},
+"label": "Harbor of Maurice"
+},
+"why": "A new harbor named for Maurice takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 145,
+"structure": {
+"id": "his_road_33",
+"type": "road",
+"name": "Street of Eudoxia II",
+"geom": {
+"type": "line",
+"coords": [
+[
+291.1,
+487.1
+],
+[
+288.3,
+463.9
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Eudoxia II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 145,
+"structure": {
+"id": "his_dis_33",
+"type": "district",
+"name": "Quarter of Eudoxia II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+319.8,
+432.4
+],
+[
+250.3,
+440.7
+],
+[
+256.8,
+495.3
+],
+[
+326.3,
+487.0
+],
+[
+319.8,
+432.4
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Eudoxia II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 145,
+"structure": {
+"id": "his_road_34",
+"type": "road",
+"name": "Street of Ariadne II",
+"geom": {
+"type": "line",
+"coords": [
+[
+113.2,
+535.6
+],
+[
+123.0,
+575.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Ariadne II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 145,
+"structure": {
+"id": "his_dis_34",
+"type": "district",
+"name": "Quarter of Ariadne II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+150.3,
+540.1
+],
+[
+82.4,
+556.9
+],
+[
+95.6,
+610.3
+],
+[
+163.6,
+593.5
+],
+[
+150.3,
+540.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Ariadne II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 145,
+"structure": {
+"id": "his_road_35",
+"type": "road",
+"name": "Street of Sophia II",
+"geom": {
+"type": "line",
+"coords": [
+[
+181.8,
+509.6
+],
+[
+177.8,
+482.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Sophia II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 145,
+"structure": {
+"id": "his_dis_35",
+"type": "district",
+"name": "Quarter of Sophia II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+146.3,
+451.3
+],
+[
+154.7,
+520.8
+],
+[
+209.3,
+514.3
+],
+[
+200.9,
+444.8
+],
+[
+146.3,
+451.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Sophia II."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Horrea Maurice",
+"reasons": [
+"his_granary_10: footprint leaves dry land (45 sq units in water)",
+"his_granary_10: overlaps standing his_har_10 (Harbor of Maurice)"
+]
+}
+]
+}
+]
+}

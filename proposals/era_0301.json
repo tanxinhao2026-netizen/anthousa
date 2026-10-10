@@ -1,0 +1,106 @@
+{
+"era": {
+"from": 301,
+"to": 310,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 304,
+"structure": {
+"id": "his_cis_21",
+"type": "cistern",
+"name": "Cistern of Arcadius II",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+363.6,
+462.1
+],
+[
+353.6,
+460.7
+],
+[
+354.7,
+452.8
+],
+[
+364.6,
+454.2
+]
+]
+},
+"label": "Cistern of Arcadius II"
+},
+"why": "An open reservoir named for Arcadius II stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 306,
+"structure": {
+"id": "his_church_18",
+"type": "church",
+"name": "St Stephen",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+337.8,
+413.7
+],
+[
+335.4,
+408.2
+],
+[
+339.0,
+406.6
+],
+[
+341.5,
+412.1
+]
+]
+}
+},
+"why": "A parish church for St Stephen serves the new streets."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_26: overlaps standing his_har_3 (Harbor of Marcian)",
+"his_har_26: overlaps standing his_har_9 (Harbor of Tiberius)"
+]
+}
+]
+}
+]
+}

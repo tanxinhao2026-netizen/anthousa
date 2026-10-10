@@ -1,0 +1,125 @@
+{
+"era": {
+"from": 281,
+"to": 290,
+"title": "海上粮路"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 285,
+"structure": {
+"id": "his_road_68",
+"type": "road",
+"name": "Street of Justinian IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+234.0,
+415.6
+],
+[
+249.6,
+417.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justinian IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 285,
+"structure": {
+"id": "his_dis_68",
+"type": "district",
+"name": "Quarter of Justinian IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+273.4,
+454.9
+],
+[
+280.6,
+385.3
+],
+[
+225.9,
+379.6
+],
+[
+218.7,
+449.3
+],
+[
+273.4,
+454.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Justinian IV."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 286,
+"structure": {
+"id": "his_church_16",
+"type": "church",
+"name": "St Acacius",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+352.2,
+436.3
+],
+[
+346.9,
+433.5
+],
+[
+348.8,
+429.9
+],
+[
+354.1,
+432.8
+]
+]
+}
+},
+"why": "A parish church for St Acacius serves the new streets."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_24: overlaps standing his_har_8 (Harbor of Justinian)"
+]
+}
+]
+}
+]
+}

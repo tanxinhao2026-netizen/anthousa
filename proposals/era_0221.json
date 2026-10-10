@@ -1,0 +1,485 @@
+{
+"era": {
+"from": 221,
+"to": 230,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 224,
+"structure": {
+"id": "his_cis_14",
+"type": "cistern",
+"name": "Cistern of Ariadne",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+372.0,
+425.7
+],
+[
+368.0,
+416.6
+],
+[
+375.3,
+413.4
+],
+[
+379.3,
+422.5
+]
+]
+},
+"label": "Cistern of Ariadne"
+},
+"why": "An open reservoir named for Ariadne stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 225,
+"structure": {
+"id": "his_road_57",
+"type": "road",
+"name": "Street of Aspar III",
+"geom": {
+"type": "line",
+"coords": [
+[
+77.6,
+651.2
+],
+[
+35.1,
+686.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Aspar III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 225,
+"structure": {
+"id": "his_dis_57",
+"type": "district",
+"name": "Quarter of Aspar III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+78.6,
+695.9
+],
+[
+33.8,
+642.0
+],
+[
+2.0,
+668.5
+],
+[
+2.0,
+689.8
+],
+[
+30.3,
+723.8
+],
+[
+36.0,
+719.7
+],
+[
+36.1,
+719.6
+],
+[
+36.3,
+719.5
+],
+[
+36.4,
+719.5
+],
+[
+36.6,
+719.4
+],
+[
+41.9,
+717.9
+],
+[
+42.1,
+717.9
+],
+[
+42.3,
+717.8
+],
+[
+46.3,
+717.5
+],
+[
+46.4,
+717.4
+],
+[
+46.5,
+717.2
+],
+[
+46.7,
+717.1
+],
+[
+46.8,
+717.0
+],
+[
+47.0,
+716.9
+],
+[
+47.2,
+716.8
+],
+[
+47.3,
+716.7
+],
+[
+47.5,
+716.7
+],
+[
+47.7,
+716.6
+],
+[
+49.3,
+716.5
+],
+[
+47.9,
+712.0
+],
+[
+47.9,
+711.8
+],
+[
+47.8,
+711.6
+],
+[
+47.8,
+711.4
+],
+[
+47.8,
+711.3
+],
+[
+47.8,
+711.1
+],
+[
+47.9,
+710.9
+],
+[
+47.9,
+710.7
+],
+[
+48.5,
+709.4
+],
+[
+48.5,
+709.2
+],
+[
+48.6,
+709.0
+],
+[
+48.7,
+708.9
+],
+[
+48.8,
+708.7
+],
+[
+49.0,
+708.6
+],
+[
+49.1,
+708.5
+],
+[
+49.3,
+708.4
+],
+[
+49.4,
+708.3
+],
+[
+49.6,
+708.2
+],
+[
+56.2,
+705.7
+],
+[
+56.4,
+705.6
+],
+[
+56.6,
+705.6
+],
+[
+56.7,
+705.6
+],
+[
+56.9,
+705.6
+],
+[
+57.1,
+705.6
+],
+[
+57.3,
+705.6
+],
+[
+64.3,
+707.2
+],
+[
+64.5,
+707.2
+],
+[
+64.7,
+707.3
+],
+[
+64.8,
+707.3
+],
+[
+78.6,
+695.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Aspar III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 225,
+"structure": {
+"id": "his_road_58",
+"type": "road",
+"name": "Street of Modestus III",
+"geom": {
+"type": "line",
+"coords": [
+[
+56.4,
+500.2
+],
+[
+15.2,
+477.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Modestus III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 225,
+"structure": {
+"id": "his_dis_58",
+"type": "district",
+"name": "Quarter of Modestus III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+50.2,
+504.8
+],
+[
+33.5,
+436.8
+],
+[
+2.0,
+444.6
+],
+[
+2.0,
+516.7
+],
+[
+50.2,
+504.8
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Modestus III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 225,
+"structure": {
+"id": "his_road_59",
+"type": "road",
+"name": "Street of Philoxenus III",
+"geom": {
+"type": "line",
+"coords": [
+[
+56.2,
+387.9
+],
+[
+5.7,
+410.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Philoxenus III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 225,
+"structure": {
+"id": "his_dis_59",
+"type": "district",
+"name": "Quarter of Philoxenus III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+33.6,
+445.4
+],
+[
+46.0,
+391.8
+],
+[
+2.0,
+381.7
+],
+[
+2.0,
+438.1
+],
+[
+33.6,
+445.4
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Philoxenus III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 227,
+"structure": {
+"id": "his_baths_4",
+"type": "baths",
+"name": "Baths of Zeuxippus II II",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+379.2,
+390.6
+],
+[
+376.0,
+383.3
+],
+[
+381.5,
+380.9
+],
+[
+384.7,
+388.2
+]
+]
+}
+},
+"why": "Public baths for a growing quarter."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_18: overlaps standing his_har_6 (Harbor of Anastasius)",
+"his_har_18: overlaps standing his_har_8 (Harbor of Justinian)"
+]
+}
+]
+}
+]
+}

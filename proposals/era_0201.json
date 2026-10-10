@@ -1,0 +1,437 @@
+{
+"era": {
+"from": 201,
+"to": 210,
+"title": "圣索菲亚"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 203,
+"structure": {
+"id": "his_cistern_5",
+"type": "cistern",
+"name": "Basilica Cistern",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+662.0,
+452.8
+],
+[
+652.7,
+458.6
+],
+[
+649.5,
+453.5
+],
+[
+658.9,
+447.7
+]
+]
+},
+"label": "Basilica Cistern"
+},
+"why": "Under the Stoa Basilica a forest of columns holds the palace's water."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 208,
+"structure": {
+"id": "his_church_11",
+"type": "church",
+"name": "Hagia Sophia",
+"dna": {
+"motif": "domed_basilica",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 3,
+"scale": "wonder"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+669.2,
+452.0
+],
+[
+679.1,
+453.1
+],
+[
+678.2,
+462.1
+],
+[
+668.2,
+461.0
+]
+]
+},
+"label": "Hagia Sophia"
+},
+"why": "On the ashes Justinian raises a dome that seems hung from heaven."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 204,
+"structure": {
+"id": "his_cis_12",
+"type": "cistern",
+"name": "Cistern of Pulcheria",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+393.2,
+472.4
+],
+[
+383.4,
+474.4
+],
+[
+381.8,
+466.5
+],
+[
+391.7,
+464.6
+]
+]
+},
+"label": "Cistern of Pulcheria"
+},
+"why": "An open reservoir named for Pulcheria stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 202,
+"structure": {
+"id": "his_har_16",
+"type": "harbor",
+"name": "Harbor of Aetius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+384.1,
+516.7
+],
+[
+382.6,
+536.6
+],
+[
+369.6,
+535.6
+],
+[
+371.1,
+515.7
+]
+]
+},
+"label": "Harbor of Aetius"
+},
+"why": "A new harbor named for Aetius takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 203,
+"structure": {
+"id": "his_granary_12",
+"type": "granary",
+"name": "Horrea Aetius",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+367.0,
+517.1
+],
+[
+367.9,
+526.0
+],
+[
+362.9,
+526.5
+],
+[
+362.0,
+517.6
+]
+]
+}
+},
+"why": "State granaries rise behind the new quays."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 205,
+"structure": {
+"id": "his_road_51",
+"type": "road",
+"name": "Street of Heraclius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+57.7,
+627.2
+],
+[
+84.4,
+659.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Heraclius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 205,
+"structure": {
+"id": "his_dis_51",
+"type": "district",
+"name": "Quarter of Heraclius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+60.4,
+621.8
+],
+[
+53.6,
+691.4
+],
+[
+108.3,
+696.8
+],
+[
+115.1,
+627.1
+],
+[
+60.4,
+621.8
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Heraclius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 205,
+"structure": {
+"id": "his_road_52",
+"type": "road",
+"name": "Street of Pulcheria III",
+"geom": {
+"type": "line",
+"coords": [
+[
+57.3,
+249.5
+],
+[
+27.6,
+196.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Pulcheria III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 205,
+"structure": {
+"id": "his_dis_52",
+"type": "district",
+"name": "Quarter of Pulcheria III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+50.0,
+235.2
+],
+[
+59.6,
+165.9
+],
+[
+5.1,
+158.3
+],
+[
+2.0,
+180.7
+],
+[
+2.0,
+228.6
+],
+[
+50.0,
+235.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Pulcheria III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 205,
+"structure": {
+"id": "his_road_53",
+"type": "road",
+"name": "Street of Eudoxia III",
+"geom": {
+"type": "line",
+"coords": [
+[
+57.3,
+249.5
+],
+[
+91.2,
+238.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Eudoxia III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 205,
+"structure": {
+"id": "his_dis_53",
+"type": "district",
+"name": "Quarter of Eudoxia III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+113.6,
+276.6
+],
+[
+123.2,
+207.3
+],
+[
+68.8,
+199.7
+],
+[
+59.2,
+269.1
+],
+[
+113.6,
+276.6
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Eudoxia III."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 206,
+"structure": {
+"id": "his_church_12",
+"type": "church",
+"name": "St Thomas",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+369.1,
+490.7
+],
+[
+369.9,
+484.8
+],
+[
+373.9,
+485.3
+],
+[
+373.1,
+491.3
+]
+]
+}
+},
+"why": "A parish church for St Thomas serves the new streets."
+}
+],
+"growth_floor": 150
+}

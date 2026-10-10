@@ -1,0 +1,281 @@
+{
+"era": {
+"from": 101,
+"to": 110,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 104,
+"structure": {
+"id": "his_cis_4",
+"type": "cistern",
+"name": "Cistern of Leo",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+472.8,
+395.5
+],
+[
+467.3,
+387.1
+],
+[
+474.1,
+382.7
+],
+[
+479.5,
+391.1
+]
+]
+},
+"label": "Cistern of Leo"
+},
+"why": "An open reservoir named for Leo stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 102,
+"structure": {
+"id": "his_har_6",
+"type": "harbor",
+"name": "Harbor of Anastasius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+525.7,
+554.6
+],
+[
+535.5,
+537.2
+],
+[
+546.8,
+543.6
+],
+[
+537.0,
+561.0
+]
+]
+},
+"label": "Harbor of Anastasius"
+},
+"why": "A new harbor named for Anastasius takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 105,
+"structure": {
+"id": "his_road_21",
+"type": "road",
+"name": "Street of Arcadius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+231.2,
+443.2
+],
+[
+235.3,
+403.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Arcadius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 105,
+"structure": {
+"id": "his_dis_21",
+"type": "district",
+"name": "Quarter of Arcadius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+273.6,
+426.2
+],
+[
+248.4,
+360.8
+],
+[
+197.1,
+380.6
+],
+[
+222.3,
+445.9
+],
+[
+273.6,
+426.2
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Arcadius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 105,
+"structure": {
+"id": "his_road_22",
+"type": "road",
+"name": "Street of Theodosius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+181.8,
+509.6
+],
+[
+186.9,
+552.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Theodosius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 105,
+"structure": {
+"id": "his_dis_22",
+"type": "district",
+"name": "Quarter of Theodosius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+218.3,
+520.5
+],
+[
+148.8,
+528.8
+],
+[
+155.4,
+583.5
+],
+[
+224.9,
+575.1
+],
+[
+218.3,
+520.5
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Theodosius II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 105,
+"structure": {
+"id": "his_road_23",
+"type": "road",
+"name": "Street of Marcian II",
+"geom": {
+"type": "line",
+"coords": [
+[
+235.3,
+403.4
+],
+[
+171.7,
+370.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Marcian II."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 105,
+"structure": {
+"id": "his_dis_23",
+"type": "district",
+"name": "Quarter of Marcian II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+195.5,
+407.7
+],
+[
+202.7,
+338.1
+],
+[
+148.0,
+332.5
+],
+[
+140.8,
+402.1
+],
+[
+195.5,
+407.7
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Marcian II."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Horrea Anastasius",
+"reasons": [
+"his_granary_6: footprint leaves dry land (28 sq units in water)",
+"his_granary_6: overlaps standing his_har_6 (Harbor of Anastasius)"
+]
+}
+]
+}
+]
+}

@@ -1,0 +1,64 @@
+{
+"era": {
+"from": 271,
+"to": 280,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 274,
+"structure": {
+"id": "his_cis_19",
+"type": "cistern",
+"name": "Cistern of Philoxenus",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+430.2,
+428.8
+],
+[
+439.7,
+425.6
+],
+[
+442.2,
+433.1
+],
+[
+432.8,
+436.4
+]
+]
+},
+"label": "Cistern of Philoxenus"
+},
+"why": "An open reservoir named for Philoxenus stores the aqueduct's winter flow."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_23: overlaps standing harbor_julian (Harbor of Julian)"
+]
+}
+]
+}
+]
+}

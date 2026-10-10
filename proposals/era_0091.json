@@ -1,0 +1,340 @@
+{
+"era": {
+"from": 91,
+"to": 100,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 94,
+"structure": {
+"id": "his_cis_3",
+"type": "cistern",
+"name": "Cistern of Marcian",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+357.8,
+427.0
+],
+[
+353.8,
+417.8
+],
+[
+361.1,
+414.6
+],
+[
+365.1,
+423.8
+]
+]
+},
+"label": "Cistern of Marcian"
+},
+"why": "An open reservoir named for Marcian stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "merchants",
+"year": 92,
+"structure": {
+"id": "his_har_5",
+"type": "harbor",
+"name": "Harbor of Zeno",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+635.2,
+520.0
+],
+[
+655.1,
+521.0
+],
+[
+654.4,
+534.0
+],
+[
+634.4,
+532.9
+]
+]
+},
+"label": "Harbor of Zeno"
+},
+"why": "A new harbor named for Zeno takes the grain ships the old quays turn away."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 95,
+"structure": {
+"id": "his_road_17",
+"type": "road",
+"name": "Street of Aspar",
+"geom": {
+"type": "line",
+"coords": [
+[
+67.9,
+546.8
+],
+[
+56.4,
+500.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Aspar."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 95,
+"structure": {
+"id": "his_dis_17",
+"type": "district",
+"name": "Quarter of Aspar",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+83.7,
+465.1
+],
+[
+15.8,
+481.9
+],
+[
+29.0,
+535.3
+],
+[
+97.0,
+518.5
+],
+[
+83.7,
+465.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Aspar."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 95,
+"structure": {
+"id": "his_road_18",
+"type": "road",
+"name": "Street of Modestus",
+"geom": {
+"type": "line",
+"coords": [
+[
+349.0,
+448.7
+],
+[
+296.7,
+420.9
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Modestus."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 95,
+"structure": {
+"id": "his_dis_18",
+"type": "district",
+"name": "Quarter of Modestus",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+335.1,
+398.3
+],
+[
+265.7,
+388.9
+],
+[
+258.4,
+443.4
+],
+[
+327.7,
+452.8
+],
+[
+335.1,
+398.3
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Modestus."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 95,
+"structure": {
+"id": "his_road_20",
+"type": "road",
+"name": "Street of Probus",
+"geom": {
+"type": "line",
+"coords": [
+[
+250.0,
+492.0
+],
+[
+231.2,
+443.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Probus."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 95,
+"structure": {
+"id": "his_dis_20",
+"type": "district",
+"name": "Quarter of Probus",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+262.7,
+411.7
+],
+[
+193.2,
+420.1
+],
+[
+199.7,
+474.7
+],
+[
+269.2,
+466.3
+],
+[
+262.7,
+411.7
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Probus."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 96,
+"structure": {
+"id": "his_church_3",
+"type": "church",
+"name": "St Euphemia",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+343.7,
+418.9
+],
+[
+341.3,
+413.4
+],
+[
+344.9,
+411.8
+],
+[
+347.3,
+417.3
+]
+]
+}
+},
+"why": "A parish church for St Euphemia serves the new streets."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Cistern of Aetius",
+"reasons": [
+"his_cistern_1: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Cistern of Aetius",
+"reasons": [
+"his_cistern_2: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Horrea Zeno",
+"reasons": [
+"his_granary_5: footprint leaves dry land (45 sq units in water)",
+"his_granary_5: overlaps standing his_har_5 (Harbor of Zeno)"
+]
+},
+{
+"what": "Quarter of Philoxenus",
+"reasons": [
+"his_dis_19: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

@@ -1,0 +1,293 @@
+{
+"era": {
+"from": 211,
+"to": 220,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 214,
+"structure": {
+"id": "his_cis_13",
+"type": "cistern",
+"name": "Cistern of Eudoxia",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+599.3,
+465.9
+],
+[
+589.6,
+463.3
+],
+[
+591.7,
+455.5
+],
+[
+601.4,
+458.1
+]
+]
+},
+"label": "Cistern of Eudoxia"
+},
+"why": "An open reservoir named for Eudoxia stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 215,
+"structure": {
+"id": "his_road_54",
+"type": "road",
+"name": "Street of Ariadne III",
+"geom": {
+"type": "line",
+"coords": [
+[
+70.7,
+642.8
+],
+[
+78.8,
+636.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Ariadne III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 215,
+"structure": {
+"id": "his_dis_54",
+"type": "district",
+"name": "Quarter of Ariadne III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+35.3,
+626.7
+],
+[
+80.1,
+680.5
+],
+[
+122.4,
+645.4
+],
+[
+77.6,
+591.6
+],
+[
+35.3,
+626.7
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Ariadne III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 215,
+"structure": {
+"id": "his_road_55",
+"type": "road",
+"name": "Street of Sophia III",
+"geom": {
+"type": "line",
+"coords": [
+[
+91.2,
+238.2
+],
+[
+102.4,
+245.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Sophia III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 215,
+"structure": {
+"id": "his_dis_55",
+"type": "district",
+"name": "Quarter of Sophia III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+77.9,
+282.9
+],
+[
+144.3,
+260.7
+],
+[
+126.9,
+208.6
+],
+[
+60.5,
+230.7
+],
+[
+77.9,
+282.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Sophia III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 215,
+"structure": {
+"id": "his_road_56",
+"type": "road",
+"name": "Street of Aetius III",
+"geom": {
+"type": "line",
+"coords": [
+[
+28.2,
+197.9
+],
+[
+37.0,
+192.9
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Aetius III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 215,
+"structure": {
+"id": "his_dis_56",
+"type": "district",
+"name": "Quarter of Aetius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+30.2,
+236.9
+],
+[
+78.2,
+209.9
+],
+[
+43.8,
+149.0
+],
+[
+2.0,
+172.6
+],
+[
+2.0,
+186.8
+],
+[
+30.2,
+236.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Aetius III."
+},
+{
+"op": "build",
+"faction": "church",
+"year": 216,
+"structure": {
+"id": "his_church_13",
+"type": "church",
+"name": "St Andrew",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 2,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+376.7,
+470.1
+],
+[
+377.5,
+464.2
+],
+[
+381.5,
+464.7
+],
+[
+380.7,
+470.7
+]
+]
+}
+},
+"why": "A parish church for St Andrew serves the new streets."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_17: overlaps standing harbor_theodosius (Harbor of Theodosius)",
+"his_har_17: overlaps standing his_har_3 (Harbor of Marcian)"
+]
+}
+]
+}
+]
+}

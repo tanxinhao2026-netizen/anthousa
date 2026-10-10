@@ -1,0 +1,454 @@
+{
+"era": {
+"from": 41,
+"to": 50,
+"title": "向西"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 45,
+"structure": {
+"id": "his_road_1",
+"type": "road",
+"name": "Street of Arcadius",
+"geom": {
+"type": "line",
+"coords": [
+[
+492.4,
+473.7
+],
+[
+476.6,
+475.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Arcadius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 45,
+"structure": {
+"id": "his_dis_1",
+"type": "district",
+"name": "Quarter of Arcadius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+445.8,
+443.1
+],
+[
+452.7,
+512.8
+],
+[
+507.4,
+507.3
+],
+[
+500.5,
+437.7
+],
+[
+445.8,
+443.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Arcadius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 45,
+"structure": {
+"id": "his_road_2",
+"type": "road",
+"name": "Street of Theodosius",
+"geom": {
+"type": "line",
+"coords": [
+[
+414.2,
+468.6
+],
+[
+420.8,
+496.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Theodosius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 45,
+"structure": {
+"id": "his_dis_2",
+"type": "district",
+"name": "Quarter of Theodosius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+448.4,
+461.1
+],
+[
+380.3,
+477.5
+],
+[
+393.2,
+531.0
+],
+[
+461.2,
+514.6
+],
+[
+448.4,
+461.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Theodosius."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 45,
+"structure": {
+"id": "his_road_4",
+"type": "road",
+"name": "Street of Leo",
+"geom": {
+"type": "line",
+"coords": [
+[
+354.4,
+480.6
+],
+[
+356.3,
+499.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Leo."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 45,
+"structure": {
+"id": "his_dis_4",
+"type": "district",
+"name": "Quarter of Leo",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+393.8,
+522.9
+],
+[
+388.4,
+468.2
+],
+[
+318.7,
+475.1
+],
+[
+324.2,
+529.9
+],
+[
+365.2,
+525.8
+],
+[
+365.3,
+525.7
+],
+[
+365.5,
+525.6
+],
+[
+371.0,
+521.2
+],
+[
+371.2,
+521.1
+],
+[
+371.4,
+521.0
+],
+[
+371.5,
+520.9
+],
+[
+371.7,
+520.8
+],
+[
+371.9,
+520.8
+],
+[
+372.1,
+520.8
+],
+[
+376.3,
+520.4
+],
+[
+376.5,
+520.4
+],
+[
+376.7,
+520.4
+],
+[
+376.9,
+520.4
+],
+[
+377.1,
+520.5
+],
+[
+377.3,
+520.6
+],
+[
+377.5,
+520.7
+],
+[
+377.7,
+520.8
+],
+[
+377.8,
+520.9
+],
+[
+378.0,
+521.1
+],
+[
+378.1,
+521.2
+],
+[
+379.6,
+521.3
+],
+[
+380.0,
+520.9
+],
+[
+379.9,
+519.6
+],
+[
+379.9,
+519.4
+],
+[
+379.9,
+519.2
+],
+[
+379.9,
+519.0
+],
+[
+380.0,
+518.8
+],
+[
+380.0,
+518.6
+],
+[
+380.1,
+518.4
+],
+[
+380.2,
+518.3
+],
+[
+380.3,
+518.1
+],
+[
+380.5,
+518.0
+],
+[
+380.6,
+517.8
+],
+[
+380.8,
+517.7
+],
+[
+380.9,
+517.6
+],
+[
+381.1,
+517.5
+],
+[
+381.3,
+517.5
+],
+[
+381.5,
+517.4
+],
+[
+383.4,
+517.1
+],
+[
+383.6,
+517.1
+],
+[
+383.7,
+517.1
+],
+[
+383.9,
+517.1
+],
+[
+384.1,
+517.1
+],
+[
+384.3,
+517.1
+],
+[
+384.5,
+517.2
+],
+[
+384.7,
+517.3
+],
+[
+384.8,
+517.4
+],
+[
+385.0,
+517.5
+],
+[
+385.1,
+517.6
+],
+[
+385.3,
+517.8
+],
+[
+385.4,
+517.9
+],
+[
+385.5,
+518.1
+],
+[
+385.6,
+518.2
+],
+[
+386.7,
+520.8
+],
+[
+386.8,
+521.0
+],
+[
+386.8,
+521.2
+],
+[
+386.8,
+521.4
+],
+[
+386.9,
+521.6
+],
+[
+386.9,
+521.8
+],
+[
+386.8,
+522.0
+],
+[
+386.6,
+523.6
+],
+[
+393.8,
+522.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Leo."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Quarter of Marcian",
+"reasons": [
+"his_dis_3: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

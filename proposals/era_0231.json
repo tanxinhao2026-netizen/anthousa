@@ -1,0 +1,292 @@
+{
+"era": {
+"from": 231,
+"to": 240,
+"title": "储水"
+},
+"actions": [
+{
+"op": "build",
+"faction": "people",
+"year": 234,
+"structure": {
+"id": "his_cis_15",
+"type": "cistern",
+"name": "Cistern of Sophia",
+"dna": {
+"motif": "cistern",
+"materials": [
+"brick"
+],
+"ornament": 0,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+372.1,
+402.1
+],
+[
+368.0,
+393.0
+],
+[
+375.4,
+389.8
+],
+[
+379.4,
+398.9
+]
+]
+},
+"label": "Cistern of Sophia"
+},
+"why": "An open reservoir named for Sophia stores the aqueduct's winter flow."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 235,
+"structure": {
+"id": "his_road_60",
+"type": "road",
+"name": "Street of Probus III",
+"geom": {
+"type": "line",
+"coords": [
+[
+38.5,
+683.7
+],
+[
+8.2,
+647.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Probus III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 235,
+"structure": {
+"id": "his_dis_60",
+"type": "district",
+"name": "Quarter of Probus III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+52.6,
+645.9
+],
+[
+17.5,
+603.6
+],
+[
+2.0,
+616.5
+],
+[
+2.0,
+688.0
+],
+[
+52.6,
+645.9
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Probus III."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 235,
+"structure": {
+"id": "his_road_61",
+"type": "road",
+"name": "Street of Arcadius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+8.2,
+647.1
+],
+[
+3.2,
+607.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Arcadius IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 235,
+"structure": {
+"id": "his_dis_61",
+"type": "district",
+"name": "Quarter of Arcadius IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+4.4,
+651.5
+],
+[
+46.7,
+616.4
+],
+[
+2.1,
+562.5
+],
+[
+2.0,
+562.6
+],
+[
+2.0,
+648.6
+],
+[
+4.4,
+651.5
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Arcadius IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 235,
+"structure": {
+"id": "his_road_62",
+"type": "road",
+"name": "Street of Theodosius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+35.6,
+211.0
+],
+[
+5.1,
+228.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Theodosius IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 235,
+"structure": {
+"id": "his_dis_62",
+"type": "district",
+"name": "Quarter of Theodosius IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+46.2,
+245.1
+],
+[
+11.9,
+184.1
+],
+[
+2.0,
+189.7
+],
+[
+2.0,
+270.0
+],
+[
+46.2,
+245.1
+]
+]
+}
+},
+"why": "Houses are let to settle the quarter of Theodosius IV."
+},
+{
+"op": "build",
+"faction": "people",
+"year": 237,
+"structure": {
+"id": "his_baths_5",
+"type": "baths",
+"name": "Baths of Arcadius II",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+499.5,
+448.9
+],
+[
+496.9,
+441.3
+],
+[
+502.6,
+439.4
+],
+[
+505.2,
+447.0
+]
+]
+}
+},
+"why": "Public baths for a growing quarter."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "harbor",
+"reasons": [
+"his_har_19: overlaps standing his_har_2 (Harbor of Theodosius)"
+]
+}
+]
+}
+]
+}
