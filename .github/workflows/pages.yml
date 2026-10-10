@@ -4,14 +4,51 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
+  issues: write
   pages: write
   id-token: write
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
+  guard:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install shapely numpy
+      - name: the gate that judges this push is the one on main before it
+        run: git show ${{ github.event.before }}:.github/guard.py > /tmp/guard.py 2>/dev/null || cp .github/guard.py /tmp/guard.py
+      - name: rebuild every era and run the acceptance checks
+        id: check
+        run: python engine/build_all.py && python engine/test_grammar_rules.py
+      - name: who may change what
+        id: gate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: python /tmp/guard.py
+      - name: rejected → revert the push and say why
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          [ -f /tmp/guard_reason ] || echo "engine/check.py or the tests failed on the rebuilt world" > /tmp/guard_reason
+          git config user.name "anthousa-guard"; git config user.email "guard@users.noreply.github.com"
+          git revert --no-edit ${{ github.event.before }}..${{ github.sha }}
+          git push origin HEAD:main
+          gh issue create --title "守卫回滚 · guard reverted ${GITHUB_SHA::7}" --body "$(printf '这次推送被机器守卫拒绝并已回滚。\n\n%s\n\n运行记录：%s/%s/actions/runs/%s' "$(cat /tmp/guard_reason)" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID")"
+          gh workflow run build-and-publish --ref main
   build:
+    needs: guard
+    if: always() && (needs.guard.result == 'success' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
