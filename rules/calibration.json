@@ -147,5 +147,11 @@
   ],
   "max_slope": 0.1,
   "slope_why": "ploughland needs gentle ground: 80% of a field must slope under 10% (our judgement; terraces would allow more, not modelled)"
+ },
+ "growth_cap_from": {
+  "from_year": 41,
+  "value": 0.35,
+  "basis": "experiment",
+  "why": "controlled experiment: only this differs between draft/exp-growth-*; historical policy, same dice"
  }
 }
