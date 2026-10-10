@@ -17,3 +17,9 @@ Brakes: check fails twice in a row → stop, ask the user. Every 10 eras (a cent
 - `spolia_from: [ids]` 只能指向已经毁掉的建筑；`scale: wonder` 面积 ≤ 120 平方单位，每十年最多开工一座。
 - 拆除奇观分 ≥ 3 的建筑必须带 `memorial: {kind: stele|rename|chronicle_feature, note}`。
 - 用 `grammar.motif_for(faction, era)` 可以按派系口味抽母题；声望只影响提案，不影响裁决。
+
+## 人物层（从 AF 31 起试运行，见 docs/persons-schema.md）
+- 每个十年，从本十年事件与建筑里析出 3–5 个具名人物，写入 `world.json` 的 `persons` 表。
+- 人物字段：`{id, name, name_en, born, died, trade, faction, address, status, bio, linked}`；`bio` 约 200 字，必须引用真实存在的建筑或事件 `{{id}}`，不许编造地点。
+- 人物会变老（每十年 +10 岁）、会死（按年龄与事件判定）；无人提起的名字按半衰期淡出（`status: faded`），被编年史引用过的人物永不删除。
+- 只读引用 proposals/chronicle/engine 数据，不改动引擎核心；属于 A 类（历史推进）。
