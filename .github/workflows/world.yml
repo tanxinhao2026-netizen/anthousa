@@ -1,0 +1,51 @@
+name: world-gate
+# World loop: agents push a decade to world/*; this gate rebuilds and checks it, and only then moves main.
+on:
+  push:
+    branches: ['world/**']
+permissions:
+  contents: write
+  actions: write
+  issues: write
+concurrency:
+  group: world-gate
+  cancel-in-progress: false
+jobs:
+  land:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false   # the engine code being judged never sees a write token
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install shapely numpy
+      - name: the gate is main's copy, not the branch's
+        run: git show origin/main:.github/guard.py > /tmp/guard.py
+      - name: must sit on top of main (fast-forward only)
+        run: git merge-base --is-ancestor origin/main HEAD
+      - name: rebuild every era and run the acceptance checks
+        run: python engine/build_all.py && python engine/test_grammar_rules.py
+      - name: world data only
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BEFORE: ${{ github.sha }}
+          AFTER: ${{ github.sha }}
+          MODE: world
+        run: BEFORE=$(git rev-parse origin/main) python /tmp/guard.py
+      - name: land on main and publish
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
+          gh workflow run build-and-publish --ref main -R "$GITHUB_REPOSITORY"
+      - name: rejected → say why (main untouched)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          [ -f /tmp/guard_reason ] || echo "not on top of main, or engine/check.py / tests failed on the rebuilt world" > /tmp/guard_reason
+          gh issue create -R "$GITHUB_REPOSITORY" --title "守卫拦截 · ${GITHUB_REF_NAME}" --body "$(printf '世界分支没有落到 main。\n\n%s\n\n运行记录：%s/%s/actions/runs/%s' "$(cat /tmp/guard_reason)" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID")"
