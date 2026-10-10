@@ -1,0 +1,553 @@
+{
+"era": {
+"from": 41,
+"to": 50,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 41,
+"structure": {
+"id": "imp_axis_1",
+"type": "road",
+"name": "Imperial Axis, stage 1",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+611.0,
+454.0
+],
+[
+573.0,
+454.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_road_1",
+"type": "road",
+"name": "Street of Arcadius",
+"geom": {
+"type": "line",
+"coords": [
+[
+604.9,
+418.7
+],
+[
+592.0,
+420.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Arcadius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_dis_1",
+"type": "district",
+"name": "Quarter of Arcadius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+612.0,
+395.0
+],
+[
+572.0,
+395.0
+],
+[
+572.0,
+445.0
+],
+[
+612.0,
+445.0
+],
+[
+612.0,
+395.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Arcadius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_road_2",
+"type": "road",
+"name": "Planned street of Arcadius",
+"geom": {
+"type": "line",
+"coords": [
+[
+610.0,
+428.3
+],
+[
+574.0,
+428.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_road_3",
+"type": "road",
+"name": "Planned street of Arcadius",
+"geom": {
+"type": "line",
+"coords": [
+[
+592.0,
+438.0
+],
+[
+592.0,
+402.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_road_4",
+"type": "road",
+"name": "Street of Theodosius",
+"geom": {
+"type": "line",
+"coords": [
+[
+575.1,
+483.3
+],
+[
+592.0,
+488.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Theodosius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_dis_2",
+"type": "district",
+"name": "Quarter of Theodosius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+612.0,
+513.0
+],
+[
+612.0,
+463.0
+],
+[
+572.0,
+463.0
+],
+[
+572.0,
+511.5
+],
+[
+584.5,
+513.0
+],
+[
+612.0,
+513.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Theodosius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_road_5",
+"type": "road",
+"name": "Planned street of Theodosius",
+"geom": {
+"type": "line",
+"coords": [
+[
+610.0,
+496.3
+],
+[
+574.0,
+496.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_road_6",
+"type": "road",
+"name": "Planned street of Theodosius",
+"geom": {
+"type": "line",
+"coords": [
+[
+592.0,
+506.0
+],
+[
+592.0,
+470.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 45,
+"structure": {
+"id": "imp_road_7",
+"type": "road",
+"name": "Street of Marcian",
+"geom": {
+"type": "line",
+"coords": [
+[
+493.2,
+481.9
+],
+[
+507.1,
+480.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Marcian."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 45,
+"structure": {
+"id": "imp_dis_3",
+"type": "district",
+"name": "Quarter of Marcian",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+477.1,
+505.5
+],
+[
+537.1,
+505.5
+],
+[
+537.1,
+455.5
+],
+[
+477.1,
+455.5
+],
+[
+477.1,
+505.5
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Marcian."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 45,
+"structure": {
+"id": "imp_road_8",
+"type": "road",
+"name": "Planned street of Marcian",
+"geom": {
+"type": "line",
+"coords": [
+[
+480.1,
+472.2
+],
+[
+534.1,
+472.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 45,
+"structure": {
+"id": "imp_road_9",
+"type": "road",
+"name": "Planned street of Marcian",
+"geom": {
+"type": "line",
+"coords": [
+[
+507.1,
+453.5
+],
+[
+507.1,
+507.5
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 45,
+"structure": {
+"id": "imp_road_10",
+"type": "road",
+"name": "Street of Leo",
+"geom": {
+"type": "line",
+"coords": [
+[
+435.5,
+463.5
+],
+[
+429.2,
+413.6
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Leo."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 45,
+"structure": {
+"id": "imp_dis_4",
+"type": "district",
+"name": "Quarter of Leo",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+393.3,
+437.7
+],
+[
+453.3,
+437.7
+],
+[
+453.3,
+387.7
+],
+[
+393.3,
+387.7
+],
+[
+393.3,
+437.7
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Leo."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 42,
+"structure": {
+"id": "imp_aq_1",
+"type": "aqueduct",
+"name": "Aqueduct of Arcadius",
+"geom": {
+"type": "line",
+"coords": [
+[
+142.7,
+254.6
+],
+[
+213.0,
+323.3
+],
+[
+316.8,
+395.3
+],
+[
+383.5,
+446.8
+]
+]
+},
+"label": "Aqueduct of Arcadius"
+},
+"why": "Another imperial aqueduct comes down from the Thracian hills."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 43,
+"structure": {
+"id": "imp_granary_1",
+"type": "granary",
+"name": "Horrea of Arcadius",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+637.9,
+424.2
+],
+[
+640.1,
+436.0
+],
+[
+634.2,
+437.1
+],
+[
+632.0,
+425.3
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 47,
+"structure": {
+"id": "imp_palace_1",
+"type": "palace",
+"name": "Palace of Arcadius",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+650.2,
+490.8
+],
+[
+651.4,
+504.8
+],
+[
+641.4,
+505.6
+],
+[
+640.2,
+491.7
+]
+]
+},
+"label": "Palace of Arcadius"
+},
+"why": "Another palace for the court, its gardens running down to the sea."
+}
+],
+"growth_floor": 150
+}

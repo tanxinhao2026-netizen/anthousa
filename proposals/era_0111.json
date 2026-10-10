@@ -1,0 +1,488 @@
+{
+"era": {
+"from": 111,
+"to": 120,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 111,
+"structure": {
+"id": "imp_axis_8",
+"type": "road",
+"name": "Imperial Axis, stage 8",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+345.0,
+454.0
+],
+[
+307.0,
+454.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 113,
+"structure": {
+"id": "imp_forum_4",
+"type": "forum",
+"name": "Forum of Leo",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+311.0,
+465.9
+],
+[
+295.0,
+465.9
+],
+[
+295.0,
+453.9
+],
+[
+311.0,
+453.9
+]
+]
+},
+"label": "Forum of Leo"
+},
+"why": "A forum for Leo at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 112,
+"structure": {
+"id": "imp_road_87",
+"type": "road",
+"name": "Street of Heraclius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+322.9,
+420.8
+],
+[
+326.0,
+420.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Heraclius II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 112,
+"structure": {
+"id": "imp_dis_31",
+"type": "district",
+"name": "Quarter of Heraclius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+346.0,
+395.0
+],
+[
+306.0,
+395.0
+],
+[
+306.0,
+445.0
+],
+[
+346.0,
+445.0
+],
+[
+346.0,
+395.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Heraclius II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 112,
+"structure": {
+"id": "imp_road_88",
+"type": "road",
+"name": "Planned street of Heraclius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+344.0,
+428.3
+],
+[
+308.0,
+428.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 112,
+"structure": {
+"id": "imp_road_89",
+"type": "road",
+"name": "Planned street of Heraclius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+326.0,
+438.0
+],
+[
+326.0,
+402.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 112,
+"structure": {
+"id": "imp_road_90",
+"type": "road",
+"name": "Street of Pulcheria II",
+"geom": {
+"type": "line",
+"coords": [
+[
+325.5,
+483.4
+],
+[
+326.0,
+488.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Pulcheria II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 112,
+"structure": {
+"id": "imp_dis_32",
+"type": "district",
+"name": "Quarter of Pulcheria II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+346.0,
+463.0
+],
+[
+306.0,
+463.0
+],
+[
+306.0,
+513.0
+],
+[
+346.0,
+513.0
+],
+[
+346.0,
+463.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Pulcheria II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 112,
+"structure": {
+"id": "imp_road_91",
+"type": "road",
+"name": "Planned street of Pulcheria II",
+"geom": {
+"type": "line",
+"coords": [
+[
+344.0,
+496.3
+],
+[
+308.0,
+496.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 112,
+"structure": {
+"id": "imp_road_92",
+"type": "road",
+"name": "Planned street of Pulcheria II",
+"geom": {
+"type": "line",
+"coords": [
+[
+326.0,
+506.0
+],
+[
+326.0,
+470.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 115,
+"structure": {
+"id": "imp_road_93",
+"type": "road",
+"name": "Street of Eudoxia II",
+"geom": {
+"type": "line",
+"coords": [
+[
+250.0,
+492.0
+],
+[
+250.2,
+543.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Eudoxia II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 115,
+"structure": {
+"id": "imp_dis_33",
+"type": "district",
+"name": "Quarter of Eudoxia II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+220.2,
+568.3
+],
+[
+280.2,
+568.3
+],
+[
+280.2,
+518.3
+],
+[
+220.2,
+518.3
+],
+[
+220.2,
+568.3
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Eudoxia II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 115,
+"structure": {
+"id": "imp_road_94",
+"type": "road",
+"name": "Planned street of Eudoxia II",
+"geom": {
+"type": "line",
+"coords": [
+[
+223.2,
+535.0
+],
+[
+277.2,
+535.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 115,
+"structure": {
+"id": "imp_road_95",
+"type": "road",
+"name": "Planned street of Eudoxia II",
+"geom": {
+"type": "line",
+"coords": [
+[
+250.2,
+516.3
+],
+[
+250.2,
+570.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 115,
+"structure": {
+"id": "imp_road_96",
+"type": "road",
+"name": "Street of Ariadne II",
+"geom": {
+"type": "line",
+"coords": [
+[
+253.4,
+362.9
+],
+[
+250.4,
+309.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Ariadne II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 115,
+"structure": {
+"id": "imp_dis_34",
+"type": "district",
+"name": "Quarter of Ariadne II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+220.4,
+334.4
+],
+[
+280.4,
+334.4
+],
+[
+280.4,
+284.4
+],
+[
+220.4,
+284.4
+],
+[
+220.4,
+334.4
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Ariadne II."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Column of Leo",
+"reasons": [
+"imp_column_4: overlaps standing imp_forum_4 (Forum of Leo)"
+]
+}
+]
+}
+]
+}

@@ -1,0 +1,684 @@
+{
+"era": {
+"from": 91,
+"to": 100,
+"title": "年金"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 93,
+"structure": {
+"id": "imp_forum_3",
+"type": "forum",
+"name": "Forum of Marcian",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+381.2,
+461.8
+],
+[
+383.4,
+446.0
+],
+[
+395.3,
+447.6
+],
+[
+393.1,
+463.5
+]
+]
+},
+"label": "Forum of Marcian"
+},
+"why": "A forum for Marcian at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 92,
+"structure": {
+"id": "imp_dis_23",
+"type": "district",
+"name": "Quarter of Marcian II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+422.0,
+395.0
+],
+[
+382.0,
+395.0
+],
+[
+382.0,
+445.0
+],
+[
+422.0,
+445.0
+],
+[
+422.0,
+395.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Marcian II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 92,
+"structure": {
+"id": "imp_dis_24",
+"type": "district",
+"name": "Quarter of Leo II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+422.0,
+463.0
+],
+[
+382.0,
+463.0
+],
+[
+382.0,
+513.0
+],
+[
+422.0,
+513.0
+],
+[
+422.0,
+463.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Leo II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 92,
+"structure": {
+"id": "imp_road_68",
+"type": "road",
+"name": "Planned street of Leo II",
+"geom": {
+"type": "line",
+"coords": [
+[
+402.0,
+506.0
+],
+[
+402.0,
+470.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 95,
+"structure": {
+"id": "imp_road_69",
+"type": "road",
+"name": "Street of Zeno II",
+"geom": {
+"type": "line",
+"coords": [
+[
+354.1,
+480.6
+],
+[
+356.3,
+502.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Zeno II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 95,
+"structure": {
+"id": "imp_dis_25",
+"type": "district",
+"name": "Quarter of Zeno II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+386.3,
+477.3
+],
+[
+326.3,
+477.3
+],
+[
+326.3,
+527.3
+],
+[
+364.5,
+527.3
+],
+[
+364.8,
+526.4
+],
+[
+364.9,
+526.2
+],
+[
+365.0,
+526.0
+],
+[
+365.2,
+525.9
+],
+[
+365.3,
+525.7
+],
+[
+365.5,
+525.6
+],
+[
+371.0,
+521.2
+],
+[
+371.2,
+521.1
+],
+[
+371.4,
+521.0
+],
+[
+371.5,
+520.9
+],
+[
+371.7,
+520.8
+],
+[
+371.9,
+520.8
+],
+[
+372.1,
+520.8
+],
+[
+376.3,
+520.4
+],
+[
+376.5,
+520.4
+],
+[
+376.7,
+520.4
+],
+[
+376.9,
+520.4
+],
+[
+377.1,
+520.5
+],
+[
+377.3,
+520.6
+],
+[
+377.5,
+520.7
+],
+[
+377.7,
+520.8
+],
+[
+377.8,
+520.9
+],
+[
+378.0,
+521.1
+],
+[
+378.1,
+521.2
+],
+[
+379.6,
+521.3
+],
+[
+380.0,
+520.9
+],
+[
+379.9,
+519.6
+],
+[
+379.9,
+519.4
+],
+[
+379.9,
+519.2
+],
+[
+379.9,
+519.0
+],
+[
+380.0,
+518.8
+],
+[
+380.0,
+518.6
+],
+[
+380.1,
+518.4
+],
+[
+380.2,
+518.3
+],
+[
+380.3,
+518.1
+],
+[
+380.5,
+518.0
+],
+[
+380.6,
+517.8
+],
+[
+380.8,
+517.7
+],
+[
+380.9,
+517.6
+],
+[
+381.1,
+517.5
+],
+[
+381.3,
+517.5
+],
+[
+381.5,
+517.4
+],
+[
+383.4,
+517.1
+],
+[
+383.6,
+517.1
+],
+[
+383.7,
+517.1
+],
+[
+383.9,
+517.1
+],
+[
+384.1,
+517.1
+],
+[
+384.3,
+517.1
+],
+[
+384.5,
+517.2
+],
+[
+384.7,
+517.3
+],
+[
+384.8,
+517.4
+],
+[
+385.0,
+517.5
+],
+[
+385.1,
+517.6
+],
+[
+385.3,
+517.8
+],
+[
+385.4,
+517.9
+],
+[
+385.5,
+518.1
+],
+[
+385.6,
+518.2
+],
+[
+386.3,
+519.9
+],
+[
+386.3,
+477.3
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Zeno II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 95,
+"structure": {
+"id": "imp_road_70",
+"type": "road",
+"name": "Planned street of Zeno II",
+"geom": {
+"type": "line",
+"coords": [
+[
+329.3,
+494.0
+],
+[
+383.3,
+494.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 95,
+"structure": {
+"id": "imp_road_71",
+"type": "road",
+"name": "Planned street of Zeno II",
+"geom": {
+"type": "line",
+"coords": [
+[
+356.3,
+475.3
+],
+[
+356.3,
+529.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 95,
+"structure": {
+"id": "imp_road_72",
+"type": "road",
+"name": "Street of Anastasius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+310.8,
+349.5
+],
+[
+305.3,
+339.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Anastasius II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 95,
+"structure": {
+"id": "imp_dis_26",
+"type": "district",
+"name": "Quarter of Anastasius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+275.3,
+364.0
+],
+[
+335.3,
+364.0
+],
+[
+335.3,
+314.0
+],
+[
+275.3,
+314.0
+],
+[
+275.3,
+364.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Anastasius II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 95,
+"structure": {
+"id": "imp_road_74",
+"type": "road",
+"name": "Planned street of Anastasius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+305.3,
+312.0
+],
+[
+305.3,
+366.0
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 93,
+"structure": {
+"id": "imp_granary_5",
+"type": "granary",
+"name": "Horrea of Zeno",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+429.8,
+466.3
+],
+[
+418.2,
+469.1
+],
+[
+416.8,
+463.2
+],
+[
+428.4,
+460.4
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 97,
+"structure": {
+"id": "imp_palace_3",
+"type": "palace",
+"name": "Palace of Marcian",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+370.9,
+475.4
+],
+[
+357.2,
+478.2
+],
+[
+355.2,
+468.4
+],
+[
+368.9,
+465.6
+]
+]
+},
+"label": "Palace of Marcian"
+},
+"why": "Another palace for the court, its gardens running down to the sea."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Imperial Axis, stage 6",
+"reasons": [
+"imp_axis_6: crosses wall wall_founder at (416,454) with no gate"
+]
+},
+{
+"what": "Column of Marcian",
+"reasons": [
+"imp_column_3: overlaps standing imp_forum_3 (Forum of Marcian)"
+]
+}
+]
+}
+]
+}

@@ -1,0 +1,120 @@
+{
+"era": {
+"from": 231,
+"to": 240,
+"title": "奇观"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 235,
+"structure": {
+"id": "imp_dis_105",
+"type": "district",
+"name": "Quarter of Zeno IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+147.6,
+557.3
+],
+[
+207.6,
+557.3
+],
+[
+207.6,
+507.3
+],
+[
+147.6,
+507.3
+],
+[
+147.6,
+557.3
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Zeno IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 236,
+"structure": {
+"id": "imp_church_8",
+"type": "church",
+"name": "Great Church of St Andrew",
+"dna": {
+"motif": "domed_basilica",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 3,
+"scale": "wonder"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+378.7,
+509.0
+],
+[
+368.7,
+509.0
+],
+[
+368.7,
+499.0
+],
+[
+378.7,
+499.0
+]
+]
+},
+"label": "Great Church of St Andrew"
+},
+"why": "The emperor raises a domed church for St Andrew that every ship on the sea can see."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Quarter of Arcadius IV",
+"reasons": [
+"imp_dis_101: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Theodosius IV",
+"reasons": [
+"imp_dis_102: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Marcian IV",
+"reasons": [
+"imp_dis_103: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Leo IV",
+"reasons": [
+"imp_dis_104: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

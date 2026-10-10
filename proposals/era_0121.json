@@ -1,0 +1,664 @@
+{
+"era": {
+"from": 121,
+"to": 130,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 121,
+"structure": {
+"id": "imp_axis_9",
+"type": "road",
+"name": "Imperial Axis, stage 9",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+307.0,
+454.0
+],
+[
+269.0,
+454.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_road_99",
+"type": "road",
+"name": "Street of Sophia II",
+"geom": {
+"type": "line",
+"coords": [
+[
+308.0,
+428.3
+],
+[
+288.0,
+420.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Sophia II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_dis_35",
+"type": "district",
+"name": "Quarter of Sophia II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+308.0,
+395.0
+],
+[
+268.0,
+395.0
+],
+[
+268.0,
+445.0
+],
+[
+308.0,
+445.0
+],
+[
+308.0,
+395.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Sophia II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_road_100",
+"type": "road",
+"name": "Planned street of Sophia II",
+"geom": {
+"type": "line",
+"coords": [
+[
+306.0,
+428.3
+],
+[
+270.0,
+428.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_road_101",
+"type": "road",
+"name": "Planned street of Sophia II",
+"geom": {
+"type": "line",
+"coords": [
+[
+288.0,
+438.0
+],
+[
+288.0,
+402.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_dis_36",
+"type": "district",
+"name": "Quarter of Aetius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+308.0,
+463.0
+],
+[
+268.0,
+463.0
+],
+[
+268.0,
+513.0
+],
+[
+308.0,
+513.0
+],
+[
+308.0,
+463.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Aetius II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_road_103",
+"type": "road",
+"name": "Planned street of Aetius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+306.0,
+496.3
+],
+[
+270.0,
+496.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_road_104",
+"type": "road",
+"name": "Planned street of Aetius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+288.0,
+506.0
+],
+[
+288.0,
+470.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 125,
+"structure": {
+"id": "imp_dis_37",
+"type": "district",
+"name": "Quarter of Aspar II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+219.9,
+372.2
+],
+[
+279.9,
+372.2
+],
+[
+279.9,
+322.2
+],
+[
+219.9,
+322.2
+],
+[
+219.9,
+372.2
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Aspar II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 125,
+"structure": {
+"id": "imp_road_106",
+"type": "road",
+"name": "Planned street of Aspar II",
+"geom": {
+"type": "line",
+"coords": [
+[
+222.9,
+338.8
+],
+[
+276.9,
+338.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 125,
+"structure": {
+"id": "imp_road_107",
+"type": "road",
+"name": "Planned street of Aspar II",
+"geom": {
+"type": "line",
+"coords": [
+[
+249.9,
+320.2
+],
+[
+249.9,
+374.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 125,
+"structure": {
+"id": "imp_road_108",
+"type": "road",
+"name": "Street of Modestus II",
+"geom": {
+"type": "line",
+"coords": [
+[
+250.0,
+493.2
+],
+[
+211.9,
+493.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Modestus II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 125,
+"structure": {
+"id": "imp_dis_38",
+"type": "district",
+"name": "Quarter of Modestus II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+181.9,
+518.4
+],
+[
+241.9,
+518.4
+],
+[
+241.9,
+468.4
+],
+[
+181.9,
+468.4
+],
+[
+181.9,
+518.4
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Modestus II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 125,
+"structure": {
+"id": "imp_road_110",
+"type": "road",
+"name": "Planned street of Modestus II",
+"geom": {
+"type": "line",
+"coords": [
+[
+211.9,
+466.4
+],
+[
+211.9,
+520.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 126,
+"structure": {
+"id": "imp_church_4",
+"type": "church",
+"name": "Great Church of St Anastasia",
+"dna": {
+"motif": "rotunda",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "wonder"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+581.8,
+446.9
+],
+[
+572.2,
+444.0
+],
+[
+575.1,
+434.4
+],
+[
+584.7,
+437.3
+]
+]
+},
+"label": "Great Church of St Anastasia"
+},
+"why": "The emperor raises a domed church for St Anastasia that every ship on the sea can see."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_arcade_3",
+"type": "aqueduct_bridge",
+"name": "Arcade of the Aqueduct of Marcian",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+300.0,
+284.6
+],
+[
+302.8,
+288.9
+],
+[
+304.0,
+288.1
+],
+[
+301.1,
+283.7
+],
+[
+301.0,
+283.7
+],
+[
+301.0,
+283.6
+],
+[
+300.9,
+283.6
+],
+[
+300.9,
+283.5
+],
+[
+291.8,
+277.6
+],
+[
+291.0,
+278.8
+]
+]
+}
+},
+"why": "Arcades carry the channel across the low ground."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_arcade_4",
+"type": "aqueduct_bridge",
+"name": "Arcade of the Aqueduct of Marcian",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+327.0,
+325.9
+],
+[
+328.2,
+325.2
+],
+[
+319.4,
+311.7
+],
+[
+318.2,
+312.5
+]
+]
+}
+},
+"why": "Arcades carry the channel across the low ground."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_arcade_5",
+"type": "aqueduct_bridge",
+"name": "Arcade of the Aqueduct of Marcian",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+348.7,
+359.1
+],
+[
+348.8,
+359.1
+],
+[
+348.8,
+359.2
+],
+[
+348.8,
+359.2
+],
+[
+356.9,
+366.3
+],
+[
+357.8,
+365.2
+],
+[
+349.8,
+358.2
+],
+[
+335.9,
+337.0
+],
+[
+334.7,
+337.7
+]
+]
+}
+},
+"why": "Arcades carry the channel across the low ground."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 122,
+"structure": {
+"id": "imp_aq_3",
+"type": "aqueduct",
+"name": "Aqueduct of Marcian",
+"geom": {
+"type": "line",
+"coords": [
+[
+259.4,
+257.3
+],
+[
+300.5,
+284.1
+],
+[
+349.3,
+358.7
+],
+[
+410.3,
+412.2
+]
+]
+},
+"label": "Aqueduct of Marcian"
+},
+"why": "Another imperial aqueduct comes down from the Thracian hills."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 123,
+"structure": {
+"id": "imp_granary_7",
+"type": "granary",
+"name": "Horrea of Justin",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+285.2,
+433.9
+],
+[
+273.2,
+433.9
+],
+[
+273.2,
+427.9
+],
+[
+285.2,
+427.9
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+}
+],
+"growth_floor": 150
+}

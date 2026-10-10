@@ -74,7 +74,7 @@
   "basis": "estimate"
  },
  "growth_cap_per_decade": {
-  "value": 0.5,
+  "value": 0.6,
   "basis": "estimate",
   "why": "historic average 330-450 is ~21%/decade (x10 in 120 years); booms run faster, so the cap sits above the average"
  },
@@ -85,11 +85,12 @@
  "food": {
   "base": 6000,
   "harbor": 25000,
-  "granary": 20000,
+  "granary": 30000,
   "market": 3000,
   "warehouse": 4000,
   "basis": "estimate",
-  "why": "two harbors + one granary ~ 80,000, the size of the 332 grain dole"
+  "why": "two harbors + one granary ~ 80,000, the size of the 332 grain dole",
+  "why_imperial": "draft imperial: the annona is a state machine; a state granary feeds 30,000 (canon 20,000). Retroactive from AF 1."
  },
  "water": {
   "base": 8000,
@@ -147,5 +148,10 @@
   ],
   "max_slope": 0.1,
   "slope_why": "ploughland needs gentle ground: 80% of a field must slope under 10% (our judgement; terraces would allow more, not modelled)"
+ },
+ "dice": {
+  "fire_p": 0.2,
+  "basis": "draft",
+  "why": "imperial: state fire brigades and stone building codes"
  }
 }

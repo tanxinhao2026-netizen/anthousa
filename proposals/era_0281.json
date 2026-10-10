@@ -1,0 +1,137 @@
+{
+"era": {
+"from": 281,
+"to": 290,
+"title": "奇观"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 286,
+"structure": {
+"id": "imp_church_10",
+"type": "church",
+"name": "Great Church of St Plato",
+"dna": {
+"motif": "rotunda",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 3,
+"scale": "wonder"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+587.1,
+471.1
+],
+[
+587.1,
+461.1
+],
+[
+597.1,
+461.1
+],
+[
+597.1,
+471.1
+]
+]
+},
+"label": "Great Church of St Plato"
+},
+"why": "The emperor raises a domed church for St Plato that every ship on the sea can see."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 287,
+"structure": {
+"id": "imp_palace_10",
+"type": "palace",
+"name": "Palace of Maurice",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+398.5,
+535.5
+],
+[
+385.3,
+540.3
+],
+[
+381.9,
+530.9
+],
+[
+395.0,
+526.1
+]
+]
+},
+"label": "Palace of Maurice"
+},
+"why": "Another palace for the court, its gardens running down to the sea."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Quarter of Sophia IV",
+"reasons": [
+"imp_dis_135: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aetius IV",
+"reasons": [
+"imp_dis_136: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aspar IV",
+"reasons": [
+"imp_dis_137: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Modestus IV",
+"reasons": [
+"imp_dis_138: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Philoxenus IV",
+"reasons": [
+"imp_dis_139: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Probus IV",
+"reasons": [
+"imp_dis_140: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

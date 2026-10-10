@@ -1,0 +1,325 @@
+{
+"era": {
+"from": 171,
+"to": 180,
+"title": "奇观"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 172,
+"structure": {
+"id": "imp_road_159",
+"type": "road",
+"name": "Street of Marcian IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+401.9,
+336.8
+],
+[
+399.4,
+274.1
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Marcian IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 172,
+"structure": {
+"id": "imp_dis_63",
+"type": "district",
+"name": "Quarter of Marcian IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+430.1,
+265.1
+],
+[
+397.4,
+242.1
+],
+[
+368.7,
+283.1
+],
+[
+401.5,
+306.0
+],
+[
+430.1,
+265.1
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Marcian IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 172,
+"structure": {
+"id": "imp_road_160",
+"type": "road",
+"name": "Planned street of Marcian IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+409.4,
+291.2
+],
+[
+379.9,
+270.6
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 172,
+"structure": {
+"id": "imp_road_161",
+"type": "road",
+"name": "Planned street of Marcian IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+389.1,
+288.8
+],
+[
+409.8,
+259.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 172,
+"structure": {
+"id": "imp_road_162",
+"type": "road",
+"name": "Street of Leo IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+369.0,
+342.7
+],
+[
+360.4,
+329.8
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Leo IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 172,
+"structure": {
+"id": "imp_dis_64",
+"type": "district",
+"name": "Quarter of Leo IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+391.1,
+320.8
+],
+[
+358.4,
+297.8
+],
+[
+329.7,
+338.8
+],
+[
+362.5,
+361.7
+],
+[
+391.1,
+320.8
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Leo IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 172,
+"structure": {
+"id": "imp_road_163",
+"type": "road",
+"name": "Planned street of Leo IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+370.4,
+346.9
+],
+[
+340.9,
+326.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 172,
+"structure": {
+"id": "imp_road_164",
+"type": "road",
+"name": "Planned street of Leo IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+350.1,
+344.5
+],
+[
+370.7,
+315.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 176,
+"structure": {
+"id": "imp_church_6",
+"type": "church",
+"name": "Great Church of St Irene",
+"dna": {
+"motif": "rotunda",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "wonder"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+396.0,
+355.0
+],
+[
+401.8,
+346.8
+],
+[
+409.9,
+352.5
+],
+[
+404.2,
+360.7
+]
+]
+},
+"label": "Great Church of St Irene"
+},
+"why": "The emperor raises a domed church for St Irene that every ship on the sea can see."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Imperial Axis, stage 5",
+"reasons": [
+"imp_axis_14: road does not connect to the existing street network"
+]
+},
+{
+"what": "Quarter of Zeno IV",
+"reasons": [
+"imp_dis_65: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Anastasius IV",
+"reasons": [
+"imp_dis_66: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Justin IV",
+"reasons": [
+"imp_dis_67: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Justinian IV",
+"reasons": [
+"imp_dis_68: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Tiberius IV",
+"reasons": [
+"imp_dis_69: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Maurice IV",
+"reasons": [
+"imp_dis_70: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

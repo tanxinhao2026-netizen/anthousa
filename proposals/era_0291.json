@@ -1,0 +1,320 @@
+{
+"era": {
+"from": 291,
+"to": 300,
+"title": "帝国的十年"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 293,
+"structure": {
+"id": "imp_forum_12",
+"type": "forum",
+"name": "Forum of Pulcheria",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+342.2,
+538.1
+],
+[
+342.2,
+554.1
+],
+[
+330.2,
+554.1
+],
+[
+330.2,
+538.1
+]
+]
+},
+"label": "Forum of Pulcheria"
+},
+"why": "A forum for Pulcheria at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 292,
+"structure": {
+"id": "imp_road_279",
+"type": "road",
+"name": "Street of Arcadius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+356.3,
+509.5
+],
+[
+352.0,
+509.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Arcadius IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 292,
+"structure": {
+"id": "imp_dis_141",
+"type": "district",
+"name": "Quarter of Arcadius IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+362.2,
+479.2
+],
+[
+324.6,
+492.9
+],
+[
+341.7,
+539.9
+],
+[
+356.1,
+534.7
+],
+[
+359.4,
+530.9
+],
+[
+359.5,
+530.8
+],
+[
+359.7,
+530.7
+],
+[
+359.8,
+530.6
+],
+[
+360.0,
+530.5
+],
+[
+364.1,
+528.3
+],
+[
+364.8,
+526.4
+],
+[
+364.9,
+526.2
+],
+[
+365.0,
+526.0
+],
+[
+365.2,
+525.9
+],
+[
+365.3,
+525.7
+],
+[
+365.5,
+525.6
+],
+[
+371.0,
+521.2
+],
+[
+371.2,
+521.1
+],
+[
+371.4,
+521.0
+],
+[
+371.5,
+520.9
+],
+[
+371.7,
+520.8
+],
+[
+371.9,
+520.8
+],
+[
+372.1,
+520.8
+],
+[
+376.3,
+520.4
+],
+[
+376.5,
+520.4
+],
+[
+376.7,
+520.4
+],
+[
+376.9,
+520.4
+],
+[
+377.1,
+520.5
+],
+[
+377.2,
+520.5
+],
+[
+362.2,
+479.2
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Arcadius IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 292,
+"structure": {
+"id": "imp_road_280",
+"type": "road",
+"name": "Planned street of Arcadius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+371.7,
+511.2
+],
+[
+337.9,
+523.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 292,
+"structure": {
+"id": "imp_road_281",
+"type": "road",
+"name": "Planned street of Arcadius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+358.1,
+526.4
+],
+[
+345.8,
+492.6
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Imperial Axis, stage 6",
+"reasons": [
+"imp_axis_24: road runs 78% over water",
+"imp_axis_24: road does not connect to the existing street network"
+]
+},
+{
+"what": "Column of Pulcheria",
+"reasons": [
+"imp_column_10: overlaps standing imp_forum_12 (Forum of Pulcheria)"
+]
+},
+{
+"what": "Quarter of Theodosius IV",
+"reasons": [
+"imp_dis_142: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Marcian IV",
+"reasons": [
+"imp_dis_143: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Leo IV",
+"reasons": [
+"imp_dis_144: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Zeno IV",
+"reasons": [
+"imp_dis_145: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Anastasius IV",
+"reasons": [
+"imp_dis_146: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Justin IV",
+"reasons": [
+"imp_dis_147: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

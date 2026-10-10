@@ -1,0 +1,516 @@
+{
+"era": {
+"from": 101,
+"to": 110,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 101,
+"structure": {
+"id": "imp_axis_7",
+"type": "road",
+"name": "Imperial Axis, stage 7",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+383.0,
+454.0
+],
+[
+345.0,
+454.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 102,
+"structure": {
+"id": "imp_dis_27",
+"type": "district",
+"name": "Quarter of Justin II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+384.0,
+395.0
+],
+[
+344.0,
+395.0
+],
+[
+344.0,
+445.0
+],
+[
+384.0,
+445.0
+],
+[
+384.0,
+395.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Justin II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 102,
+"structure": {
+"id": "imp_road_76",
+"type": "road",
+"name": "Planned street of Justin II",
+"geom": {
+"type": "line",
+"coords": [
+[
+382.0,
+428.3
+],
+[
+346.0,
+428.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 102,
+"structure": {
+"id": "imp_road_77",
+"type": "road",
+"name": "Planned street of Justin II",
+"geom": {
+"type": "line",
+"coords": [
+[
+364.0,
+438.0
+],
+[
+364.0,
+402.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 102,
+"structure": {
+"id": "imp_road_78",
+"type": "road",
+"name": "Street of Justinian II",
+"geom": {
+"type": "line",
+"coords": [
+[
+364.0,
+494.0
+],
+[
+364.0,
+488.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Justinian II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 102,
+"structure": {
+"id": "imp_dis_28",
+"type": "district",
+"name": "Quarter of Justinian II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+384.0,
+463.0
+],
+[
+344.0,
+463.0
+],
+[
+344.0,
+513.0
+],
+[
+384.0,
+513.0
+],
+[
+384.0,
+463.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Justinian II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 102,
+"structure": {
+"id": "imp_road_79",
+"type": "road",
+"name": "Planned street of Justinian II",
+"geom": {
+"type": "line",
+"coords": [
+[
+382.0,
+496.3
+],
+[
+346.0,
+496.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 102,
+"structure": {
+"id": "imp_road_80",
+"type": "road",
+"name": "Planned street of Justinian II",
+"geom": {
+"type": "line",
+"coords": [
+[
+364.0,
+506.0
+],
+[
+364.0,
+470.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 105,
+"structure": {
+"id": "imp_road_81",
+"type": "road",
+"name": "Street of Tiberius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+298.8,
+486.1
+],
+[
+300.8,
+502.9
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Tiberius II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 105,
+"structure": {
+"id": "imp_dis_29",
+"type": "district",
+"name": "Quarter of Tiberius II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+270.8,
+527.9
+],
+[
+330.8,
+527.9
+],
+[
+330.8,
+477.9
+],
+[
+270.8,
+477.9
+],
+[
+270.8,
+527.9
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Tiberius II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 105,
+"structure": {
+"id": "imp_road_82",
+"type": "road",
+"name": "Planned street of Tiberius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+273.8,
+494.6
+],
+[
+327.8,
+494.6
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 105,
+"structure": {
+"id": "imp_road_83",
+"type": "road",
+"name": "Planned street of Tiberius II",
+"geom": {
+"type": "line",
+"coords": [
+[
+300.8,
+475.9
+],
+[
+300.8,
+529.9
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 105,
+"structure": {
+"id": "imp_road_84",
+"type": "road",
+"name": "Street of Maurice II",
+"geom": {
+"type": "line",
+"coords": [
+[
+271.5,
+489.4
+],
+[
+267.8,
+458.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Maurice II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 105,
+"structure": {
+"id": "imp_dis_30",
+"type": "district",
+"name": "Quarter of Maurice II",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+237.8,
+483.7
+],
+[
+297.8,
+483.7
+],
+[
+297.8,
+433.7
+],
+[
+237.8,
+433.7
+],
+[
+237.8,
+483.7
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Maurice II."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 105,
+"structure": {
+"id": "imp_road_86",
+"type": "road",
+"name": "Planned street of Maurice II",
+"geom": {
+"type": "line",
+"coords": [
+[
+267.8,
+431.7
+],
+[
+267.8,
+485.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 106,
+"structure": {
+"id": "imp_church_3",
+"type": "church",
+"name": "Great Church of St Euphemia",
+"dna": {
+"motif": "rotunda",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "wonder"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+598.8,
+452.0
+],
+[
+589.2,
+449.2
+],
+[
+592.1,
+439.6
+],
+[
+601.7,
+442.5
+]
+]
+},
+"label": "Great Church of St Euphemia"
+},
+"why": "The emperor raises a domed church for St Euphemia that every ship on the sea can see."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 103,
+"structure": {
+"id": "imp_granary_6",
+"type": "granary",
+"name": "Horrea of Anastasius",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+350.4,
+441.1
+],
+[
+338.4,
+441.1
+],
+[
+338.4,
+435.1
+],
+[
+350.4,
+435.1
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+}
+],
+"growth_floor": 150
+}

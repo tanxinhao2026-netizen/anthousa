@@ -1,0 +1,213 @@
+{
+"era": {
+"from": 301,
+"to": 310,
+"title": "奇观"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 302,
+"structure": {
+"id": "imp_road_288",
+"type": "road",
+"name": "Street of Justinian IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+300.8,
+522.5
+],
+[
+316.3,
+522.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Justinian IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 302,
+"structure": {
+"id": "imp_dis_148",
+"type": "district",
+"name": "Quarter of Justinian IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+326.5,
+492.2
+],
+[
+288.9,
+505.9
+],
+[
+306.0,
+552.9
+],
+[
+343.6,
+539.2
+],
+[
+326.5,
+492.2
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Justinian IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 302,
+"structure": {
+"id": "imp_road_289",
+"type": "road",
+"name": "Planned street of Justinian IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+336.0,
+524.2
+],
+[
+302.2,
+536.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 302,
+"structure": {
+"id": "imp_road_290",
+"type": "road",
+"name": "Planned street of Justinian IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+322.4,
+539.4
+],
+[
+310.1,
+505.6
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 306,
+"structure": {
+"id": "imp_church_11",
+"type": "church",
+"name": "Great Church of St Acacius",
+"dna": {
+"motif": "rotunda",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 3,
+"scale": "wonder"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+547.3,
+487.2
+],
+[
+537.9,
+490.6
+],
+[
+534.5,
+481.2
+],
+[
+543.9,
+477.8
+]
+]
+},
+"label": "Great Church of St Acacius"
+},
+"why": "The emperor raises a domed church for St Acacius that every ship on the sea can see."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Imperial Axis, stage 7",
+"reasons": [
+"imp_axis_25: road does not connect to the existing street network"
+]
+},
+{
+"what": "Quarter of Tiberius IV",
+"reasons": [
+"imp_dis_149: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Maurice IV",
+"reasons": [
+"imp_dis_150: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Heraclius IV",
+"reasons": [
+"imp_dis_151: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Pulcheria IV",
+"reasons": [
+"imp_dis_152: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Eudoxia IV",
+"reasons": [
+"imp_dis_153: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Ariadne IV",
+"reasons": [
+"imp_dis_154: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

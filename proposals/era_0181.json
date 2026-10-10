@@ -1,0 +1,349 @@
+{
+"era": {
+"from": 181,
+"to": 190,
+"title": "年金"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 182,
+"structure": {
+"id": "imp_road_171",
+"type": "road",
+"name": "Street of Heraclius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+379.9,
+270.6
+],
+[
+368.3,
+252.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Heraclius IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 182,
+"structure": {
+"id": "imp_dis_71",
+"type": "district",
+"name": "Quarter of Heraclius IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+399.0,
+243.3
+],
+[
+366.3,
+220.3
+],
+[
+337.6,
+261.3
+],
+[
+370.3,
+284.2
+],
+[
+399.0,
+243.3
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Heraclius IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 182,
+"structure": {
+"id": "imp_road_172",
+"type": "road",
+"name": "Planned street of Heraclius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+378.3,
+269.4
+],
+[
+348.8,
+248.8
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 182,
+"structure": {
+"id": "imp_road_173",
+"type": "road",
+"name": "Planned street of Heraclius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+358.0,
+267.0
+],
+[
+378.6,
+237.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 182,
+"structure": {
+"id": "imp_road_174",
+"type": "road",
+"name": "Street of Pulcheria IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+340.9,
+326.3
+],
+[
+329.3,
+308.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Pulcheria IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 182,
+"structure": {
+"id": "imp_dis_72",
+"type": "district",
+"name": "Quarter of Pulcheria IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+360.0,
+299.0
+],
+[
+327.3,
+276.0
+],
+[
+298.6,
+317.0
+],
+[
+331.3,
+339.9
+],
+[
+360.0,
+299.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Pulcheria IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 182,
+"structure": {
+"id": "imp_road_175",
+"type": "road",
+"name": "Planned street of Pulcheria IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+339.3,
+325.1
+],
+[
+309.8,
+304.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 182,
+"structure": {
+"id": "imp_road_176",
+"type": "road",
+"name": "Planned street of Pulcheria IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+319.0,
+322.7
+],
+[
+339.6,
+293.2
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 185,
+"structure": {
+"id": "imp_dis_73",
+"type": "district",
+"name": "Quarter of Eudoxia IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+164.4,
+411.8
+],
+[
+224.4,
+411.8
+],
+[
+224.4,
+361.8
+],
+[
+164.4,
+361.8
+],
+[
+164.4,
+411.8
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Eudoxia IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 183,
+"structure": {
+"id": "imp_granary_9",
+"type": "granary",
+"name": "Horrea of Tiberius",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+317.5,
+273.0
+],
+[
+324.4,
+263.1
+],
+[
+329.3,
+266.6
+],
+[
+322.4,
+276.4
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Imperial Axis, stage 6",
+"reasons": [
+"imp_axis_15: road does not connect to the existing street network"
+]
+},
+{
+"what": "Forum of Justin",
+"reasons": [
+"imp_forum_7: no road within 25 units; nobody could reach it"
+]
+},
+{
+"what": "Quarter of Ariadne IV",
+"reasons": [
+"imp_dis_74: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Sophia IV",
+"reasons": [
+"imp_dis_75: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aetius IV",
+"reasons": [
+"imp_dis_76: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

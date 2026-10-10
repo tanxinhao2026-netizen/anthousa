@@ -1,0 +1,536 @@
+{
+"era": {
+"from": 311,
+"to": 320,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 311,
+"structure": {
+"id": "imp_axis_26",
+"type": "road",
+"name": "Imperial Axis, stage 8",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+310.0,
+561.0
+],
+[
+274.3,
+574.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 313,
+"structure": {
+"id": "imp_forum_13",
+"type": "forum",
+"name": "Forum of Eudoxia",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"rubble"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+291.9,
+580.5
+],
+[
+276.9,
+586.0
+],
+[
+272.8,
+574.7
+],
+[
+287.8,
+569.2
+]
+]
+},
+"label": "Forum of Eudoxia"
+},
+"why": "A forum for Eudoxia at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 312,
+"structure": {
+"id": "imp_road_297",
+"type": "road",
+"name": "Street of Sophia IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+277.2,
+535.0
+],
+[
+280.6,
+535.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Sophia IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 312,
+"structure": {
+"id": "imp_dis_155",
+"type": "district",
+"name": "Quarter of Sophia IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+290.8,
+505.2
+],
+[
+253.2,
+518.9
+],
+[
+270.3,
+565.9
+],
+[
+307.9,
+552.2
+],
+[
+290.8,
+505.2
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Sophia IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 312,
+"structure": {
+"id": "imp_road_298",
+"type": "road",
+"name": "Planned street of Sophia IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+300.3,
+537.2
+],
+[
+266.5,
+549.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 312,
+"structure": {
+"id": "imp_road_299",
+"type": "road",
+"name": "Planned street of Sophia IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+286.7,
+552.4
+],
+[
+274.4,
+518.6
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 312,
+"structure": {
+"id": "imp_road_300",
+"type": "road",
+"name": "Street of Aetius IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+272.1,
+588.9
+],
+[
+303.8,
+599.4
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Aetius IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 312,
+"structure": {
+"id": "imp_dis_156",
+"type": "district",
+"name": "Quarter of Aetius IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+314.1,
+569.1
+],
+[
+276.5,
+582.8
+],
+[
+293.6,
+629.8
+],
+[
+294.4,
+629.5
+],
+[
+305.2,
+612.8
+],
+[
+305.3,
+612.6
+],
+[
+305.5,
+612.5
+],
+[
+305.6,
+612.3
+],
+[
+305.8,
+612.2
+],
+[
+305.9,
+612.1
+],
+[
+306.1,
+612.0
+],
+[
+306.3,
+612.0
+],
+[
+306.5,
+611.9
+],
+[
+306.2,
+611.7
+],
+[
+306.1,
+611.5
+],
+[
+306.0,
+611.4
+],
+[
+305.9,
+611.2
+],
+[
+305.8,
+611.0
+],
+[
+305.7,
+610.8
+],
+[
+305.7,
+610.7
+],
+[
+305.6,
+610.5
+],
+[
+305.6,
+610.3
+],
+[
+305.6,
+610.1
+],
+[
+305.6,
+609.9
+],
+[
+305.7,
+609.7
+],
+[
+305.7,
+609.5
+],
+[
+305.8,
+609.4
+],
+[
+305.9,
+609.2
+],
+[
+306.0,
+609.0
+],
+[
+313.6,
+598.8
+],
+[
+313.7,
+598.7
+],
+[
+313.9,
+598.5
+],
+[
+314.0,
+598.4
+],
+[
+314.2,
+598.3
+],
+[
+314.4,
+598.2
+],
+[
+314.6,
+598.1
+],
+[
+314.8,
+598.1
+],
+[
+315.0,
+598.0
+],
+[
+315.2,
+598.0
+],
+[
+315.4,
+598.0
+],
+[
+315.6,
+598.0
+],
+[
+315.8,
+598.1
+],
+[
+315.9,
+598.1
+],
+[
+316.8,
+597.0
+],
+[
+316.9,
+596.8
+],
+[
+317.0,
+596.7
+],
+[
+317.2,
+596.6
+],
+[
+317.3,
+596.5
+],
+[
+317.5,
+596.4
+],
+[
+317.5,
+596.3
+],
+[
+317.3,
+594.1
+],
+[
+317.3,
+593.9
+],
+[
+317.3,
+593.7
+],
+[
+317.3,
+593.5
+],
+[
+317.3,
+593.3
+],
+[
+317.4,
+593.1
+],
+[
+317.5,
+593.0
+],
+[
+317.6,
+592.8
+],
+[
+317.7,
+592.6
+],
+[
+317.8,
+592.5
+],
+[
+317.9,
+592.4
+],
+[
+318.1,
+592.2
+],
+[
+321.6,
+589.7
+],
+[
+314.1,
+569.1
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Aetius IV."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Column of Eudoxia",
+"reasons": [
+"imp_column_11: overlaps standing imp_forum_13 (Forum of Eudoxia)"
+]
+},
+{
+"what": "Quarter of Aspar IV",
+"reasons": [
+"imp_dis_157: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Modestus IV",
+"reasons": [
+"imp_dis_158: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Philoxenus IV",
+"reasons": [
+"imp_dis_159: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Probus IV",
+"reasons": [
+"imp_dis_160: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Arcadius IV",
+"reasons": [
+"imp_dis_161: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Theodosius IV",
+"reasons": [
+"imp_dis_162: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

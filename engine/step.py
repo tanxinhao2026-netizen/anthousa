@@ -226,7 +226,7 @@ def roll_events_fixed(w, era, rnd):
     radius are drawn first, before anything about the world is read, so no proposal can move them. Only where a
     fire lands (among the standing houses) and what it happens to catch depend on the city as built."""
     y0, y1 = era["from"], era["to"]
-    fire = (rnd.random() < 0.28, rnd.randint(y0, y1), rnd.random(), rnd.random())
+    fire = (rnd.random() < rules.CAL.get("dice", {}).get("fire_p", 0.28), rnd.randint(y0, y1), rnd.random(), rnd.random())
     quake = (rnd.random() < 0.08, rnd.randint(y0, y1))
     plague = (rnd.random() < 0.06, rnd.randint(y0, y1))
     dmg = random.Random(rnd.random())  # per-house / per-building damage rolls

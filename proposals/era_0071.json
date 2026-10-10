@@ -1,0 +1,748 @@
+{
+"era": {
+"from": 71,
+"to": 80,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 71,
+"structure": {
+"id": "imp_axis_4",
+"type": "road",
+"name": "Imperial Axis, stage 4",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+497.0,
+454.0
+],
+[
+459.0,
+454.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 73,
+"structure": {
+"id": "imp_forum_2",
+"type": "forum",
+"name": "Forum of Theodosius",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+463.8,
+466.6
+],
+[
+448.2,
+470.5
+],
+[
+445.3,
+458.9
+],
+[
+460.9,
+455.0
+]
+]
+},
+"label": "Forum of Theodosius"
+},
+"why": "A forum for Theodosius at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_road_37",
+"type": "road",
+"name": "Street of Eudoxia",
+"geom": {
+"type": "line",
+"coords": [
+[
+488.8,
+419.6
+],
+[
+478.0,
+420.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Eudoxia."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_dis_13",
+"type": "district",
+"name": "Quarter of Eudoxia",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+498.0,
+395.0
+],
+[
+458.0,
+395.0
+],
+[
+458.0,
+445.0
+],
+[
+498.0,
+445.0
+],
+[
+498.0,
+395.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Eudoxia."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_road_38",
+"type": "road",
+"name": "Planned street of Eudoxia",
+"geom": {
+"type": "line",
+"coords": [
+[
+496.0,
+428.3
+],
+[
+460.0,
+428.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_road_39",
+"type": "road",
+"name": "Planned street of Eudoxia",
+"geom": {
+"type": "line",
+"coords": [
+[
+478.0,
+438.0
+],
+[
+478.0,
+402.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_road_40",
+"type": "road",
+"name": "Street of Ariadne",
+"geom": {
+"type": "line",
+"coords": [
+[
+493.6,
+486.4
+],
+[
+478.0,
+488.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Ariadne."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_dis_14",
+"type": "district",
+"name": "Quarter of Ariadne",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+498.0,
+463.0
+],
+[
+458.0,
+463.0
+],
+[
+458.0,
+513.0
+],
+[
+487.3,
+513.0
+],
+[
+487.5,
+512.9
+],
+[
+487.7,
+512.9
+],
+[
+487.9,
+512.8
+],
+[
+489.4,
+512.6
+],
+[
+489.6,
+512.5
+],
+[
+489.7,
+512.3
+],
+[
+489.9,
+512.2
+],
+[
+490.1,
+512.2
+],
+[
+490.3,
+512.1
+],
+[
+490.5,
+512.1
+],
+[
+498.0,
+510.8
+],
+[
+498.0,
+463.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Ariadne."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_road_41",
+"type": "road",
+"name": "Planned street of Ariadne",
+"geom": {
+"type": "line",
+"coords": [
+[
+496.0,
+496.3
+],
+[
+460.0,
+496.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_road_42",
+"type": "road",
+"name": "Planned street of Ariadne",
+"geom": {
+"type": "line",
+"coords": [
+[
+478.0,
+506.0
+],
+[
+478.0,
+470.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 75,
+"structure": {
+"id": "imp_road_43",
+"type": "road",
+"name": "Street of Sophia",
+"geom": {
+"type": "line",
+"coords": [
+[
+327.9,
+483.2
+],
+[
+325.1,
+455.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Sophia."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 75,
+"structure": {
+"id": "imp_dis_15",
+"type": "district",
+"name": "Quarter of Sophia",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+295.1,
+480.7
+],
+[
+355.1,
+480.7
+],
+[
+355.1,
+430.7
+],
+[
+295.1,
+430.7
+],
+[
+295.1,
+480.7
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Sophia."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 75,
+"structure": {
+"id": "imp_road_45",
+"type": "road",
+"name": "Planned street of Sophia",
+"geom": {
+"type": "line",
+"coords": [
+[
+325.1,
+428.7
+],
+[
+325.1,
+482.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 75,
+"structure": {
+"id": "imp_road_48",
+"type": "road",
+"name": "Street of Modestus",
+"geom": {
+"type": "line",
+"coords": [
+[
+365.2,
+397.8
+],
+[
+369.0,
+369.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Modestus."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 75,
+"structure": {
+"id": "imp_dis_18",
+"type": "district",
+"name": "Quarter of Modestus",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+339.0,
+394.7
+],
+[
+399.0,
+394.7
+],
+[
+399.0,
+344.7
+],
+[
+339.0,
+344.7
+],
+[
+339.0,
+394.7
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Modestus."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 75,
+"structure": {
+"id": "imp_road_50",
+"type": "road",
+"name": "Planned street of Modestus",
+"geom": {
+"type": "line",
+"coords": [
+[
+369.0,
+342.7
+],
+[
+369.0,
+396.7
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_arcade_1",
+"type": "aqueduct_bridge",
+"name": "Arcade of the Aqueduct of Theodosius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+305.2,
+185.9
+],
+[
+306.3,
+185.1
+],
+[
+292.1,
+165.6
+],
+[
+291.0,
+166.5
+]
+]
+}
+},
+"why": "Arcades carry the channel across the low ground."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_arcade_2",
+"type": "aqueduct_bridge",
+"name": "Arcade of the Aqueduct of Theodosius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+405.1,
+260.7
+],
+[
+422.5,
+281.5
+],
+[
+423.6,
+280.6
+],
+[
+406.1,
+259.8
+],
+[
+406.1,
+259.7
+],
+[
+406.0,
+259.7
+],
+[
+406.0,
+259.6
+],
+[
+405.9,
+259.6
+],
+[
+386.0,
+248.3
+],
+[
+385.3,
+249.5
+]
+]
+}
+},
+"why": "Arcades carry the channel across the low ground."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 72,
+"structure": {
+"id": "imp_aq_2",
+"type": "aqueduct",
+"name": "Aqueduct of Theodosius",
+"geom": {
+"type": "line",
+"coords": [
+[
+258.5,
+120.7
+],
+[
+328.2,
+216.3
+],
+[
+405.6,
+260.2
+],
+[
+470.6,
+337.9
+]
+]
+},
+"label": "Aqueduct of Theodosius"
+},
+"why": "Another imperial aqueduct comes down from the Thracian hills."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 73,
+"structure": {
+"id": "imp_granary_4",
+"type": "granary",
+"name": "Horrea of Leo",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+497.1,
+470.9
+],
+[
+498.3,
+482.8
+],
+[
+492.3,
+483.4
+],
+[
+491.1,
+471.5
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 77,
+"structure": {
+"id": "imp_palace_2",
+"type": "palace",
+"name": "Palace of Theodosius",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+444.4,
+472.9
+],
+[
+430.7,
+476.2
+],
+[
+428.4,
+466.5
+],
+[
+442.0,
+463.2
+]
+]
+},
+"label": "Palace of Theodosius"
+},
+"why": "Another palace for the court, its gardens running down to the sea."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Column of Theodosius",
+"reasons": [
+"imp_column_2: overlaps standing imp_forum_2 (Forum of Theodosius)"
+]
+},
+{
+"what": "Quarter of Aetius",
+"reasons": [
+"imp_dis_16: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aspar",
+"reasons": [
+"imp_dis_17: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

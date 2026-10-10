@@ -1,0 +1,395 @@
+{
+"era": {
+"from": 221,
+"to": 230,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 221,
+"structure": {
+"id": "imp_axis_19",
+"type": "road",
+"name": "Imperial Axis, stage 4",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+452.9,
+509.0
+],
+[
+417.2,
+522.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 223,
+"structure": {
+"id": "imp_forum_9",
+"type": "forum",
+"name": "Forum of Tiberius",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+417.0,
+525.9
+],
+[
+401.9,
+531.3
+],
+[
+397.8,
+520.1
+],
+[
+412.9,
+514.6
+]
+]
+},
+"label": "Forum of Tiberius"
+},
+"why": "A forum for Tiberius at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 222,
+"structure": {
+"id": "imp_dis_93",
+"type": "district",
+"name": "Quarter of Eudoxia IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+433.6,
+453.2
+],
+[
+396.0,
+466.9
+],
+[
+413.1,
+513.9
+],
+[
+450.7,
+500.2
+],
+[
+433.6,
+453.2
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Eudoxia IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 222,
+"structure": {
+"id": "imp_road_212",
+"type": "road",
+"name": "Planned street of Eudoxia IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+443.2,
+485.2
+],
+[
+409.3,
+497.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 222,
+"structure": {
+"id": "imp_road_213",
+"type": "road",
+"name": "Planned street of Eudoxia IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+429.5,
+500.5
+],
+[
+417.2,
+466.6
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 222,
+"structure": {
+"id": "imp_road_214",
+"type": "road",
+"name": "Street of Ariadne IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+420.9,
+527.4
+],
+[
+446.6,
+547.4
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Ariadne IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 222,
+"structure": {
+"id": "imp_dis_94",
+"type": "district",
+"name": "Quarter of Ariadne IV",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+456.9,
+517.1
+],
+[
+419.3,
+530.8
+],
+[
+432.5,
+567.2
+],
+[
+435.0,
+567.4
+],
+[
+447.8,
+566.5
+],
+[
+463.9,
+561.8
+],
+[
+471.7,
+557.7
+],
+[
+456.9,
+517.1
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Ariadne IV."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 222,
+"structure": {
+"id": "imp_road_216",
+"type": "road",
+"name": "Planned street of Ariadne IV",
+"geom": {
+"type": "line",
+"coords": [
+[
+452.8,
+564.4
+],
+[
+440.5,
+530.5
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 223,
+"structure": {
+"id": "imp_granary_12",
+"type": "granary",
+"name": "Horrea of Pulcheria",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+564.2,
+492.0
+],
+[
+552.7,
+488.7
+],
+[
+554.3,
+483.0
+],
+[
+565.8,
+486.2
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 227,
+"structure": {
+"id": "imp_palace_8",
+"type": "palace",
+"name": "Palace of Justinian",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"gold_mosaic"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+415.7,
+533.6
+],
+[
+415.7,
+547.6
+],
+[
+405.7,
+547.6
+],
+[
+405.7,
+533.6
+]
+]
+},
+"label": "Palace of Justinian"
+},
+"why": "Another palace for the court, its gardens running down to the sea."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Column of Tiberius",
+"reasons": [
+"imp_column_8: overlaps standing imp_forum_9 (Forum of Tiberius)"
+]
+},
+{
+"what": "Quarter of Sophia IV",
+"reasons": [
+"imp_dis_95: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aetius IV",
+"reasons": [
+"imp_dis_96: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Aspar IV",
+"reasons": [
+"imp_dis_97: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Modestus IV",
+"reasons": [
+"imp_dis_98: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Philoxenus IV",
+"reasons": [
+"imp_dis_99: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Probus IV",
+"reasons": [
+"imp_dis_100: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

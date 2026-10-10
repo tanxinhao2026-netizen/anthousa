@@ -1,0 +1,486 @@
+{
+"era": {
+"from": 141,
+"to": 150,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 141,
+"structure": {
+"id": "imp_axis_11",
+"type": "road",
+"name": "Imperial Axis, stage 2",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+488.9,
+378.2
+],
+[
+457.7,
+356.4
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 143,
+"structure": {
+"id": "imp_forum_5",
+"type": "forum",
+"name": "Forum of Zeno",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+454.5,
+372.5
+],
+[
+441.4,
+363.4
+],
+[
+448.3,
+353.5
+],
+[
+461.4,
+362.7
+]
+]
+},
+"label": "Forum of Zeno"
+},
+"why": "A forum for Zeno at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 142,
+"structure": {
+"id": "imp_dis_44",
+"type": "district",
+"name": "Quarter of Leo III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+523.5,
+330.4
+],
+[
+490.8,
+307.5
+],
+[
+462.1,
+348.5
+],
+[
+494.9,
+371.4
+],
+[
+523.5,
+330.4
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Leo III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 142,
+"structure": {
+"id": "imp_road_125",
+"type": "road",
+"name": "Planned street of Leo III",
+"geom": {
+"type": "line",
+"coords": [
+[
+502.8,
+356.6
+],
+[
+473.3,
+336.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 142,
+"structure": {
+"id": "imp_road_126",
+"type": "road",
+"name": "Planned street of Leo III",
+"geom": {
+"type": "line",
+"coords": [
+[
+482.5,
+354.2
+],
+[
+503.1,
+324.7
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 142,
+"structure": {
+"id": "imp_road_127",
+"type": "road",
+"name": "Street of Zeno III",
+"geom": {
+"type": "line",
+"coords": [
+[
+440.0,
+402.0
+],
+[
+453.8,
+395.2
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Zeno III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 142,
+"structure": {
+"id": "imp_dis_45",
+"type": "district",
+"name": "Quarter of Zeno III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+484.5,
+386.2
+],
+[
+451.8,
+363.2
+],
+[
+423.1,
+404.2
+],
+[
+455.9,
+427.1
+],
+[
+484.5,
+386.2
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Zeno III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 142,
+"structure": {
+"id": "imp_road_128",
+"type": "road",
+"name": "Planned street of Zeno III",
+"geom": {
+"type": "line",
+"coords": [
+[
+463.8,
+412.3
+],
+[
+434.3,
+391.7
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 142,
+"structure": {
+"id": "imp_road_129",
+"type": "road",
+"name": "Planned street of Zeno III",
+"geom": {
+"type": "line",
+"coords": [
+[
+443.5,
+409.9
+],
+[
+464.1,
+380.4
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 145,
+"structure": {
+"id": "imp_dis_46",
+"type": "district",
+"name": "Quarter of Anastasius III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+152.1,
+454.5
+],
+[
+212.1,
+454.5
+],
+[
+212.1,
+404.5
+],
+[
+152.1,
+404.5
+],
+[
+152.1,
+454.5
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Anastasius III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 145,
+"structure": {
+"id": "imp_road_134",
+"type": "road",
+"name": "Street of Justinian III",
+"geom": {
+"type": "line",
+"coords": [
+[
+241.9,
+493.2
+],
+[
+241.9,
+500.6
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justinian III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 145,
+"structure": {
+"id": "imp_dis_48",
+"type": "district",
+"name": "Quarter of Justinian III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+211.9,
+525.6
+],
+[
+271.9,
+525.6
+],
+[
+271.9,
+475.6
+],
+[
+211.9,
+475.6
+],
+[
+211.9,
+525.6
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Justinian III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 145,
+"structure": {
+"id": "imp_road_135",
+"type": "road",
+"name": "Planned street of Justinian III",
+"geom": {
+"type": "line",
+"coords": [
+[
+214.9,
+492.3
+],
+[
+268.9,
+492.3
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 145,
+"structure": {
+"id": "imp_road_136",
+"type": "road",
+"name": "Planned street of Justinian III",
+"geom": {
+"type": "line",
+"coords": [
+[
+241.9,
+473.6
+],
+[
+241.9,
+527.6
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 147,
+"structure": {
+"id": "imp_palace_5",
+"type": "palace",
+"name": "Palace of Zeno",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+642.7,
+521.6
+],
+[
+628.7,
+521.6
+],
+[
+628.7,
+511.6
+],
+[
+642.7,
+511.6
+]
+]
+},
+"label": "Palace of Zeno"
+},
+"why": "Another palace for the court, its gardens running down to the sea."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Column of Zeno",
+"reasons": [
+"imp_column_5: overlaps standing imp_forum_5 (Forum of Zeno)"
+]
+},
+{
+"what": "Quarter of Justin III",
+"reasons": [
+"imp_dis_47: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

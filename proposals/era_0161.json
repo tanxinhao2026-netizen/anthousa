@@ -1,0 +1,269 @@
+{
+"era": {
+"from": 161,
+"to": 170,
+"title": "帝国的十年"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 163,
+"structure": {
+"id": "imp_forum_6",
+"type": "forum",
+"name": "Forum of Anastasius",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+395.4,
+309.8
+],
+[
+395.4,
+325.8
+],
+[
+383.4,
+325.8
+],
+[
+383.4,
+309.8
+]
+]
+},
+"label": "Forum of Anastasius"
+},
+"why": "A forum for Anastasius at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 162,
+"structure": {
+"id": "imp_road_150",
+"type": "road",
+"name": "Street of Modestus III",
+"geom": {
+"type": "line",
+"coords": [
+[
+369.0,
+351.6
+],
+[
+391.6,
+351.6
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Modestus III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 162,
+"structure": {
+"id": "imp_dis_58",
+"type": "district",
+"name": "Quarter of Modestus III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+422.3,
+342.6
+],
+[
+389.5,
+319.6
+],
+[
+360.8,
+360.6
+],
+[
+393.6,
+383.5
+],
+[
+422.3,
+342.6
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Modestus III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 162,
+"structure": {
+"id": "imp_road_151",
+"type": "road",
+"name": "Planned street of Modestus III",
+"geom": {
+"type": "line",
+"coords": [
+[
+401.5,
+368.7
+],
+[
+372.0,
+348.1
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 162,
+"structure": {
+"id": "imp_road_152",
+"type": "road",
+"name": "Planned street of Modestus III",
+"geom": {
+"type": "line",
+"coords": [
+[
+381.2,
+366.3
+],
+[
+401.9,
+336.8
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 165,
+"structure": {
+"id": "imp_road_153",
+"type": "road",
+"name": "Street of Philoxenus III",
+"geom": {
+"type": "line",
+"coords": [
+[
+211.9,
+467.2
+],
+[
+208.5,
+467.2
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Philoxenus III."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 165,
+"structure": {
+"id": "imp_dis_59",
+"type": "district",
+"name": "Quarter of Philoxenus III",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+178.5,
+492.2
+],
+[
+238.5,
+492.2
+],
+[
+238.5,
+442.2
+],
+[
+178.5,
+442.2
+],
+[
+178.5,
+492.2
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Philoxenus III."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Imperial Axis, stage 4",
+"reasons": [
+"imp_axis_13: road does not connect to the existing street network"
+]
+},
+{
+"what": "Column of Anastasius",
+"reasons": [
+"imp_column_6: overlaps standing imp_forum_6 (Forum of Anastasius)"
+]
+},
+{
+"what": "Quarter of Aspar III",
+"reasons": [
+"imp_dis_57: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Probus III",
+"reasons": [
+"imp_dis_60: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Arcadius IV",
+"reasons": [
+"imp_dis_61: a district needs a road running into it"
+]
+},
+{
+"what": "Quarter of Theodosius IV",
+"reasons": [
+"imp_dis_62: a district needs a road running into it"
+]
+}
+]
+}
+]
+}

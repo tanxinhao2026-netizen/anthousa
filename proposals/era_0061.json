@@ -1,0 +1,622 @@
+{
+"era": {
+"from": 61,
+"to": 70,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 61,
+"structure": {
+"id": "imp_axis_3",
+"type": "road",
+"name": "Imperial Axis, stage 3",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+535.0,
+454.0
+],
+[
+497.0,
+454.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 62,
+"structure": {
+"id": "imp_road_25",
+"type": "road",
+"name": "Street of Tiberius",
+"geom": {
+"type": "line",
+"coords": [
+[
+497.1,
+426.3
+],
+[
+516.0,
+420.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Tiberius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 62,
+"structure": {
+"id": "imp_dis_9",
+"type": "district",
+"name": "Quarter of Tiberius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+536.0,
+395.0
+],
+[
+496.0,
+395.0
+],
+[
+496.0,
+445.0
+],
+[
+536.0,
+445.0
+],
+[
+536.0,
+395.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Tiberius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 62,
+"structure": {
+"id": "imp_road_26",
+"type": "road",
+"name": "Planned street of Tiberius",
+"geom": {
+"type": "line",
+"coords": [
+[
+534.0,
+428.3
+],
+[
+498.0,
+428.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 62,
+"structure": {
+"id": "imp_road_27",
+"type": "road",
+"name": "Planned street of Tiberius",
+"geom": {
+"type": "line",
+"coords": [
+[
+516.0,
+438.0
+],
+[
+516.0,
+402.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 62,
+"structure": {
+"id": "imp_road_28",
+"type": "road",
+"name": "Street of Maurice",
+"geom": {
+"type": "line",
+"coords": [
+[
+507.1,
+488.0
+],
+[
+516.0,
+488.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Maurice."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 62,
+"structure": {
+"id": "imp_dis_10",
+"type": "district",
+"name": "Quarter of Maurice",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+536.0,
+513.0
+],
+[
+536.0,
+463.0
+],
+[
+496.0,
+463.0
+],
+[
+496.0,
+511.2
+],
+[
+500.0,
+510.5
+],
+[
+500.2,
+510.5
+],
+[
+500.4,
+510.5
+],
+[
+500.6,
+510.5
+],
+[
+500.8,
+510.5
+],
+[
+501.0,
+510.6
+],
+[
+501.2,
+510.7
+],
+[
+501.3,
+510.8
+],
+[
+501.5,
+510.9
+],
+[
+501.6,
+511.0
+],
+[
+503.7,
+512.8
+],
+[
+503.7,
+512.9
+],
+[
+503.8,
+512.9
+],
+[
+504.0,
+513.0
+],
+[
+504.0,
+513.0
+],
+[
+509.4,
+513.0
+],
+[
+509.6,
+512.7
+],
+[
+509.7,
+512.5
+],
+[
+509.9,
+512.4
+],
+[
+510.0,
+512.3
+],
+[
+510.2,
+512.2
+],
+[
+510.3,
+512.1
+],
+[
+510.5,
+512.0
+],
+[
+510.7,
+511.9
+],
+[
+510.9,
+511.9
+],
+[
+511.1,
+511.9
+],
+[
+511.3,
+511.9
+],
+[
+511.5,
+511.9
+],
+[
+511.7,
+511.9
+],
+[
+511.8,
+512.0
+],
+[
+512.0,
+512.0
+],
+[
+512.2,
+512.1
+],
+[
+512.3,
+512.2
+],
+[
+512.5,
+512.3
+],
+[
+513.3,
+513.0
+],
+[
+536.0,
+513.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Maurice."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 62,
+"structure": {
+"id": "imp_road_29",
+"type": "road",
+"name": "Planned street of Maurice",
+"geom": {
+"type": "line",
+"coords": [
+[
+534.0,
+496.3
+],
+[
+498.0,
+496.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 62,
+"structure": {
+"id": "imp_road_30",
+"type": "road",
+"name": "Planned street of Maurice",
+"geom": {
+"type": "line",
+"coords": [
+[
+516.0,
+506.0
+],
+[
+516.0,
+470.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 65,
+"structure": {
+"id": "imp_dis_11",
+"type": "district",
+"name": "Quarter of Heraclius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+397.1,
+395.5
+],
+[
+457.1,
+395.5
+],
+[
+457.1,
+345.5
+],
+[
+397.1,
+345.5
+],
+[
+397.1,
+395.5
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Heraclius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 65,
+"structure": {
+"id": "imp_road_34",
+"type": "road",
+"name": "Street of Pulcheria",
+"geom": {
+"type": "line",
+"coords": [
+[
+433.4,
+446.8
+],
+[
+423.0,
+448.1
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Pulcheria."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 65,
+"structure": {
+"id": "imp_dis_12",
+"type": "district",
+"name": "Quarter of Pulcheria",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+393.0,
+473.1
+],
+[
+453.0,
+473.1
+],
+[
+453.0,
+423.1
+],
+[
+393.0,
+423.1
+],
+[
+393.0,
+473.1
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Pulcheria."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 66,
+"structure": {
+"id": "imp_church_1",
+"type": "church",
+"name": "Great Church of St Polyeuctus",
+"dna": {
+"motif": "domed_basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "wonder"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+557.7,
+419.7
+],
+[
+555.6,
+409.9
+],
+[
+565.4,
+407.8
+],
+[
+567.4,
+417.6
+]
+]
+},
+"label": "Great Church of St Polyeuctus"
+},
+"why": "The emperor raises a domed church for St Polyeuctus that every ship on the sea can see."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 63,
+"structure": {
+"id": "imp_granary_3",
+"type": "granary",
+"name": "Horrea of Marcian",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+545.9,
+428.2
+],
+[
+533.9,
+428.2
+],
+[
+533.9,
+422.2
+],
+[
+545.9,
+422.2
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+},
+{
+"op": "build",
+"faction": "army",
+"year": 70,
+"structure": {
+"id": "imp_wall_1",
+"type": "wall",
+"name": "Wall of the Emperors",
+"geom": {
+"type": "line",
+"coords": [
+[
+168.0,
+603.5
+],
+[
+217.0,
+571.3
+],
+[
+196.0,
+368.6
+],
+[
+287.0,
+248.8
+],
+[
+336.0,
+138.2
+],
+[
+372.7,
+98.0
+]
+]
+},
+"label": "Wall of the Emperors"
+},
+"why": "The emperor rings a city not yet built with a wall far beyond the houses."
+}
+],
+"growth_floor": 150
+}

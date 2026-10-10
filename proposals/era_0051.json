@@ -1,0 +1,656 @@
+{
+"era": {
+"from": 51,
+"to": 60,
+"title": "中轴西进"
+},
+"actions": [
+{
+"op": "build",
+"faction": "emperor",
+"year": 51,
+"structure": {
+"id": "imp_axis_2",
+"type": "road",
+"name": "Imperial Axis, stage 2",
+"width": 2.6,
+"geom": {
+"type": "line",
+"coords": [
+[
+573.0,
+454.0
+],
+[
+535.0,
+454.0
+]
+]
+}
+},
+"why": "The emperor drives the colonnaded axis another half kilometre west, through whatever stands in the way."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 53,
+"structure": {
+"id": "imp_forum_1",
+"type": "forum",
+"name": "Forum of Arcadius",
+"dna": {
+"motif": "peristyle",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 3,
+"scale": "monumental"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+551.9,
+463.3
+],
+[
+535.9,
+463.3
+],
+[
+535.9,
+451.3
+],
+[
+551.9,
+451.3
+]
+]
+},
+"label": "Forum of Arcadius"
+},
+"why": "A forum for Arcadius at the new end of the axis, ringed with porticoes."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 52,
+"structure": {
+"id": "imp_dis_5",
+"type": "district",
+"name": "Quarter of Zeno",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+574.0,
+395.0
+],
+[
+534.0,
+395.0
+],
+[
+534.0,
+445.0
+],
+[
+574.0,
+445.0
+],
+[
+574.0,
+395.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Zeno."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 52,
+"structure": {
+"id": "imp_road_14",
+"type": "road",
+"name": "Planned street of Zeno",
+"geom": {
+"type": "line",
+"coords": [
+[
+572.0,
+428.3
+],
+[
+536.0,
+428.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 52,
+"structure": {
+"id": "imp_road_15",
+"type": "road",
+"name": "Planned street of Zeno",
+"geom": {
+"type": "line",
+"coords": [
+[
+554.0,
+438.0
+],
+[
+554.0,
+402.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 52,
+"structure": {
+"id": "imp_road_16",
+"type": "road",
+"name": "Street of Anastasius",
+"geom": {
+"type": "line",
+"coords": [
+[
+572.3,
+493.1
+],
+[
+554.0,
+488.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A street is laid out toward the new quarter of Anastasius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 52,
+"structure": {
+"id": "imp_dis_6",
+"type": "district",
+"name": "Quarter of Anastasius",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+574.0,
+463.0
+],
+[
+534.0,
+463.0
+],
+[
+534.0,
+513.0
+],
+[
+538.1,
+513.0
+],
+[
+541.4,
+511.5
+],
+[
+541.6,
+511.5
+],
+[
+541.8,
+511.4
+],
+[
+542.0,
+511.4
+],
+[
+542.2,
+511.4
+],
+[
+542.4,
+511.4
+],
+[
+542.5,
+511.4
+],
+[
+542.5,
+511.4
+],
+[
+542.7,
+511.4
+],
+[
+547.1,
+511.4
+],
+[
+547.3,
+511.4
+],
+[
+547.3,
+511.4
+],
+[
+547.4,
+511.4
+],
+[
+547.6,
+511.4
+],
+[
+551.6,
+511.3
+],
+[
+551.6,
+511.3
+],
+[
+551.8,
+511.3
+],
+[
+552.0,
+511.3
+],
+[
+552.2,
+511.2
+],
+[
+557.3,
+511.3
+],
+[
+557.4,
+511.3
+],
+[
+557.6,
+511.3
+],
+[
+557.8,
+511.4
+],
+[
+558.0,
+511.4
+],
+[
+560.3,
+512.3
+],
+[
+560.4,
+512.3
+],
+[
+560.5,
+512.1
+],
+[
+560.6,
+512.0
+],
+[
+560.8,
+511.9
+],
+[
+560.9,
+511.8
+],
+[
+561.1,
+511.7
+],
+[
+561.3,
+511.6
+],
+[
+561.5,
+511.6
+],
+[
+561.7,
+511.5
+],
+[
+566.3,
+510.9
+],
+[
+566.6,
+510.9
+],
+[
+566.8,
+510.9
+],
+[
+574.0,
+511.8
+],
+[
+574.0,
+463.0
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Anastasius."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 52,
+"structure": {
+"id": "imp_road_17",
+"type": "road",
+"name": "Planned street of Anastasius",
+"geom": {
+"type": "line",
+"coords": [
+[
+572.0,
+496.3
+],
+[
+536.0,
+496.3
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 52,
+"structure": {
+"id": "imp_road_18",
+"type": "road",
+"name": "Planned street of Anastasius",
+"geom": {
+"type": "line",
+"coords": [
+[
+554.0,
+506.0
+],
+[
+554.0,
+470.0
+]
+]
+},
+"width": 1.6
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 55,
+"structure": {
+"id": "imp_road_19",
+"type": "road",
+"name": "Street of Justin",
+"geom": {
+"type": "line",
+"coords": [
+[
+413.3,
+468.8
+],
+[
+420.9,
+500.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justin."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 55,
+"structure": {
+"id": "imp_dis_7",
+"type": "district",
+"name": "Quarter of Justin",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+390.9,
+525.4
+],
+[
+450.9,
+525.4
+],
+[
+450.9,
+475.4
+],
+[
+390.9,
+475.4
+],
+[
+390.9,
+525.4
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Justin."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 55,
+"structure": {
+"id": "imp_road_21",
+"type": "road",
+"name": "Planned street of Justin",
+"geom": {
+"type": "line",
+"coords": [
+[
+420.9,
+473.4
+],
+[
+420.9,
+527.4
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 55,
+"structure": {
+"id": "imp_road_22",
+"type": "road",
+"name": "Street of Justinian",
+"geom": {
+"type": "line",
+"coords": [
+[
+377.0,
+442.0
+],
+[
+365.2,
+424.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A street is laid out toward the new quarter of Justinian."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 55,
+"structure": {
+"id": "imp_dis_8",
+"type": "district",
+"name": "Quarter of Justinian",
+"geom": {
+"type": "polygon",
+"coords": [
+[
+335.2,
+449.8
+],
+[
+395.2,
+449.8
+],
+[
+395.2,
+399.8
+],
+[
+335.2,
+399.8
+],
+[
+335.2,
+449.8
+]
+]
+},
+"spacing": 1.4725
+},
+"why": "Houses are let to settle the quarter of Justinian."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 55,
+"structure": {
+"id": "imp_road_24",
+"type": "road",
+"name": "Planned street of Justinian",
+"geom": {
+"type": "line",
+"coords": [
+[
+365.2,
+397.8
+],
+[
+365.2,
+451.8
+]
+]
+},
+"width": 1.4
+},
+"why": "A straight street is ruled across the new quarter."
+},
+{
+"op": "build",
+"faction": "emperor",
+"year": 53,
+"structure": {
+"id": "imp_granary_2",
+"type": "granary",
+"name": "Horrea of Theodosius",
+"dna": {
+"motif": "basilica",
+"materials": [
+"brick",
+"marble_revetted"
+],
+"ornament": 1,
+"scale": "civic"
+},
+"geom": {
+"type": "polygon",
+"coords": [
+[
+578.6,
+460.0
+],
+[
+566.6,
+460.0
+],
+[
+566.6,
+454.0
+],
+[
+578.6,
+454.0
+]
+]
+}
+},
+"why": "State granaries for the free bread of the annona."
+}
+],
+"growth_floor": 150,
+"review": [
+{
+"round": 1,
+"abandoned": [
+{
+"what": "Column of Arcadius",
+"reasons": [
+"imp_column_1: overlaps standing imp_forum_1 (Forum of Arcadius)"
+]
+}
+]
+}
+]
+}
