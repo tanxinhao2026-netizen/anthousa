@@ -5,11 +5,13 @@ is accepted when the rebuilt world passes engine/check.py and the tests. No PR, 
 
 Rules loop: a push that touches anything else (engine, rules, workflows, AGENTS/HEARTBEAT, published
 history) is accepted only when it is the merge of a pull request on which a human, not an app, posted a
-comment starting with 批准 after the PR's last commit. Every agent here acts through a GitHub App, so its
+comment that is exactly 批准 after the PR's last commit. Every agent here acts through a GitHub App, so its
 comments carry performed_via_github_app; the owner's own comments from the web or phone do not.
 
-The workflow runs the copy of this file that was on main *before* the push, so a push cannot loosen
-the gate that judges it. On failure the workflow reverts the push and opens an issue."""
+The workflow runs the copy of this file that is on main, never the one being judged, so a push cannot
+loosen the gate that judges it. World data lands through a world/* branch: the world workflow checks it
+first and only then moves main (gate before landing). For pushes that reach main any other way, the
+publish workflow re-checks afterwards, restores main's previous tree, and opens an issue."""
 import fnmatch, json, os, subprocess, sys, urllib.request
 
 REPO, TOKEN = os.environ["GITHUB_REPOSITORY"], os.environ["GITHUB_TOKEN"]
@@ -36,13 +38,14 @@ def human_approved():
     pr = prs[0]
     last = max(c["commit"]["committer"]["date"] for c in api(f"pulls/{pr['number']}/commits?per_page=100"))
     for c in api(f"issues/{pr['number']}/comments?per_page=100"):
-        if c["body"].strip().startswith("批准") and c.get("performed_via_github_app") is None \
+        if c["body"].strip().rstrip("。.!！") == "批准" and c.get("performed_via_github_app") is None \
                 and c["user"]["login"] == REPO.split("/")[0] and c["created_at"] > last:
             return True, f"PR #{pr['number']} approved by the owner ({c['html_url']})"
     return False, f"PR #{pr['number']} has no 批准 from the owner (posted by a person, not an app) after its last commit"
 
 
 def main():
+    mode = os.environ.get("MODE", "main")  # world: a world/* branch asking to land on main; main: backstop after a push
     if set(BEFORE) == {"0"}:
         print("first push: nothing to compare"); return 0
     rows = [l.split("\t") for l in git("diff", "--name-status", BEFORE, AFTER).splitlines() if l]
@@ -55,6 +58,11 @@ def main():
             protected.append(f"{st} {f}")
     if not protected:
         print(f"world data only ({len(rows)} files): accepted on check.py + tests"); return 0
+    if mode == "world":
+        why = "a world branch may only add world data; rules changes go through a PR with the owner's 批准"
+        print("REJECTED: " + why + "\n  " + "\n  ".join(protected))
+        open(os.environ.get("GUARD_REASON", "/tmp/guard_reason"), "w").write(why + "\n\n" + "\n".join(protected))
+        return 1
     ok, why = human_approved()
     print(("RULES CHANGE ACCEPTED: " if ok else "REJECTED: ") + why)
     print("protected changes:\n  " + "\n  ".join(protected))
