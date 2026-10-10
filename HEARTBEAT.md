@@ -7,8 +7,8 @@
 3. `python3 engine/step.py <file> --dry-run`; revise rejected actions at most 2 rounds; log them under "review".
    Rejections you choose not to fix stay in history.
 4. Commit: `python3 engine/step.py <file>`; write chronicle/<from>_<to>.md (Chinese) AND chronicle/en/<from>_<to>.md (English, same {{id}} refs); add every new id to i18n/i18n.json (names_zh, labels_zh, titles_en). Keep proposals/make_era_NNNN.py so the era is reproducible; final state must come from engine/build_all.py.
-5. `python3 engine/check.py` must pass; an independent reviewer (separate agent) reads chronicle vs data for contradictions.
-6. `python3 engine/render.py`; publish docs/ and changed files.
+5. `python3 engine/build_all.py` and `python3 engine/test_grammar_rules.py` must pass locally.
+6. Push the era's files to a branch `world/af-NNNN`, then fast-forward `main` to it in one ref update (see AGENTS.md, world loop). No PR. The guard in build-and-publish rebuilds, checks, and reverts on failure.
 Brakes: check fails twice in a row → stop, ask the user. Every 10 eras (a century) → pause for the user's direction.
 
 ## 建筑语法（从 AF 21 起生效，见 docs/arch-grammar-draft.md）
