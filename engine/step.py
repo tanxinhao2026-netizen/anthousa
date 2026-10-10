@@ -119,7 +119,9 @@ def grow(w, era, rnd, floor=GROWTH_FLOOR):
     cap = rules.capacities(w, y1)
     limit = int(min(cap["food"], cap["water"]) * 0.97 / rules.PEOPLE_PER_HOUSE)
     have = len(houses_standing(w, y1))
-    target = min(limit, max(have + floor, int(have * (1 + GROWTH_PER_ERA))))
+    G2 = rules.CAL.get("growth_cap_from")  # experiment: a different growth cap from a given year on; earlier eras untouched
+    gr = G2["value"] if G2 and y0 >= G2["from_year"] else GROWTH_PER_ERA
+    target = min(limit, max(have + floor, int(have * (1 + gr))))
     need = target - have
     if need <= 0:
         return 0
@@ -226,7 +228,7 @@ def roll_events_fixed(w, era, rnd):
     radius are drawn first, before anything about the world is read, so no proposal can move them. Only where a
     fire lands (among the standing houses) and what it happens to catch depend on the city as built."""
     y0, y1 = era["from"], era["to"]
-    fire = (rnd.random() < 0.28, rnd.randint(y0, y1), rnd.random(), rnd.random())
+    fire = (rnd.random() < rules.CAL.get("dice", {}).get("fire_p", 0.28), rnd.randint(y0, y1), rnd.random(), rnd.random())
     quake = (rnd.random() < 0.08, rnd.randint(y0, y1))
     plague = (rnd.random() < 0.06, rnd.randint(y0, y1))
     dmg = random.Random(rnd.random())  # per-house / per-building damage rolls
