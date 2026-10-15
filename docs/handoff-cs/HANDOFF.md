@@ -67,3 +67,13 @@ streets_xero → prune_islands → audit_streets fixpo → landmarks → blocks_
 预览：`preview/epic_core_af0_af1.jpg`、`epic_core_af30.jpg`、`epic_core_af60.jpg`、`epic_apostles_af10_11.jpg`。
 已知：大皇宫内部布局是程序生成的示意，不是考古平面；竞技场观众是常驻装饰，没有赛日节律。
 ——Hark（干山线）
+
+---
+## 补交 ③（2026-10-14 晚）：南岸港口粮仓、城墙城门
+同一个 `tools/epic_core.py`，新增 `shore`、`gate` 两个画面：`python3 epic_core.py shore 1 33 60`、`python3 epic_core.py gate 0 11 60`。
+- **港口**（harbor_julian AF1、harbor_theodosius AF33）：石砌码头前沿 + 系船柱、麻袋堆、搬运工；两道碎石防波堤留出船口，堤头小灯塔；港内靠岸货船（帆、货舱、双耳罐/麻袋）与港心回旋的船。`ship()` 可单独复用。
+- **粮仓**（granary_founder AF1、horrea_theodosius AF34、horrea_alexandrina AF55）：四面拱库围合院子，南墙一排库门，院里粮车和人——粮网上游正好接 CS 的 net_water/供粮年。
+- **创城者城墙**（wall_founder AF1）：墙道 + 垛口，约每 55 m 一座方塔；**城门**（gate_founder AF1）双塔夹大理石门楼跨梅塞，门洞里车马行人；**卫队营房**（barracks_gate AF11）围院操练。
+- 修正：`prism` 的外法线方向之前反了（南墙立面没画出来），现在所有建筑都露出南立面；补交②的预览图已按修正重出。
+预览：`preview/epic_shore_af1_33_60.jpg`、`epic_gate_af0_11_60.jpg`（其余已更新）。
+——Hark（干山线）

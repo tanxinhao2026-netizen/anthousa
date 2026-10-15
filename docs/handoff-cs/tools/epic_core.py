@@ -78,7 +78,7 @@ def prism(c, pg, h, roof=TILE, wall=(206, 184, 150), ridge=True, sh=True, outlin
     pts = list(pg.exterior.coords)
     if pg.exterior.is_ccw: pts = pts[::-1]
     for (ax, ay), (bx, by) in zip(pts, pts[1:]):
-        nx, ny = (by - ay), -(bx - ax)   # outward normal for cw ring (y down)
+        nx, ny = -(by - ay), (bx - ax)   # outward normal (ring forced to shapely-cw, y down)
         if ny > 0.05 * math.hypot(nx, ny):
             k = 0.82 + 0.18 * (nx / (abs(nx) + abs(ny) + 1e-9))
             col = tuple(int(v * k) for v in wall)
@@ -510,7 +510,176 @@ def render_apostles(Y, out):
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
     img.save(out, quality=88); return out
 
+# ---------- harbors, granaries, walls & gates ----------
+def ship(c, x, y, ang, L=26, sail=True, seed=0):
+    hull = affinity.translate(affinity.rotate(Polygon([(-L / 2, -3.5), (L / 2 - 5, -3.5), (L / 2, 0), (L / 2 - 5, 3.5), (-L / 2, 3.5), (-L / 2 - 2, 0)]), ang, origin=(0, 0)), x, y)
+    shadow(c, hull, 4, a=50)
+    c.d.polygon(c.T(hull.exterior.coords), fill=(110, 76, 46, 255))
+    inner = hull.buffer(-1.4)
+    if not inner.is_empty:
+        for p in polys(inner): c.d.polygon(c.T(p.exterior.coords), fill=(156, 118, 76, 255))
+    if sail:
+        m = affinity.translate(affinity.rotate(Point(-L * 0.05, 0), ang, origin=(0, 0)), x, y)
+        a = math.radians(ang + 90)
+        sw = L * 0.42
+        p1 = (m.x + math.cos(a) * sw / 2, m.y + math.sin(a) * sw / 2); p2 = (m.x - math.cos(a) * sw / 2, m.y - math.sin(a) * sw / 2)
+        col = [(236, 228, 206), (226, 206, 170), (200, 120, 90)][seed % 3]
+        c.d.polygon(c.T([p1, p2, (p2[0], p2[1] - 14), (p1[0], p1[1] - 14)]), fill=col + (235,))
+        c.d.line(c.T([(m.x, m.y), (m.x, m.y - 17)]), fill=(80, 56, 36, 255), width=SS)
+    for k in range(3):   # cargo: amphorae / grain sacks
+        q = affinity.translate(affinity.rotate(Point(-L * 0.3 + k * 4, 0), ang, origin=(0, 0)), x, y)
+        c.d.ellipse([(q.x - 1.3) * SS, (q.y - 1.6) * SS, (q.x + 1.3) * SS, (q.y + 0.6) * SS], fill=(214, 196, 150, 255))
+
+def harbor(c, sid, Y, nships, seed):
+    s = ST[sid]; pg = c.poly_local(s['geom']['coords'])
+    x0, y0, x1, y1 = pg.bounds
+    basin = box(x0 + 14, y0 + 12, x1 - 14, y1 - 4)
+    c.d.polygon(c.T(pg.exterior.coords), fill=(198, 188, 164, 255))          # quay apron
+    c.d.polygon(c.T(basin.exterior.coords), fill=(58, 106, 124, 255))        # still water
+    for i in range(30):
+        wx, wy = x0 + 16 + hsh(i, seed) * (x1 - x0 - 32), y0 + 14 + hsh(i, seed + 1) * (y1 - y0 - 20)
+        c.d.line([wx * SS, wy * SS, (wx + 5) * SS, wy * SS], fill=(96, 146, 160, 200), width=1)
+    # quay edge stones on the land (north) side, bollards, sacks, porters
+    c.d.line(c.T([(basin.bounds[0], basin.bounds[1]), (basin.bounds[2], basin.bounds[1])]), fill=(150, 138, 112, 255), width=3 * SS)
+    for i in range(int((x1 - x0) / 14)):
+        bx = x0 + 18 + i * 14
+        if bx > x1 - 18: break
+        c.d.ellipse([(bx - 1) * SS, (y0 + 9) * SS, (bx + 1) * SS, (y0 + 11) * SS], fill=(80, 70, 56, 255))
+        if hsh(i, seed + 3) < 0.6:
+            for k in range(3): c.d.ellipse([(bx + 3 + k * 2.2) * SS, (y0 + 3) * SS, (bx + 5 + k * 2.2) * SS, (y0 + 5.5) * SS], fill=(214, 196, 150, 255))
+    people(c, box(x0 + 4, y0 + 1, x1 - 4, y0 + 11), 50, seed + 5)
+    # rubble moles closing the basin to the sea, with a gap for ships
+    gap = (x0 + x1) / 2
+    for a, b in (((x0, y1), (gap - 14, y1)), ((gap + 14, y1), (x1, y1))):
+        mole = LineString([a, b]).buffer(5, cap_style=1)
+        prism(c, mole, 4, roof=(170, 160, 140), wall=(140, 128, 108), ridge=False)
+        for i in range(int(mole.length / 6)):
+            q = LineString([a, b]).interpolate(i * 3)
+            c.d.ellipse([(q.x - 1.6) * SS, (q.y - 5.5) * SS, (q.x + 1.6) * SS, (q.y - 3.5) * SS], fill=(186, 176, 156, 255))
+    for side in (x0 + 6, x1 - 6):
+        prism(c, LineString([(side, y0 + 10), (side, y1)]).buffer(5, cap_style=2), 4, roof=(178, 168, 146), wall=(140, 128, 108), ridge=False)
+    for k, (gx_) in enumerate((gap - 15, gap + 15)):   # small light towers on the mole heads
+        prism(c, Point(gx_, y1).buffer(4.5, 12), 14, roof=(200, 190, 170), wall=(176, 162, 136), ridge=False)
+        c.d.ellipse([(gx_ - 1.5) * SS, (y1 - 17) * SS, (gx_ + 1.5) * SS, (y1 - 14) * SS], fill=(240, 190, 90, 255))
+    bb = basin.buffer(-10)
+    for i in range(nships):   # moored ships along the quay, a couple swinging in the basin
+        if i < nships * 0.7:
+            x = bb.bounds[0] + 10 + i * (bb.bounds[2] - bb.bounds[0] - 20) / max(1, int(nships * 0.7)); y = bb.bounds[1] + 2; ang = 90 + (hsh(i, seed) - 0.5) * 10
+        else:
+            x = bb.bounds[0] + hsh(i, seed + 7) * (bb.bounds[2] - bb.bounds[0]); y = bb.bounds[1] + 16 + hsh(i, seed + 8) * max(1, bb.bounds[3] - bb.bounds[1] - 18); ang = hsh(i, seed + 9) * 180
+        ship(c, x, y + 12, ang, L=24 + 8 * hsh(i, seed + 2), sail=hsh(i, seed + 4) < 0.45, seed=i)
+    return pg
+
+def horrea(c, sid, Y):
+    s = ST[sid]; pg = c.poly_local(s['geom']['coords'])
+    q = list(pg.minimum_rotated_rectangle.exterior.coords)[:4]
+    e = [(q[i], q[(i + 1) % 4]) for i in range(4)]; i = 0 if math.dist(*e[0]) >= math.dist(*e[1]) else 1
+    a, b = e[i]; ang = math.atan2(b[1] - a[1], b[0] - a[0]); L, Wd = math.dist(*e[i]), math.dist(*e[(i + 1) % 4])
+    cen = pg.centroid
+    def place(g): return affinity.translate(affinity.rotate(g, ang, origin=(0, 0), use_radians=True), cen.x, cen.y)
+    court = place(box(-L / 2 + 10, -Wd / 2 + 10, L / 2 - 10, Wd / 2 - 10))
+    shadow(c, pg, 16)
+    c.d.polygon(c.T(pg.exterior.coords), fill=(200, 188, 162, 255))
+    # ranges of vaulted store rooms around a courtyard, buttressed outer walls, tiled roofs with ridge
+    ranges = [place(box(-L / 2, -Wd / 2, L / 2, -Wd / 2 + 10)), place(box(-L / 2, Wd / 2 - 10, L / 2, Wd / 2)),
+              place(box(-L / 2, -Wd / 2 + 10, -L / 2 + 10, Wd / 2 - 10)), place(box(L / 2 - 10, -Wd / 2 + 10, L / 2, Wd / 2 - 10))]
+    for r in sorted(ranges, key=lambda g: g.centroid.y): prism(c, r, 16, roof=TILE, wall=(204, 178, 140), sh=False)
+    for k in range(int(L / 7)):     # store-room doors and buttresses on the south face
+        p = place(Point(-L / 2 + 4 + k * 7, Wd / 2))
+        c.d.rectangle([(p.x - 1.2) * SS, (p.y - 6) * SS, (p.x + 1.2) * SS, p.y * SS], fill=(76, 56, 38, 255))
+    if not court.is_empty:
+        people(c, court, int(court.area / 90), 61)
+        for k in range(int(court.area / 160)):   # grain carts
+            p = court.representative_point() if k == 0 else Point(court.bounds[0] + hsh(k, 63) * (court.bounds[2] - court.bounds[0]), court.bounds[1] + hsh(k, 64) * (court.bounds[3] - court.bounds[1]))
+            if not court.contains(p): continue
+            c.d.rectangle([(p.x - 3) * SS, (p.y - 2) * SS, (p.x + 3) * SS, (p.y + 1) * SS], fill=(120, 86, 52, 255))
+            c.d.ellipse([(p.x - 2.5) * SS, (p.y - 3.5) * SS, (p.x + 2.5) * SS, (p.y - 0.5) * SS], fill=(220, 200, 150, 255))
+    return pg
+
+def city_wall(c, Y, gate_poly=None):
+    s = ST['wall_founder']; ln = c.line_local(s['geom']['coords'])
+    cut = gate_poly.buffer(6) if gate_poly is not None else Point(-99, -99).buffer(1)
+    band = ln.buffer(9, cap_style=2).difference(cut)
+    for p in polys(band.intersection(box(-50, -50, c.w + 50, c.h + 50))): prism(c, p, 22, roof=(146, 140, 130), wall=(196, 182, 156), ridge=False, outline=(110, 104, 96))
+    # crenellations on the parapet
+    off = ln.parallel_offset(7, 'right')
+    for i in range(int(ln.length / 4)):
+        q = off.interpolate(i * 4)
+        if cut.contains(q) or not (0 < q.x < c.w and 0 < q.y < c.h): continue
+        c.d.rectangle([(q.x - 1) * SS, (q.y - 25) * SS, (q.x + 1) * SS, (q.y - 22) * SS], fill=(232, 226, 212, 255))
+    for i in range(int(ln.length / 64)):   # square towers every ~55 m
+        q = ln.interpolate(i * 64 + 30)
+        if cut.buffer(10).contains(q) or not (-20 < q.x < c.w + 20 and -20 < q.y < c.h + 20): continue
+        t = affinity.rotate(box(q.x - 11, q.y - 11, q.x + 11, q.y + 11), 12, origin=(q.x, q.y))
+        prism(c, t, 34, roof=(132, 126, 118), wall=(200, 186, 160), ridge=False, outline=(96, 90, 84))
+        for k in range(5):
+            c.d.rectangle([(q.x - 10 + k * 4.5) * SS, (q.y - 39) * SS, (q.x - 8 + k * 4.5) * SS, (q.y - 35) * SS], fill=(232, 226, 212, 255))
+    return ln.buffer(10)
+
+def gate(c, Y):
+    pg = c.poly_local(ST['gate_founder']['geom']['coords']); cx, cy = pg.centroid.x, pg.centroid.y
+    for dx in (-22, 22):    # two flanking towers
+        t = Point(cx + dx * 0.25, cy + dx).buffer(17, 8)
+        prism(c, t, 46, roof=(132, 126, 118), wall=(214, 200, 172), ridge=False, outline=(96, 90, 84))
+    body = affinity.rotate(box(cx - 10, cy - 14, cx + 10, cy + 14), 12, origin=(cx, cy))
+    prism(c, body, 34, roof=MARBLE, wall=(214, 204, 184), ridge=False, outline=MARBLE_D)
+    c.d.pieslice([(cx - 7) * SS, (cy + 12 - 26) * SS, (cx + 7) * SS, (cy + 12 - 12) * SS], 180, 360, fill=(60, 46, 34, 255))
+    c.d.rectangle([(cx - 7) * SS, (cy + 12 - 19) * SS, (cx + 7) * SS, (cy + 12) * SS], fill=(60, 46, 34, 255))
+    # traffic through the gate: carts and walkers on the Mese
+    for k in range(6):
+        px, py = cx - 30 + k * 12 + hsh(k, 91) * 4, cy + (hsh(k, 92) - 0.5) * 10
+        c.d.rectangle([(px - 3) * SS, (py - 1.5) * SS, (px + 3) * SS, (py + 1.5) * SS], fill=(120, 86, 52, 255)) if k % 2 else c.d.ellipse([(px - 0.8) * SS, (py - 1.6) * SS, (px + 0.8) * SS, (py + 0.3) * SS], fill=(150, 60, 50, 255))
+    return pg
+
+def barracks(c, Y):
+    pg = c.poly_local(ST['barracks_gate']['geom']['coords'])
+    ring = pg.difference(pg.buffer(-11, join_style=2))
+    c.d.polygon(c.T(pg.exterior.coords), fill=(196, 184, 158, 255))
+    inner = pg.buffer(-11, join_style=2)
+    for i in range(14):   # soldiers drilling in rows
+        x0, y0, x1, y1 = inner.bounds
+        px, py = x0 + 6 + (i % 7) * (x1 - x0 - 12) / 6, y0 + 8 + (i // 7) * 8
+        c.d.ellipse([(px - 0.8) * SS, (py - 1.6) * SS, (px + 0.8) * SS, (py + 0.3) * SS], fill=(160, 40, 40, 255))
+    prism(c, ring, 14, roof=TILE, wall=(206, 186, 150))
+    return pg
+
+def render_shore(Y, out):
+    c = Canvas(462, 486, 596, 536)
+    ground(c, Y); roads(c, Y)
+    epic = [c.poly_local(ST[k]['geom']['coords']) for k in ('harbor_julian', 'granary_founder', 'harbor_theodosius', 'horrea_theodosius', 'horrea_alexandrina') if alive(ST[k], Y)]
+    keep = unary_union([e.buffer(3) for e in epic]) if epic else None
+    occ = [Point(c.P(h['cx'], h['cz'])).buffer(18) for h in D['houses'] if h['built'] <= Y and (h['destroyed'] is None or h['destroyed'] > Y) and c.x0 - 3 < h['cx'] < c.x0 + c.w / S + 3 and c.z0 - 3 < h['cz'] < c.z0 + c.h / S + 3]
+    occ += [c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2 + 4) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]
+    occ += [e.buffer(14) for e in epic]
+    trees(c, Y, unary_union(occ))
+    houses(c, Y, keep)
+    if alive(ST['harbor_julian'], Y): harbor(c, 'harbor_julian', Y, 15, 201)
+    if alive(ST['harbor_theodosius'], Y): harbor(c, 'harbor_theodosius', Y, 9, 301)
+    for k in ('granary_founder', 'horrea_theodosius', 'horrea_alexandrina'):
+        if alive(ST[k], Y): horrea(c, k, Y)
+    img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
+    d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
+    img.save(out, quality=88); return out
+
+def render_gate(Y, out):
+    c = Canvas(396, 452, 444, 494)
+    ground(c, Y); roads(c, Y)
+    g = c.poly_local(ST['gate_founder']['geom']['coords'])
+    wall_zone = c.line_local(ST['wall_founder']['geom']['coords']).buffer(26) if Y >= 1 else None
+    ep = [g.buffer(20)] + ([c.poly_local(ST['barracks_gate']['geom']['coords']).buffer(3)] if alive(ST['barracks_gate'], Y) else [])
+    keep = unary_union(ep + ([wall_zone] if wall_zone is not None else []))
+    occ = [Point(c.P(h['cx'], h['cz'])).buffer(18) for h in D['houses'] if h['built'] <= Y and (h['destroyed'] is None or h['destroyed'] > Y) and c.x0 - 3 < h['cx'] < c.x0 + c.w / S + 3 and c.z0 - 3 < h['cz'] < c.z0 + c.h / S + 3]
+    occ += [c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2 + 4) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]
+    trees(c, Y, unary_union(occ + [keep]))
+    houses(c, Y, keep)
+    if alive(ST['barracks_gate'], Y): barracks(c, Y)
+    if Y >= 1:
+        city_wall(c, Y, g); gate(c, Y)
+    img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
+    d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
+    img.save(out, quality=88); return out
+
 if __name__ == '__main__':
     what = sys.argv[1]; ys = [int(v) for v in sys.argv[2:]]
     for Y in ys:
-        f = (render_core if what == 'core' else render_apostles)(Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)
+        f = {'core': render_core, 'apostles': render_apostles, 'shore': render_shore, 'gate': render_gate}[what](Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)
