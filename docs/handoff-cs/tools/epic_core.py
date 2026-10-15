@@ -833,6 +833,20 @@ def city_wall(c, Y, gate_poly=None):
     s = ST['wall_founder']; ln = c.line_local(s['geom']['coords'])
     cut = gate_poly.buffer(6) if gate_poly is not None else Point(-99, -99).buffer(1)
     band = ln.buffer(9, cap_style=2).difference(cut)
+    st, _, fr = phase('wall_founder', Y)
+    if st is None: return None
+    if st != 'done':   # foundation trench (site) or a wall standing part-way (frame), towers as stumps
+        hgt = 3 if st == 'site' else 22 * (0.3 + 0.6 * fr)
+        for p in polys(band.intersection(box(-50, -50, c.w + 50, c.h + 50))):
+            if st == 'site': site(c, p, 701, int(p.area / 260), stones=True)
+            else: prism(c, p, hgt, roof=(176, 160, 128), wall=(196, 182, 156), ridge=False)
+        for i in range(int(ln.length / 64)):
+            q = ln.interpolate(i * 64 + 30)
+            if cut.buffer(10).contains(q) or not (-20 < q.x < c.w + 20 and -20 < q.y < c.h + 20): continue
+            t = affinity.rotate(box(q.x - 11, q.y - 11, q.x + 11, q.y + 11), 12, origin=(q.x, q.y))
+            if st == 'site': c.d.polygon(c.T(t.exterior.coords), outline=(120, 96, 64, 255), width=SS)
+            else: rising(c, t, 34, fr, 710 + i, wall=(200, 186, 160))
+        return ln.buffer(10)
     for p in polys(band.intersection(box(-50, -50, c.w + 50, c.h + 50))): prism(c, p, 22, roof=(146, 140, 130), wall=(196, 182, 156), ridge=False, outline=(110, 104, 96))
     # crenellations on the parapet
     off = ln.parallel_offset(7, 'right')
@@ -850,7 +864,17 @@ def city_wall(c, Y, gate_poly=None):
     return ln.buffer(10)
 
 def gate(c, Y):
+    st, _, fr = phase('gate_founder', Y)
+    if st is None: return None
     pg = c.poly_local(ST['gate_founder']['geom']['coords']); cx, cy = pg.centroid.x, pg.centroid.y
+    if st != 'done':
+        fp = unary_union([Point(cx + dx * 0.25, cy + dx).buffer(17, 8) for dx in (-22, 22)] + [affinity.rotate(box(cx - 10, cy - 14, cx + 10, cy + 14), 12, origin=(cx, cy))])
+        if st == 'site': site(c, fp.buffer(4), 731, 18)
+        else:
+            site(c, fp.buffer(6), 731, 6, stones=True)
+            for dx in (-22, 22): rising(c, Point(cx + dx * 0.25, cy + dx).buffer(17, 8), 46, fr, 733 + dx, wall=(214, 200, 172))
+            crane(c, cx + 26, cy - 4, 40)
+        return pg
     for dx in (-22, 22):    # two flanking towers
         t = Point(cx + dx * 0.25, cy + dx).buffer(17, 8)
         prism(c, t, 46, roof=(132, 126, 118), wall=(214, 200, 172), ridge=False, outline=(96, 90, 84))
@@ -865,7 +889,12 @@ def gate(c, Y):
     return pg
 
 def barracks(c, Y):
+    st, _, fr = phase('barracks_gate', Y)
+    if st is None: return None
     pg = c.poly_local(ST['barracks_gate']['geom']['coords'])
+    if st == 'site': site(c, pg, 741, 20); return pg
+    if st == 'frame':
+        site(c, pg, 741, 6); rising(c, pg.difference(pg.buffer(-11, join_style=2)), 14, fr, 742, wall=(206, 186, 150)); return pg
     ring = pg.difference(pg.buffer(-11, join_style=2))
     c.d.polygon(c.T(pg.exterior.coords), fill=(196, 184, 158, 255))
     inner = pg.buffer(-11, join_style=2)
@@ -904,9 +933,8 @@ def render_gate(Y, out):
     occ += [c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2 + 4) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]
     trees(c, Y, unary_union(occ + [keep]))
     houses(c, Y, keep)
-    if alive(ST['barracks_gate'], Y): barracks(c, Y)
-    if Y >= 1:
-        city_wall(c, Y, g); gate(c, Y)
+    barracks(c, Y)
+    city_wall(c, Y, g); gate(c, Y)
     img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
     img.save(out, quality=88); return out
@@ -927,7 +955,12 @@ def render_horn(Y, out):
     harbor(c, 'harbor_prosphorion', Y, 6 if Y < 1 else 8, 401, land='s', lights=Y >= 1)
     harbor(c, 'harbor_neorion', Y, 12, 501, land='s')
     horrea(c, 'warehouse_horn', Y); horrea(c, 'horrea_troadensia', Y)
-    if phase('tower_horn', Y)[0]:
+    tst, _, tfr = phase('tower_horn', Y)
+    if tst in ('site', 'frame'):
+        t = c.poly_local(ST['tower_horn']['geom']['coords']).buffer(3, join_style=2)
+        if tst == 'site': site(c, t.buffer(4), 751, 8)
+        else: rising(c, t, 34, tfr, 752, wall=(170, 150, 118))
+    if tst == 'done':
         t = c.poly_local(ST['tower_horn']['geom']['coords']).buffer(3, join_style=2)
         prism(c, t, 34, roof=(190, 176, 146), wall=(170, 150, 118), ridge=False)
         x0, y0, x1, y1 = t.bounds

@@ -97,3 +97,13 @@ streets_xero → prune_islands → audit_streets fixpo → landmarks → blocks_
 - 新视图 `python3 epic_core.py horn 0 11 13 15 46`：拜扎斯旧港（建城前无灯塔）、新港、金角湾仓库、特罗阿德粮仓、金角塔。
 - 预览：`preview/epic/epic_phases_shore.jpg`、`epic_phases_horn.jpg`。
 - 狄奥多西港 AF31/32 在 built 年（33）之前就有工地：`phase()` 返回 site/frame，而 `alive()` 仍是 False，读的时候以 phases 为准。
+
+## 补交 ⑥（2026-10-14 夜）：城墙、城门、营房、金角塔按分期出图
+
+main 底账又加了 11 座的 phases（城墙、城门、创城蓄水池、大水道+三段石拱、大喷泉楼、营房、金角塔、狄奥多西广场），见 main `inbox/TO_CS.md`。`tools/epic_core.py`：
+
+- `city_wall()`：site = 沿墙线基槽、石料堆、工人，方塔只画出轮廓线；frame = 墙身按进度升高、方塔为带脚手架的残高；done = 原样（雉堞+方塔）。
+- `gate()`：site 清场；frame 双塔 rising + 起重机；`barracks()`：site / 四面起墙。
+- `render_horn` 里的金角塔按 site/frame/done。
+- 命令：`python3 epic_core.py gate 1 2 3 5 12 13`、`python3 epic_core.py horn 24 25 26`。
+- 水道、石拱、喷泉楼、蓄水池、狄奥多西广场底账已有 phases，这个脚本还没画它们。
