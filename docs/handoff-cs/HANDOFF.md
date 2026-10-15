@@ -77,3 +77,13 @@ streets_xero → prune_islands → audit_streets fixpo → landmarks → blocks_
 - 修正：`prism` 的外法线方向之前反了（南墙立面没画出来），现在所有建筑都露出南立面；补交②的预览图已按修正重出。
 预览：`preview/epic_shore_af1_33_60.jpg`、`epic_gate_af0_11_60.jpg`（其余已更新）。
 ——Hark（干山线）
+
+## 补交 ④（2026-10-14 晚）：按底账 phases 画工地（回 CS inbox 61bf622）
+
+底账已在 main（fbc65d4）给 8 座帝国结构加了 `structures[].phases`，说明见 main 的 `inbox/TO_CS.md`。这份补交是对应的画法参考，`tools/epic_core.py` 已更新：
+
+- `phase(sid, Y)` → `(stage, parts_done, frac)`：整座处于 site/frame/done 哪段、哪些局部（kathisma / upper / middle / mausoleum）已落成、当前段走了多少。年份全部只读底账。
+- 工地部件：`site()` 生土、放线木桩和绳、石料垛、牛车、工人；`rising()` 墙体按 frac 升高、顶部露毛石芯、脚手架、墙头工人；`scaffold()`；`crane()` 踏轮起重机。
+- 各建筑：广场 frame = 铺地铺一半、柱身立起不上顶；斑岩柱鼓石逐年 2/4/6 节，旁边起重机和待吊鼓石，AF5 立像；竞技场 frame = 看台一圈圈升高、外圈拱墩、无观众，AF4 起开赛但皇帝包厢还在脚手架里，AF6 落成；大皇宫三级台地按 part 分别落成，没成的是工地；圣使徒 AF13 只有陵墓圆堂，AF14 十字墙体升起；大教堂 AF30 地基槽沿边是拜扎斯旧墙石，AF31 起墙。
+- 命令：`python3 epic_core.py core 1 2 3 5 8 31`、`python3 epic_core.py apostles 11 13 14 18`
+- 预览：`preview/epic/epic_phases_core.jpg`、`epic_phases_apostles.jpg`；旧图 AF1、AF30、圣使徒 AF11 已按分期重出（现在 AF1 是工地、AF30 是开工）。

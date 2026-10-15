@@ -134,6 +134,87 @@ def people(c, region, n, seed, avoid=None):
         c.d.ellipse([(px - 0.7) * SS, (py - 1.4) * SS, (px + 0.7) * SS, (py + 0.3) * SS], fill=col + (255,))
         placed += 1
 
+
+# ---------- construction phases (world.json structures[].phases, ledger-only years) ----------
+def phase(sid, Y):
+    """-> (stage, parts_done, frac): stage of the whole building in year Y; parts finished early;
+    frac = progress through the current stage toward the next phase year (0..1)"""
+    ph = ST[sid].get('phases')
+    if not ph: return ('done' if alive(ST[sid], Y) else None), set(), 1.0
+    if Y < ph[0]['year']: return None, set(), 0.0
+    cur = None; nxt = None
+    for i, p in enumerate(ph):
+        if p['year'] <= Y and 'part' not in p: cur = (i, p)
+    parts = {p['part'] for p in ph if 'part' in p and p['year'] <= Y}
+    i, p = cur
+    if p['stage'] == 'done': return 'done', parts, 1.0
+    for q in ph[i + 1:]:
+        if 'part' not in q: nxt = q; break
+    frac = (Y - p['year'] + 0.5) / max(1, nxt['year'] - p['year']) if nxt else 0.5
+    return p['stage'], parts, min(1.0, frac)
+
+EARTH = (168, 140, 100)
+def site(c, pg, seed, n_work=24, stones=True, fill=EARTH):
+    """cleared plot: raw earth, survey stakes and cords, stone stacks, an ox cart, workers"""
+    c.d.polygon(c.T(pg.exterior.coords), fill=fill + (255,))
+    x0, y0, x1, y1 = pg.bounds
+    for k in range(int((x1 - x0) * (y1 - y0) / 900) + 4):    # spoil heaps and ruts
+        px, py = x0 + hsh(k, seed) * (x1 - x0), y0 + hsh(k, seed + 3) * (y1 - y0)
+        if not pg.contains(Point(px, py)): continue
+        r = 2 + 4 * hsh(k, seed + 5)
+        c.d.ellipse([(px - r) * SS, (py - r * 0.5) * SS, (px + r) * SS, (py + r * 0.5) * SS], fill=(148, 120, 84, 255))
+    ring = pg.exterior
+    for i in range(int(ring.length / 10)):       # stakes + cord
+        q = ring.interpolate(i * 10)
+        c.d.line([q.x * SS, q.y * SS, q.x * SS, (q.y - 4) * SS], fill=(96, 70, 44, 255), width=SS)
+    c.d.line(c.T(ring.coords, 3), fill=(236, 226, 200, 200), width=1)
+    if stones:
+        for k in range(int(ring.length / 40) + 2):
+            q = ring.interpolate(hsh(k, seed + 9) * ring.length)
+            px, py = q.x + (hsh(k, seed + 11) - 0.5) * 16, q.y + (hsh(k, seed + 12) - 0.5) * 10
+            for j in range(3):
+                prism(c, box(px - 4 + j * 0.8, py - 2 + j * 0.3, px + 4 - j * 0.8, py + 2 - j * 0.3), 2.2 + j * 1.8, roof=(206, 196, 172), wall=(178, 166, 140), ridge=False, sh=(j == 0))
+    k = int(hsh(seed, 77) * 1000)
+    q = ring.interpolate(hsh(seed, 78) * ring.length)
+    ox(c, q.x, q.y + 4, seed)
+    people(c, pg, n_work, seed + 21)
+
+def ox(c, x, y, seed):
+    c.d.rectangle([(x - 5) * SS, (y - 3) * SS, (x + 1) * SS, (y + 0.5) * SS], fill=(120, 88, 56, 255))
+    for wx in (x - 4, x):
+        c.d.ellipse([(wx - 1.3) * SS, (y - 0.5) * SS, (wx + 1.3) * SS, (y + 1.5) * SS], fill=(70, 50, 30, 255))
+    c.d.rectangle([(x - 4) * SS, (y - 5) * SS, x * SS, (y - 3) * SS], fill=(206, 196, 172, 255))
+    for k in (0, 1):
+        c.d.ellipse([(x + 2 + k * 3.2) * SS, (y - 2.6) * SS, (x + 5 + k * 3.2) * SS, (y - 0.4) * SS], fill=(150, 130, 104, 255))
+
+def scaffold(c, pg, h, step=7):
+    """timber poles and ledgers around a rising building"""
+    ring = pg.exterior
+    pts = [ring.interpolate(i * step) for i in range(int(ring.length / step))]
+    for q in pts:
+        c.d.line([q.x * SS, (q.y + 1) * SS, q.x * SS, (q.y - h - 5) * SS], fill=(128, 94, 58, 255), width=SS)
+    for z in np.arange(4, h + 4, 5):
+        c.d.line(c.T(ring.coords, z), fill=(146, 110, 70, 230), width=SS)
+
+def rising(c, pg, h_full, frac, seed, wall=(210, 192, 160)):
+    """walls up to frac of full height, open top (rubble core), scaffolding, workers on top"""
+    h = max(3, h_full * (0.25 + 0.6 * frac))
+    prism(c, pg, h, roof=(176, 160, 128), wall=wall, ridge=False)
+    inner = pg.buffer(-3, join_style=2)
+    for p in polys(inner): c.d.polygon(c.T(p.exterior.coords, h), fill=(150, 128, 96, 255))
+    scaffold(c, pg, h)
+    people(c, affinity.translate(pg.buffer(-0.5), 0, -h), max(4, int(pg.length / 30)), seed)
+    return h
+
+def crane(c, x, y, h, ang=0.6):
+    """treadwheel crane: a raking timber jib with a rope and block"""
+    tx, ty = x + math.cos(ang) * h * 0.35, y - h
+    c.d.line([x * SS, y * SS, tx * SS, ty * SS], fill=(110, 78, 46, 255), width=SS * 2)
+    c.d.line([(x + 6) * SS, y * SS, tx * SS, ty * SS], fill=(110, 78, 46, 255), width=SS)
+    c.d.line([tx * SS, ty * SS, (tx + 2) * SS, (ty + h * 0.45) * SS], fill=(60, 50, 40, 255), width=1)
+    c.d.rectangle([(tx + 0.5) * SS, (ty + h * 0.45) * SS, (tx + 3.5) * SS, (ty + h * 0.45 + 2.5) * SS], fill=(206, 196, 172, 255))
+    c.d.ellipse([(x - 4) * SS, (y - 7) * SS, (x + 4) * SS, (y + 1) * SS], outline=(110, 78, 46, 255), width=SS)
+
 # ---------- ground ----------
 def ground(c, Y):
     g = D['grid']; hgt = np.array(g['heights'], float).reshape(g['nz'], g['nx'])
@@ -215,9 +296,26 @@ def houses(c, Y, keepout):
 # ---------- epic buildings ----------
 def forum_founder(c, Y):
     F = c.poly_local(ST['forum_founder']['geom']['coords']); mese = c.line_local(ST['r_mese']['geom']['coords'])
-    c.d.polygon(c.T(F.exterior.coords), fill=(222, 214, 196, 255))
+    st, _, fr = phase('forum_founder', Y)
+    if st == 'site': site(c, F, 41, 50)
+    elif st == 'frame':   # paving half laid, column shafts standing, porticos not yet roofed
+        site(c, F, 41, 30, stones=False)
+        gap = mese.buffer(15, cap_style=2)
+        inn = F.buffer(-12)
+        laid = inn.intersection(box(0, 0, F.bounds[0] + (F.bounds[2] - F.bounds[0]) * (0.2 + 0.6 * fr), c.h))
+        for p in polys(laid): c.d.polygon(c.T(p.exterior.coords), fill=(226, 218, 200, 255))
+        band = F.difference(F.buffer(-11)).difference(gap)
+        for p in polys(band): c.d.polygon(c.T(p.exterior.coords), fill=(200, 190, 168, 255))
+        edge = F.buffer(-11).exterior.difference(gap)
+        for ln in ([edge] if edge.geom_type == 'LineString' else list(getattr(edge, 'geoms', []))):
+            for i in range(int(ln.length / 4.2) + 1):
+                pt = ln.interpolate(i * 4.2)
+                c.d.line([pt.x * SS, pt.y * SS, pt.x * SS, (pt.y - 13) * SS], fill=MARBLE + (255,), width=max(2, int(1.2 * SS)))
+        scaffold(c, F.buffer(-5), 13, step=14)
+    if st == 'done': c.d.polygon(c.T(F.exterior.coords), fill=(222, 214, 196, 255))
     inn = F.buffer(-12)
     x0, y0, x1, y1 = inn.bounds; k = 0
+    if st != 'done': return column_founder(c, Y)
     for gy in np.arange(y0, y1, 4.2):     # radial-ish marble slabs
         for gx in np.arange(x0 + (3 if int(gy / 4.2) % 2 else 0), x1, 6.2):
             k += 1
@@ -241,16 +339,28 @@ def forum_founder(c, Y):
         cx, cy = pt.x, pt.y + 7
         c.d.pieslice([(cx - 6) * SS, (cy - 17) * SS, (cx + 6) * SS, (cy - 5) * SS], 180, 360, fill=(74, 58, 42, 255))
         c.d.rectangle([(cx - 6) * SS, (cy - 11) * SS, (cx + 6) * SS, cy * SS], fill=(74, 58, 42, 255))
+    column_founder(c, Y)
+
+def column_founder(c, Y):
     # porphyry column: base, 7 drums with laurel bands, statue of the Founder
+    st, _, fr = phase('col_founder', Y)
+    if st is None: return
     x, y = c.P(*ST['col_founder']['geom']['coords'])
     H = 37 / M   # ~37 m column (historic order of magnitude) -> px
     c.d.polygon(c.T([(x, y), (x + 4, y), (x + 4 + H * 0.55, y + H * 0.38), (x + H * 0.55, y + H * 0.38)]), fill=(50, 34, 18, 110))
     prism(c, box(x - 7, y - 5, x + 7, y + 5), 9, roof=MARBLE, wall=(214, 206, 188), ridge=False)
-    for i in range(7):
+    nd = 7 if st == 'done' else 0 if st == 'site' else min(6, 2 * (Y - ST['col_founder']['phases'][1]['year'] + 1))
+    if st != 'done':   # crane beside the column, next drums lying on rollers
+        crane(c, x + 9, y + 3, 9 + nd * (H - 14) / 7 + 14)
+        for j in range(7 - nd):
+            c.d.ellipse([(x - 16 + j * 4.5) * SS, (y + 8) * SS, (x - 12 + j * 4.5) * SS, (y + 11) * SS], fill=(118, 46, 52, 255))
+        people(c, box(x - 18, y + 4, x + 18, y + 16), 10, 5)
+    for i in range(nd):
         z0 = 9 + i * (H - 14) / 7; z1 = z0 + (H - 14) / 7
         c.d.rectangle([(x - 3.6) * SS, (y - z1) * SS, (x + 3.6) * SS, (y - z0) * SS], fill=(118, 46, 52, 255))
         c.d.rectangle([(x + 1.6) * SS, (y - z1) * SS, (x + 3.6) * SS, (y - z0) * SS], fill=(92, 34, 40, 255))
         c.d.rectangle([(x - 3.8) * SS, (y - z0 - 1) * SS, (x + 3.8) * SS, (y - z0) * SS], fill=(200, 170, 90, 255))
+    if st != 'done': return
     c.d.rectangle([(x - 4.5) * SS, (y - H + 3) * SS, (x + 4.5) * SS, (y - H + 5) * SS], fill=MARBLE + (255,))
     c.d.rectangle([(x - 1.4) * SS, (y - H - 4) * SS, (x + 1.4) * SS, (y - H + 3) * SS], fill=(214, 176, 70, 255))
     c.d.ellipse([(x - 1.3) * SS, (y - H - 6.5) * SS, (x + 1.3) * SS, (y - H - 3.8) * SS], fill=(226, 190, 84, 255))
@@ -260,6 +370,10 @@ def forum_founder(c, Y):
 
 def milion(c, Y):
     pg = c.poly_local(ST['milion']['geom']['coords']).buffer(4, join_style=2)
+    st, _, fr = phase('milion', Y)
+    if st is None: return
+    if st == 'site': site(c, pg.buffer(6), 31, 6); scaffold(c, pg, 12, step=4); return
+    if st == 'frame': site(c, pg.buffer(6), 31, 4, stones=False); rising(c, pg, 16, fr, 31, wall=(214, 206, 188)); return
     prism(c, pg, 16, roof=MARBLE, wall=(214, 206, 188), ridge=False, outline=MARBLE_D)
     x, y = pg.centroid.x, pg.centroid.y
     c.d.pieslice([(x - 3) * SS, (y - 11) * SS, (x + 3) * SS, (y - 5) * SS], 180, 360, fill=(70, 56, 40, 255))
@@ -279,6 +393,30 @@ def hippodrome(c, Y):
     CV = 32
     arena = place(unary_union([box(-L / 2 + 14, -Wd / 2 + CV, L / 2 - Wd / 2, Wd / 2 - CV), Point(L / 2 - Wd / 2, 0).buffer(Wd / 2 - CV)]))
     cavea = outer.difference(arena)
+    st, parts, fr = phase('hippodrome', Y)
+    if st is None: return None
+    if st == 'site':
+        site(c, outer, 71, 90)
+        c.d.polygon(c.T(arena.exterior.coords), fill=(190, 160, 112, 255))   # track being dug
+        people(c, arena, 50, 73)
+        return outer
+    if st == 'frame':   # vaulted substructures of the stands rising ring by ring, track levelled, no crowd
+        site(c, outer, 71, 30, stones=True)
+        c.d.polygon(c.T(arena.exterior.coords), fill=(204, 176, 124, 255))
+        nk = int(2 + 5 * fr)
+        for k in range(nk):
+            ring = arena.buffer(k * 4 + 4).difference(arena.buffer(k * 4)).intersection(cavea)
+            tone = 196 - k * 3
+            for p in polys(ring): c.d.polygon(c.T(p.exterior.coords, 3 + k * 2.4), fill=(tone, tone - 14, tone - 40, 255))
+        for i in range(int(outer.exterior.length / 9)):   # radial vault piers of the outer ring
+            q = outer.buffer(-3).exterior.interpolate(i * 9)
+            c.d.pieslice([(q.x - 2.6) * SS, (q.y - 14) * SS, (q.x + 2.6) * SS, (q.y - 8) * SS], 180, 360, fill=(70, 56, 40, 255))
+        for p in polys(outer.difference(outer.buffer(-3))): rising(c, p, 24, fr, 74, wall=(190, 170, 136))
+        car = place(box(-L / 2, -Wd / 2 + 6, -L / 2 + 14, Wd / 2 - 6)); rising(c, car, 14, fr, 75)
+        for t in (-0.25, 0.2):
+            q = place(Point(L * t, Wd / 2 - 4)); crane(c, q.x, q.y, 30)
+        people(c, arena, 30, 76)
+        return outer
     shadow(c, outer, 22)
     c.d.polygon(c.T(arena.exterior.coords), fill=(214, 186, 130, 255))      # sand
     # spina with turning posts and statues
@@ -321,11 +459,18 @@ def hippodrome(c, Y):
     # kathisma: imperial box on the palace (east) side, on the axis
     kp = place(Point(-L * 0.05, -Wd / 2 + 6))
     kb = place(box(-L * 0.05 - 14, -Wd / 2 - 2, -L * 0.05 + 14, -Wd / 2 + 10))
-    prism(c, kb, 26, roof=LEAD, wall=MARBLE, ridge=True, outline=MARBLE_D)
+    if 'kathisma' in parts or not any(p.get('part') == 'kathisma' for p in ST['hippodrome']['phases']):
+        prism(c, kb, 26, roof=LEAD, wall=MARBLE, ridge=True, outline=MARBLE_D)
+    else:   # imperial box still in scaffolding; the races already run
+        rising(c, kb, 26, 0.6, 77, wall=MARBLE)
     return outer
 
 def palace(c, Y):
     pg = c.poly_local(ST['palace_great']['geom']['coords'])
+    st, parts, fr = phase('palace_great', Y)
+    if st is None: return None
+    tdone = [st == 'done' or 'upper' in parts, st == 'done' or 'middle' in parts, st == 'done']
+    if not any(tdone): site(c, pg, 90, 120); return pg
     shadow(c, pg, 10)
     # three terraces stepping down toward the sea (south-east)
     cen = pg.centroid; q = list(pg.exterior.coords)
@@ -336,11 +481,15 @@ def palace(c, Y):
         band = affinity.rotate(box(-L, -L / 2 + k * L / 3, L, -L / 2 + (k + 1) * L / 3), ang - 90, origin=(0, 0))
         band = affinity.translate(band, cen.x, cen.y).intersection(pg)
         hgt = 14 - k * 4
+        if not tdone[k]:
+            for p in polys(band): site(c, p, 90 + k, 40); scaffold(c, p.buffer(-8), 6 + 4 * k, step=16)
+            continue
         for p in polys(band):
             prism(c, p, hgt, roof=[(204, 194, 170), (150, 160, 100), (196, 184, 156)][k], wall=(176, 156, 120), ridge=False, sh=False)
     # rows of halls and residences along each terrace
     for k in range(3):
         hgt = 14 - k * 4
+        if not tdone[k]: continue
         for j in range(18):
             u = -L * 0.44 + (j % 9) * L * 0.11
             v = -L / 2 + k * L / 3 + L / 3 * ((0.22 if j < 9 else 0.68) + 0.1 * hsh(j + 19 * k, 2))
@@ -356,6 +505,7 @@ def palace(c, Y):
     for i, (fx, fy) in enumerate(rng):
         cx_, cy_ = x0 + fx * (x1 - x0), y0 + fy * (y1 - y0)
         if not pg.buffer(-20).contains(Point(cx_, cy_)): continue
+        if not tdone[min(2, int(fy * 3))]: continue
         hgt = 14 - 4 * min(2, int(fy * 3))
         court = box(cx_ - 22, cy_ - 16, cx_ + 22, cy_ + 16)
         # peristyle court: roofs around, garden in the middle
@@ -368,18 +518,34 @@ def palace(c, Y):
         for p in polys(ring): prism(c, affinity.translate(p, 0, -hgt), 9, roof=TILE, wall=MARBLE, ridge=False, sh=False)
     # great halls: an audience hall with apse, a domed triclinium, the Chalke gate toward the Augusteion
     hall = affinity.translate(affinity.rotate(box(-30, -12, 30, 12), ang, origin=(0, 0)), cen.x - 10, cen.y - 24)
-    prism(c, hall, 30, roof=TILE, wall=(222, 210, 186))
-    dome(c, cen.x + 30, cen.y + 10, 13, 18, drum=6)
+    if tdone[0]: prism(c, hall, 30, roof=TILE, wall=(222, 210, 186))
+    if tdone[1]: dome(c, cen.x + 30, cen.y + 10, 13, 18, drum=6)
+    elif tdone[0]: rising(c, Point(cen.x + 30, cen.y + 10).buffer(13), 18, 0.5, 93)
     gate = affinity.translate(box(-14, -8, 14, 8), up[0] + 6, up[1] + 6)
-    prism(c, gate, 24, roof=LEAD, wall=MARBLE, ridge=False, outline=MARBLE_D)
-    dome(c, gate.centroid.x, gate.centroid.y, 8, 24)
+    if tdone[0]:
+        prism(c, gate, 24, roof=LEAD, wall=MARBLE, ridge=False, outline=MARBLE_D)
+        dome(c, gate.centroid.x, gate.centroid.y, 8, 24)
     # sea wall along the lower terrace
     low = LineString([q[2], q[3]]).buffer(3, cap_style=2)
-    prism(c, low, 12, roof=(196, 180, 150), wall=(170, 150, 118), ridge=False)
+    if tdone[2]: prism(c, low, 12, roof=(196, 180, 150), wall=(170, 150, 118), ridge=False)
+    else: rising(c, low, 12, 0.3 + 0.2 * tdone[1], 94, wall=(170, 150, 118))
     return pg
 
-def basilica(c, coords, Y, name, atrium=True, length_k=1.0, roof_h=26, wonder=False):
+def basilica(c, coords, Y, name, atrium=True, length_k=1.0, roof_h=26, wonder=False, sid=None):
     pg = c.poly_local(coords)
+    st, _, fr = phase(sid, Y) if sid else ('done', set(), 1.0)
+    if st is None: return None
+    if st != 'done':
+        site(c, pg.buffer(4), 60 + len(name), 40 if st == 'site' else 20, stones=True)
+        if wonder:   # foundation trench lined with the reused Byzas wall blocks
+            ring = pg.buffer(-2, join_style=2).exterior
+            for k in range(int(ring.length / 5)):
+                q = ring.interpolate(k * 5)
+                c.d.rectangle([(q.x - 2.2) * SS, (q.y - 1.4) * SS, (q.x + 2.2) * SS, (q.y + 0.4) * SS], fill=(168, 150, 116, 255) if k % 2 else (186, 168, 132, 255))
+        if st == 'frame':
+            rising(c, pg.buffer(-1, join_style=2), roof_h * 0.62, fr, 61 + len(name))
+            cx, cy = pg.centroid.x, pg.centroid.y; crane(c, cx, cy + 6, roof_h + 14)
+        return pg.buffer(2)
     q = list(pg.minimum_rotated_rectangle.exterior.coords)[:4]
     e = [(q[i], q[(i + 1) % 4]) for i in range(4)]
     i = 0 if math.dist(*e[0]) >= math.dist(*e[1]) else 1
@@ -471,8 +637,8 @@ def render_core(Y, out):
         cistern(c, Y)
         mese_porticoes(c, Y, unary_union([c.poly_local(ST['forum_founder']['geom']['coords']).buffer(2), c.poly_local(ST['agora_tetrastoon']['geom']['coords']).buffer(6)]))
         palace(c, Y); hippodrome(c, Y)
-        basilica(c, ST['church_peace']['geom']['coords'], Y, 'peace', atrium=True, roof_h=24)
-        if Y >= 30: basilica(c, ST['church_megale']['geom']['coords'], Y, 'megale', atrium=True, roof_h=34, wonder=True)
+        basilica(c, ST['church_peace']['geom']['coords'], Y, 'peace', atrium=True, roof_h=24, sid='church_peace')
+        if Y >= 30: basilica(c, ST['church_megale']['geom']['coords'], Y, 'megale', atrium=True, roof_h=34, wonder=True, sid='church_megale')
         forum_founder(c, Y); milion(c, Y)
     img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
@@ -499,12 +665,23 @@ def render_apostles(Y, out):
         arms = [box(cen.x - arm, cen.y - thick, cen.x + arm, cen.y + thick), box(cen.x - thick, cen.y - arm, cen.x + thick, cen.y + arm)]
         mx, my = cen.x + arm + 22, cen.y
         shadow(c, unary_union(arms + [Point(mx, my).buffer(18, 24)]), 28)
-        for g in sorted(arms, key=lambda g: -g.bounds[2] + g.bounds[0]):
-            prism(c, g, 28, roof=(194, 98, 66), wall=(222, 206, 176), sh=False)
-        dome(c, cen.x, cen.y, thick * 1.1, 28, drum=10)
-        # the Founder's mausoleum: a rotunda against the east arm
-        prism(c, Point(mx, my).buffer(18, 24), 22, roof=LEAD, wall=(220, 210, 190), ridge=False, sh=False)
-        dome(c, mx, my, 17, 22)
+        st, parts, fr = phase('church_apostles', Y)
+        cross = unary_union(arms)
+        if st == 'done':
+            for g in sorted(arms, key=lambda g: -g.bounds[2] + g.bounds[0]):
+                prism(c, g, 28, roof=(194, 98, 66), wall=(222, 206, 176), sh=False)
+            dome(c, cen.x, cen.y, thick * 1.1, 28, drum=10)
+        elif st == 'frame':
+            site(c, cross.buffer(3), 111, 10, stones=True); rising(c, cross, 28, fr, 112); crane(c, cen.x, cen.y + 4, 44)
+        else:
+            site(c, cross.buffer(3), 111, 30)
+        # the Founder's mausoleum: a rotunda against the east arm, finished first
+        rot = Point(mx, my).buffer(18, 24)
+        if st == 'done' or 'mausoleum' in parts:
+            prism(c, rot, 22, roof=LEAD, wall=(220, 210, 190), ridge=False, sh=False)
+            dome(c, mx, my, 17, 22)
+        else:
+            site(c, rot.buffer(2), 113, 8, stones=False); rising(c, rot, 22, fr, 114)
         people(c, pg.buffer(15).difference(pg.buffer(2)), 40, 9)
     img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
