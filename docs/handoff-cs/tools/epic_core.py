@@ -2,7 +2,7 @@
 # Great Palace terraces, Holy Peace, Great Church (AF30), Agora, Mese porticoes.
 # Same painterly-oblique vocabulary as render_xero epic_ground/epic_tall.
 # All geometry & years come from world.json / anthousa_world3d.json (never invented).
-# usage: python3 epic_core.py core 0 1 30 60   |  python3 epic_core.py apostles 10 11 60
+# usage: python3 epic_core.py core 0 1 30 60 | apostles 10 11 60 | shore 1 3 5 31 32 33 | horn 10 11 13 15 46 | gate 0 11 60
 import json, math, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
@@ -707,48 +707,104 @@ def ship(c, x, y, ang, L=26, sail=True, seed=0):
         q = affinity.translate(affinity.rotate(Point(-L * 0.3 + k * 4, 0), ang, origin=(0, 0)), x, y)
         c.d.ellipse([(q.x - 1.3) * SS, (q.y - 1.6) * SS, (q.x + 1.3) * SS, (q.y + 0.6) * SS], fill=(214, 196, 150, 255))
 
-def harbor(c, sid, Y, nships, seed):
+def barge(c, x, y, seed):
+    """flat work barge heaped with rubble"""
+    c.d.rectangle([(x - 6) * SS, (y - 2.5) * SS, (x + 6) * SS, (y + 2.5) * SS], fill=(104, 74, 46, 255))
+    for k in range(4):
+        c.d.ellipse([(x - 5 + k * 2.6) * SS, (y - 3.2) * SS, (x - 2.6 + k * 2.6) * SS, (y - 0.8) * SS], fill=(186, 176, 156, 255))
+    c.d.ellipse([(x + 3) * SS, (y - 4.5) * SS, (x + 4.6) * SS, (y - 2.5) * SS], fill=(150, 60, 50, 255))
+
+def sea_part(c, pg, cell=4):
+    """the part of a local polygon that lies on open water (ground() keeps the water mask)"""
+    x0, y0, x1, y1 = pg.bounds; cells = []
+    for gx in np.arange(x0, x1, cell):
+        for gy in np.arange(y0, y1, cell):
+            ix, iy = int((gx + cell / 2) * SS), int((gy + cell / 2) * SS)
+            if 0 <= iy < c.water.shape[0] and 0 <= ix < c.water.shape[1] and c.water[iy, ix] > 0.42:
+                cells.append(box(gx, gy, gx + cell, gy + cell))
+    return unary_union(cells).intersection(pg) if cells else Polygon()
+
+def harbor(c, sid, Y, nships, seed, land='n', lights=True):
+    """enclosed harbor: quay on the land side, rubble moles with a mouth on the sea side.
+    land='n' (Marmara shore, sea to the south) or 's' (Golden Horn, sea to the north).
+    Construction follows world.json phases: site = moles being dumped from barges, frame = moles closed,
+    quay half-built, no lights; done = full harbor."""
+    st, _, fr = phase(sid, Y)
+    if st is None: return None
     s = ST[sid]; pg = c.poly_local(s['geom']['coords'])
     x0, y0, x1, y1 = pg.bounds
-    basin = box(x0 + 14, y0 + 12, x1 - 14, y1 - 4)
-    c.d.polygon(c.T(pg.exterior.coords), fill=(198, 188, 164, 255))          # quay apron
-    c.d.polygon(c.T(basin.exterior.coords), fill=(58, 106, 124, 255))        # still water
-    for i in range(30):
-        wx, wy = x0 + 16 + hsh(i, seed) * (x1 - x0 - 32), y0 + 14 + hsh(i, seed + 1) * (y1 - y0 - 20)
-        c.d.line([wx * SS, wy * SS, (wx + 5) * SS, wy * SS], fill=(96, 146, 160, 200), width=1)
-    # quay edge stones on the land (north) side, bollards, sacks, porters
-    c.d.line(c.T([(basin.bounds[0], basin.bounds[1]), (basin.bounds[2], basin.bounds[1])]), fill=(150, 138, 112, 255), width=3 * SS)
-    for i in range(int((x1 - x0) / 14)):
-        bx = x0 + 18 + i * 14
-        if bx > x1 - 18: break
-        c.d.ellipse([(bx - 1) * SS, (y0 + 9) * SS, (bx + 1) * SS, (y0 + 11) * SS], fill=(80, 70, 56, 255))
-        if hsh(i, seed + 3) < 0.6:
-            for k in range(3): c.d.ellipse([(bx + 3 + k * 2.2) * SS, (y0 + 3) * SS, (bx + 5 + k * 2.2) * SS, (y0 + 5.5) * SS], fill=(214, 196, 150, 255))
-    people(c, box(x0 + 4, y0 + 1, x1 - 4, y0 + 11), 50, seed + 5)
-    # rubble moles closing the basin to the sea, with a gap for ships
+    yl, ys, sg = (y0, y1, 1) if land == 'n' else (y1, y0, -1)     # land edge, sea edge, direction land->sea
+    basin = box(x0 + 14, min(yl + 12 * sg, ys - 4 * sg), x1 - 14, max(yl + 12 * sg, ys - 4 * sg))
+    apron = box(x0, min(yl, yl + 11 * sg), x1, max(yl, yl + 11 * sg))
     gap = (x0 + x1) / 2
-    for a, b in (((x0, y1), (gap - 14, y1)), ((gap + 14, y1), (x1, y1))):
-        mole = LineString([a, b]).buffer(5, cap_style=1)
+    moles = [((x0, ys), (gap - 14, ys)), ((gap + 14, ys), (x1, ys))]
+    sides = [LineString([(sd, yl + 10 * sg), (sd, ys)]) for sd in (x0 + 6, x1 - 6)]
+    if st == 'done' or st == 'frame':
+        c.d.polygon(c.T(apron.exterior.coords), fill=(198, 188, 164, 255) if st == 'done' else EARTH + (255,))
+    if st == 'site':   # basin not yet dug: the landward part is an excavation, the sea part muddy shallows
+        c.d.polygon(c.T(basin.exterior.coords), fill=(150, 122, 86, 255))
+        for p in polys(sea_part(c, basin)): c.d.polygon(c.T(p.exterior.coords), fill=(96, 130, 128, 255))
+        people(c, basin.difference(sea_part(c, basin)).buffer(-2), 30, seed + 13)
+    else:
+        c.d.polygon(c.T(basin.exterior.coords), fill=(58, 106, 124, 255) if st == 'done' else (84, 128, 132, 255))
+    for i in range(30 if st != 'site' else 0):
+        wx, wy = basin.bounds[0] + hsh(i, seed) * (basin.bounds[2] - basin.bounds[0]), basin.bounds[1] + hsh(i, seed + 1) * (basin.bounds[3] - basin.bounds[1])
+        c.d.line([wx * SS, wy * SS, (wx + 5) * SS, wy * SS], fill=(96, 146, 160, 200), width=1)
+    def mole_line(a, b, f):
+        return LineString([a, (a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f)])
+    if st == 'site':   # moles reach out from the shore ends only partway; barges dump rubble at their tips
+        f = 0.25 + 0.5 * fr
+        for sd in sides:
+            ln = mole_line(sd.coords[0], sd.coords[-1], f)
+            prism(c, ln.buffer(5, cap_style=1), 3, roof=(176, 164, 140), wall=(140, 128, 108), ridge=False)
+            tip = ln.coords[-1]; barge(c, tip[0] + 10, tip[1] + 4 * sg, seed)
+        for k in range(4): barge(c, x0 + 20 + hsh(k, seed + 31) * (x1 - x0 - 40), ys + (6 + 8 * hsh(k, seed + 32)) * sg, seed + k)
+        people(c, apron.buffer(-1), 20, seed + 5)
+        return pg
+    if st == 'done':
+        c.d.line(c.T([(basin.bounds[0], yl + 12 * sg), (basin.bounds[2], yl + 12 * sg)]), fill=(150, 138, 112, 255), width=3 * SS)
+        for i in range(int((x1 - x0) / 14)):
+            bx = x0 + 18 + i * 14
+            if bx > x1 - 18: break
+            by = yl + 10 * sg
+            c.d.ellipse([(bx - 1) * SS, (by - 1) * SS, (bx + 1) * SS, (by + 1) * SS], fill=(80, 70, 56, 255))
+            if hsh(i, seed + 3) < 0.6:
+                for k in range(3): c.d.ellipse([(bx + 3 + k * 2.2) * SS, (yl + 4 * sg - 1.2) * SS, (bx + 5 + k * 2.2) * SS, (yl + 4 * sg + 1.3) * SS], fill=(214, 196, 150, 255))
+        people(c, apron.buffer(-1), 50, seed + 5)
+    else:   # frame: quay wall half laid, stone stacks, workers
+        qf = 0.3 + 0.6 * fr
+        c.d.line(c.T([(basin.bounds[0], yl + 12 * sg), (basin.bounds[0] + (basin.bounds[2] - basin.bounds[0]) * qf, yl + 12 * sg)]), fill=(150, 138, 112, 255), width=3 * SS)
+        site(c, apron, seed + 40, 18, stones=True, fill=EARTH)
+    for a, b in moles:
+        ln = LineString([a, b]); mole = ln.buffer(5, cap_style=1)
         prism(c, mole, 4, roof=(170, 160, 140), wall=(140, 128, 108), ridge=False)
         for i in range(int(mole.length / 6)):
-            q = LineString([a, b]).interpolate(i * 3)
+            q = ln.interpolate(i * 3)
             c.d.ellipse([(q.x - 1.6) * SS, (q.y - 5.5) * SS, (q.x + 1.6) * SS, (q.y - 3.5) * SS], fill=(186, 176, 156, 255))
-    for side in (x0 + 6, x1 - 6):
-        prism(c, LineString([(side, y0 + 10), (side, y1)]).buffer(5, cap_style=2), 4, roof=(178, 168, 146), wall=(140, 128, 108), ridge=False)
-    for k, (gx_) in enumerate((gap - 15, gap + 15)):   # small light towers on the mole heads
-        prism(c, Point(gx_, y1).buffer(4.5, 12), 14, roof=(200, 190, 170), wall=(176, 162, 136), ridge=False)
-        c.d.ellipse([(gx_ - 1.5) * SS, (y1 - 17) * SS, (gx_ + 1.5) * SS, (y1 - 14) * SS], fill=(240, 190, 90, 255))
+    for sd in sides:
+        prism(c, sd.buffer(5, cap_style=2), 4, roof=(178, 168, 146), wall=(140, 128, 108), ridge=False)
+    if st == 'frame':
+        barge(c, gap, ys + 8 * sg, seed + 9); barge(c, gap - 30, ys - 10 * sg, seed + 10)
+        return pg
+    for gx_ in ((gap - 15, gap + 15) if lights else ()):   # small light towers on the mole heads
+        prism(c, Point(gx_, ys).buffer(4.5, 12), 14, roof=(200, 190, 170), wall=(176, 162, 136), ridge=False)
+        c.d.ellipse([(gx_ - 1.5) * SS, (ys - 17) * SS, (gx_ + 1.5) * SS, (ys - 14) * SS], fill=(240, 190, 90, 255))
     bb = basin.buffer(-10)
+    if bb.is_empty: return pg
     for i in range(nships):   # moored ships along the quay, a couple swinging in the basin
         if i < nships * 0.7:
-            x = bb.bounds[0] + 10 + i * (bb.bounds[2] - bb.bounds[0] - 20) / max(1, int(nships * 0.7)); y = bb.bounds[1] + 2; ang = 90 + (hsh(i, seed) - 0.5) * 10
+            x = bb.bounds[0] + 10 + i * (bb.bounds[2] - bb.bounds[0] - 20) / max(1, int(nships * 0.7)); y = (bb.bounds[1] + 2) if land == 'n' else (bb.bounds[3] - 14); ang = 90 + (hsh(i, seed) - 0.5) * 10
         else:
-            x = bb.bounds[0] + hsh(i, seed + 7) * (bb.bounds[2] - bb.bounds[0]); y = bb.bounds[1] + 16 + hsh(i, seed + 8) * max(1, bb.bounds[3] - bb.bounds[1] - 18); ang = hsh(i, seed + 9) * 180
+            x = bb.bounds[0] + hsh(i, seed + 7) * (bb.bounds[2] - bb.bounds[0]); y = bb.bounds[1] + 4 + hsh(i, seed + 8) * max(1, bb.bounds[3] - bb.bounds[1] - 18); ang = hsh(i, seed + 9) * 180
         ship(c, x, y + 12, ang, L=24 + 8 * hsh(i, seed + 2), sail=hsh(i, seed + 4) < 0.45, seed=i)
     return pg
 
 def horrea(c, sid, Y):
+    st, _, fr = phase(sid, Y)
+    if st is None: return None
     s = ST[sid]; pg = c.poly_local(s['geom']['coords'])
+    if st == 'site': site(c, pg, 600 + len(sid), 24); return pg
+    if st == 'frame': site(c, pg, 600 + len(sid), 8, stones=True); rising(c, pg, 16, fr, 610 + len(sid), wall=(204, 178, 140)); return pg
     q = list(pg.minimum_rotated_rectangle.exterior.coords)[:4]
     e = [(q[i], q[(i + 1) % 4]) for i in range(4)]; i = 0 if math.dist(*e[0]) >= math.dist(*e[1]) else 1
     a, b = e[i]; ang = math.atan2(b[1] - a[1], b[0] - a[0]); L, Wd = math.dist(*e[i]), math.dist(*e[(i + 1) % 4])
@@ -830,10 +886,9 @@ def render_shore(Y, out):
     occ += [e.buffer(14) for e in epic]
     trees(c, Y, unary_union(occ))
     houses(c, Y, keep)
-    if alive(ST['harbor_julian'], Y): harbor(c, 'harbor_julian', Y, 15, 201)
-    if alive(ST['harbor_theodosius'], Y): harbor(c, 'harbor_theodosius', Y, 9, 301)
-    for k in ('granary_founder', 'horrea_theodosius', 'horrea_alexandrina'):
-        if alive(ST[k], Y): horrea(c, k, Y)
+    harbor(c, 'harbor_julian', Y, 15, 201)
+    harbor(c, 'harbor_theodosius', Y, 9, 301)
+    for k in ('granary_founder', 'horrea_theodosius', 'horrea_alexandrina'): horrea(c, k, Y)
     img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
     img.save(out, quality=88); return out
@@ -856,7 +911,33 @@ def render_gate(Y, out):
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
     img.save(out, quality=88); return out
 
+def render_horn(Y, out):
+    """Golden Horn: old Byzas landing (Prosphorion), Neorion harbor + warehouses (AF11), tower, Troad granaries (AF46)"""
+    c = Canvas(598, 344, 676, 402)
+    ground(c, Y); roads(c, Y)
+    ids = ('harbor_prosphorion', 'harbor_neorion', 'warehouse_horn', 'horrea_troadensia', 'tower_horn')
+    epic = [c.poly_local(ST[k]['geom']['coords']) for k in ids if phase(k, Y)[0]]
+    keep = unary_union([e.buffer(3) for e in epic]) if epic else None
+    occ = [Point(c.P(h['cx'], h['cz'])).buffer(18) for h in D['houses'] if h['built'] <= Y and (h['destroyed'] is None or h['destroyed'] > Y) and c.x0 - 3 < h['cx'] < c.x0 + c.w / S + 3 and c.z0 - 3 < h['cz'] < c.z0 + c.h / S + 3]
+    occ += [c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2 + 4) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]
+    occ += [e.buffer(14) for e in epic]
+    trees(c, Y, unary_union(occ))
+    walls(c, Y)
+    houses(c, Y, keep)
+    harbor(c, 'harbor_prosphorion', Y, 6 if Y < 1 else 8, 401, land='s', lights=Y >= 1)
+    harbor(c, 'harbor_neorion', Y, 12, 501, land='s')
+    horrea(c, 'warehouse_horn', Y); horrea(c, 'horrea_troadensia', Y)
+    if phase('tower_horn', Y)[0]:
+        t = c.poly_local(ST['tower_horn']['geom']['coords']).buffer(3, join_style=2)
+        prism(c, t, 34, roof=(190, 176, 146), wall=(170, 150, 118), ridge=False)
+        x0, y0, x1, y1 = t.bounds
+        for k in range(int((x1 - x0) / 3)):
+            c.d.rectangle([(x0 + k * 3) * SS, (y0 - 37) * SS, (x0 + k * 3 + 1.6) * SS, (y0 - 34) * SS], fill=(190, 176, 146, 255))
+    img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
+    d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
+    img.save(out, quality=88); return out
+
 if __name__ == '__main__':
     what = sys.argv[1]; ys = [int(v) for v in sys.argv[2:]]
     for Y in ys:
-        f = {'core': render_core, 'apostles': render_apostles, 'shore': render_shore, 'gate': render_gate}[what](Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)
+        f = {'core': render_core, 'apostles': render_apostles, 'shore': render_shore, 'gate': render_gate, 'horn': render_horn}[what](Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)

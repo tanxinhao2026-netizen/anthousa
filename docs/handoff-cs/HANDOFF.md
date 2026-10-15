@@ -87,3 +87,13 @@ streets_xero → prune_islands → audit_streets fixpo → landmarks → blocks_
 - 各建筑：广场 frame = 铺地铺一半、柱身立起不上顶；斑岩柱鼓石逐年 2/4/6 节，旁边起重机和待吊鼓石，AF5 立像；竞技场 frame = 看台一圈圈升高、外圈拱墩、无观众，AF4 起开赛但皇帝包厢还在脚手架里，AF6 落成；大皇宫三级台地按 part 分别落成，没成的是工地；圣使徒 AF13 只有陵墓圆堂，AF14 十字墙体升起；大教堂 AF30 地基槽沿边是拜扎斯旧墙石，AF31 起墙。
 - 命令：`python3 epic_core.py core 1 2 3 5 8 31`、`python3 epic_core.py apostles 11 13 14 18`
 - 预览：`preview/epic/epic_phases_core.jpg`、`epic_phases_apostles.jpg`；旧图 AF1、AF30、圣使徒 AF11 已按分期重出（现在 AF1 是工地、AF30 是开工）。
+
+## 补交 ⑤（2026-10-14 晚）：港口与码头分期 + 金角湾视图
+
+底账 main 又给 5 座港口/码头/粮仓加了 phases（见 main 的 `inbox/TO_CS.md` 追加段）。`tools/epic_core.py` 对应更新：
+
+- `harbor(c, sid, Y, nships, seed, land='n'|'s', lights=True)` 按 phases 出图：site = 港池陆上部分是开挖坑、海上部分是浑浊浅水，防波堤从岸两端伸出一截，驳船在堤头抛石；frame = 堤合拢、码头石岸铺了一部分、无灯塔、只有工作驳船；done = 码头系船柱、货包、搬运工、堤头灯塔、靠港船只。`land='s'` 给金角湾（海在北）。
+- `sea_part()` 用地面水域遮罩切出港池的海上部分。`horrea()` 也按 phases 走 site/rising。
+- 新视图 `python3 epic_core.py horn 0 11 13 15 46`：拜扎斯旧港（建城前无灯塔）、新港、金角湾仓库、特罗阿德粮仓、金角塔。
+- 预览：`preview/epic/epic_phases_shore.jpg`、`epic_phases_horn.jpg`。
+- 狄奥多西港 AF31/32 在 built 年（33）之前就有工地：`phase()` 返回 site/frame，而 `alive()` 仍是 False，读的时候以 phases 为准。
