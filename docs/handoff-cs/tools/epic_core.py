@@ -380,7 +380,8 @@ def milion(c, Y):
     c.d.rectangle([(x - 3) * SS, (y - 8) * SS, (x + 3) * SS, y * SS], fill=(70, 56, 40, 255))
     dome(c, x, y - 2, 7, 16)
 
-def hippodrome(c, Y):
+def hippodrome(c, Y, crowd=1.0, lap=None):
+    """crowd: share of seats filled (race day rhythm); lap: None = chariots parked as markers, 0..1 = race position on the lap"""
     pts = [c.P(*p) for p in ST['hippodrome']['geom']['coords']]
     # long axis from carceres (north end, near the Mese) to sphendone (south)
     (a, b, cc, d_) = pts
@@ -433,9 +434,23 @@ def hippodrome(c, Y):
     for r_ in (8, 13):
         lane = place(unary_union([box(-L / 2 + 60, -r_, L / 2 - Wd / 2 - 30, r_)])).exterior
         c.d.line(c.T(lane.coords), fill=(190, 160, 108, 255), width=1)
-    for i, col in enumerate([(30, 90, 170), (40, 140, 60), (200, 40, 40), (230, 230, 230)]):   # four factions' chariots
-        p = place(Point(-L / 2 + 120 + i * 60, (-11 if i % 2 else 11)))
-        c.d.ellipse([(p.x - 2) * SS, (p.y - 1.5) * SS, (p.x + 2) * SS, (p.y + 1.5) * SS], fill=col + (255,))
+    FAC = [(30, 90, 170), (40, 140, 60), (200, 40, 40), (230, 230, 230)]   # Blues, Greens, Reds, Whites
+    if lap is None:
+        for i, col in enumerate(FAC):
+            p = place(Point(-L / 2 + 120 + i * 60, (-11 if i % 2 else 11)))
+            c.d.ellipse([(p.x - 2) * SS, (p.y - 1.5) * SS, (p.x + 2) * SS, (p.y + 1.5) * SS], fill=col + (255,))
+    else:   # four quadrigae strung out around the spina, a dust trail behind each
+        x_a, x_b = -L / 2 + 70, L / 2 - Wd / 2 - 30; R = 11
+        loop = LineString([(x_a, R), (x_b, R)] + [(x_b + R * math.sin(t / 12 * math.pi), R * math.cos(t / 12 * math.pi)) for t in range(1, 12)] + [(x_b, -R), (x_a, -R)] + [(x_a - R * math.sin(t / 12 * math.pi), -R * math.cos(t / 12 * math.pi)) for t in range(1, 12)] + [(x_a, R)])
+        for i, col in enumerate(FAC):
+            f = (lap - i * 0.035 - 0.01 * hsh(i, 991)) % 1.0
+            for k in range(6):   # dust
+                q = place(loop.interpolate(((f - 0.01 * (k + 1)) % 1.0) * loop.length, ))
+                c.d.ellipse([(q.x - 1.5 - k * 0.5) * SS, (q.y - 1.2 - k * 0.4) * SS, (q.x + 1.5 + k * 0.5) * SS, (q.y + 1.2 + k * 0.4) * SS], fill=(226, 204, 160, 150 - k * 22))
+            p = place(loop.interpolate(f * loop.length))
+            for h in (-1.2, 0, 1.2, 2.4):   # four horses abreast, chariot behind
+                c.d.ellipse([(p.x - 1) * SS, (p.y - 1.8 + h * 0.6) * SS, (p.x + 1) * SS, (p.y - 0.8 + h * 0.6) * SS], fill=(90, 66, 44, 255))
+            c.d.ellipse([(p.x - 2) * SS, (p.y - 1.5) * SS, (p.x + 2) * SS, (p.y + 1.5) * SS], fill=col + (255,))
     # tiered stands: rings of seats stepping up toward the outer wall, packed with people
     for k in range(8):
         ring = arena.buffer(k * 4 + 4).difference(arena.buffer(k * 4)).intersection(cavea)
@@ -445,7 +460,7 @@ def hippodrome(c, Y):
     seats = arena.buffer(CV - 4).difference(arena.buffer(2)).intersection(cavea)
     cols = [(150, 60, 50), (60, 80, 120), (226, 220, 200), (110, 90, 60), (40, 110, 60), (30, 80, 160)]
     k = 0; x0, y0, x1, y1 = seats.bounds; n = 0
-    while n < 900 and k < 9000:
+    while n < int(2400 * crowd) and k < 30000:
         k += 1; px, py = x0 + hsh(k, 71) * (x1 - x0), y0 + hsh(k, 72) * (y1 - y0)
         if not seats.contains(Point(px, py)): continue
         dz = 3 + arena.exterior.distance(Point(px, py)) * 0.6
@@ -1223,7 +1238,36 @@ def render_west(Y, out):
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
     img.save(out, quality=88); return out
 
+def render_raceday(Y, moment, out):
+    """one race day in the Hippodrome: dawn (empty), filling, race (lap 0.35), dusk (crowd pours onto the Mese)"""
+    c = Canvas(612, 446, 668, 502)
+    ground(c, Y)
+    hip = c.poly_local(ST['hippodrome']['geom']['coords'])
+    roads(c, Y); walls(c, Y)
+    keep = hip.buffer(30)
+    occ = [Point(c.P(h['cx'], h['cz'])).buffer(18) for h in D['houses'] if h['built'] <= Y and (h['destroyed'] is None or h['destroyed'] > Y) and c.x0 - 3 < h['cx'] < c.x0 + c.w / S + 3 and c.z0 - 3 < h['cz'] < c.z0 + c.h / S + 3]
+    occ += [c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2 + 4) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]
+    occ += [c.poly_local(s['geom']['coords']).buffer(14) for s in W['structures'] if s['geom']['type'] == 'polygon' and alive(s, Y) and s['type'] not in ('district', 'farmland')]
+    trees(c, Y, unary_union(occ))
+    houses(c, Y, keep)
+    palace(c, Y)
+    crowd, lap = {'dawn': (0.0, None), 'filling': (0.45, None), 'race': (1.0, 0.35), 'dusk': (0.12, None)}[moment]
+    hippodrome(c, Y, crowd=crowd, lap=lap)
+    streets = unary_union([c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]).intersection(hip.buffer(160)).difference(hip.buffer(2))
+    n_street = {'dawn': 15, 'filling': 260, 'race': 30, 'dusk': 600}[moment]
+    if n_street: people(c, streets, n_street, 995 + len(moment))
+    img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
+    if moment == 'dawn' or moment == 'dusk':   # low light
+        tint = Image.new('RGB', img.size, (60, 70, 110) if moment == 'dawn' else (190, 110, 60)); img = Image.blend(img, tint, 0.18)
+    d = ImageDraw.Draw(img); d.rectangle([8, 8, 200, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y} {moment}', fill=(240, 224, 190))
+    img.save(out, quality=88); return out
+
 if __name__ == '__main__':
-    what = sys.argv[1]; ys = [int(v) for v in sys.argv[2:]]
+    what = sys.argv[1]
+    if what == 'raceday':   # python3 epic_core.py raceday 60 dawn filling race dusk
+        Y = int(sys.argv[2])
+        for m in sys.argv[3:]: print(render_raceday(Y, m, f'/tmp/epic_raceday_af{Y}_{m}.jpg'))
+        sys.exit(0)
+    ys = [int(v) for v in sys.argv[2:]]
     for Y in ys:
         f = {'core': render_core, 'apostles': render_apostles, 'shore': render_shore, 'gate': render_gate, 'horn': render_horn, 'aqueduct': render_aqueduct, 'forum_theo': render_forum_theo, 'west': render_west}[what](Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)

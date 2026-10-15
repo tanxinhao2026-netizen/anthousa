@@ -125,3 +125,11 @@ main 底账又加了 11 座的 phases（城墙、城门、创城蓄水池、大�
 - 哈德良旧水道（`aq_hadrian`）在城内改画成低矮暗渠，从浴场底下穿过；原来画成拱桥会压在浴场上。
 - 新视图 `python3 epic_core.py west 35 52 64`：城门外的圣莫基乌斯教堂（35）、阿里乌派祈祷院子 `arian_yard()`（52）、阿里乌派砖教堂（64）。
 - 克塞罗洛福斯的运水人蓄水池（54）、坡顶蓄水池（62）、济贫院（65）已经在 living 页的地标系统里，这里没重复画。
+
+## 补交 ⑨（2026-10-14 夜）：竞技场赛车日的一天
+
+- `hippodrome(c, Y, crowd=1.0, lap=None)`：`crowd` 是看台上座率（0..1，满座约 2400 个人点）；`lap` 给 0..1 时，蓝、绿、红、白四驾四马战车沿标柱外的环线拉开排开，各自身后拖一串尘土；`None` 时还是原来的静态标记。
+- `render_raceday(Y, moment, out)`，moment = dawn / filling / race / dusk：看台上座率 0 / 0.45 / 1 / 0.12；竞技场周围街上的人数 15 / 260 / 30 / 600（上午涌进、黄昏散场）；dawn、dusk 加冷、暖色调。
+- 命令：`python3 epic_core.py raceday 60 dawn filling race dusk`。
+- 给瓦片页的建议：这是“时刻”维度，不进底账；如果瓦片页有一天中的时间，可以按时刻切换这四种状态（不需要运行时调 LLM）。
+- 预览：`preview/epic/epic_raceday.jpg`。
