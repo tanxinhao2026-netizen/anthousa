@@ -655,12 +655,60 @@ def render_core(Y, out):
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
     img.save(out, quality=88); return out
 
+def baths(c, Y, sid='baths_constantius'):
+    """domed bath hall: rotunda caldarium, vaulted halls, colonnaded palaestra, furnace smoke"""
+    if not phase(sid, Y)[0]: return None
+    pg = c.poly_local(ST[sid]['geom']['coords']); x0, y0, x1, y1 = pg.bounds; cx, cy = pg.centroid.x, pg.centroid.y
+    pal = box(x0, y0, x0 + (x1 - x0) * 0.42, y1)                       # palaestra (exercise court) on the west
+    c.d.polygon(c.T(pal.exterior.coords), fill=(214, 204, 184, 255))
+    colonnade(c, pal.difference(pal.buffer(-6, join_style=2)), 9, edge=pal.buffer(-6, join_style=2).exterior)
+    people(c, pal.buffer(-8), int(pal.area / 120), 901)
+    halls = box(x0 + (x1 - x0) * 0.42, y0 + 4, x1, y1 - 4)
+    prism(c, halls, 20, roof=(196, 104, 72), wall=(204, 160, 120), ridge=False)
+    for k in range(int((halls.bounds[2] - halls.bounds[0]) / 7)):   # tall arched windows on the south face
+        x = halls.bounds[0] + 4 + k * 7
+        c.d.pieslice([(x - 1.6) * SS, (halls.bounds[3] - 16) * SS, (x + 1.6) * SS, (halls.bounds[3] - 12.8) * SS], 180, 360, fill=(70, 54, 40, 255))
+        c.d.rectangle([(x - 1.6) * SS, (halls.bounds[3] - 14.4) * SS, (x + 1.6) * SS, (halls.bounds[3] - 7) * SS], fill=(70, 54, 40, 255))
+    r = min(halls.bounds[2] - halls.bounds[0], halls.bounds[3] - halls.bounds[1]) * 0.34
+    dx = (halls.bounds[0] + halls.bounds[2]) / 2 + r * 0.3
+    prism(c, Point(dx, cy).buffer(r, 32), 26, roof=LEAD, wall=(214, 172, 128), ridge=False, sh=False)
+    dome(c, dx, cy, r * 0.95, 26, col=LEAD)
+    for k in range(3):   # furnace smoke from the service yard
+        sx, sy = x1 - 4 + k * 2, y1 - 30 - k * 9
+        c.d.ellipse([(sx - 4 - k * 2) * SS, (sy - 3 - k) * SS, (sx + 4 + k * 2) * SS, (sy + 3 + k) * SS], fill=(214, 212, 206, 150 - k * 40))
+    return pg
+
+def open_cistern(c, Y, sid):
+    """open-air reservoir: brick retaining walls, steps down, still water"""
+    if not phase(sid, Y)[0]: return None
+    pg = c.poly_local(ST[sid]['geom']['coords'])
+    prism(c, pg.difference(pg.buffer(-4, join_style=2)), 5, roof=(196, 150, 112), wall=(178, 120, 86), ridge=False)
+    inner = pg.buffer(-4, join_style=2)
+    c.d.polygon(c.T(inner.exterior.coords), fill=(52, 104, 124, 255))
+    x0, y0, x1, y1 = inner.bounds
+    for i in range(24):
+        wx, wy = x0 + hsh(i, 911) * (x1 - x0 - 6), y0 + hsh(i, 912) * (y1 - y0)
+        c.d.line([wx * SS, wy * SS, (wx + 5) * SS, wy * SS], fill=(96, 150, 170, 200), width=1)
+    for k in range(4):   # steps down the north wall
+        c.d.rectangle([(x0 + 6) * SS, (y0 + k * 1.2) * SS, (x0 + 14) * SS, (y0 + k * 1.2 + 1) * SS], fill=(196, 170, 140, 255))
+    people(c, pg.buffer(6).difference(pg), 12, 913)
+    return pg
+
 def render_apostles(Y, out):
-    c = Canvas(441, 334, 481, 366)
+    c = Canvas(437, 334, 485, 388)
     ground(c, Y); roads(c, Y); walls(c, Y)
     pg = c.poly_local(ST['church_apostles']['geom']['coords'])
-    houses(c, Y, pg.buffer(18) if Y >= 11 else None)
+    extra = [c.poly_local(ST[k]['geom']['coords']).buffer(10) for k in ('baths_constantius', 'cistern_modestus') if phase(k, Y)[0]]
+    ko = ([pg.buffer(18)] if Y >= 11 else []) + extra
+    houses(c, Y, unary_union(ko) if ko else None)
+    baths(c, Y); open_cistern(c, Y, 'cistern_modestus')
     for s in W['structures']:
+        if s['type'] == 'aqueduct' and s['id'] != 'aq_great' and alive(s, Y):
+            # the old Hadrianic line runs buried inside the walls: a low covered conduit, passing under the baths
+            ln = c.line_local(s['geom']['coords'])
+            bath = box(*c.poly_local(ST['baths_constantius']['geom']['coords']).bounds).buffer(4) if phase('baths_constantius', Y)[0] else Point(-99, -99).buffer(1)
+            for p in polys(ln.buffer(2.2, cap_style=2).difference(bath).intersection(box(0, 0, c.w, c.h))): prism(c, p, 2.5, roof=(176, 168, 150), wall=(160, 146, 120), ridge=False)
+            continue
         if s['type'] == 'aqueduct' and alive(s, Y):
             ln = c.line_local(s['geom']['coords'])
             for p in polys(ln.buffer(4, cap_style=2).intersection(box(0, 0, c.w, c.h))): prism(c, p, 20, roof=(186, 176, 150), wall=(168, 150, 118), ridge=False)
@@ -1144,7 +1192,38 @@ def render_forum_theo(Y, out):
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
     img.save(out, quality=88); return out
 
+def arian_yard(c, Y):
+    """a walled yard outside the gate where the Arians pray on feast days: timber shelter, crowd"""
+    if not phase('arian_meeting', Y)[0]: return None
+    pg = c.poly_local(ST['arian_meeting']['geom']['coords'])
+    c.d.polygon(c.T(pg.exterior.coords), fill=(190, 176, 140, 255))
+    prism(c, pg.difference(pg.buffer(-2, join_style=2)), 4, roof=(170, 150, 116), wall=(150, 128, 96), ridge=False)
+    x0, y0, x1, y1 = pg.bounds
+    shed = box(x0 + 4, y0 + 4, x1 - 4, y0 + (y1 - y0) * 0.4)
+    prism(c, shed, 10, roof=(140, 104, 66), wall=(120, 88, 56))
+    people(c, box(x0 + 4, y0 + (y1 - y0) * 0.45, x1 - 4, y1 - 4), int(pg.area / 40), 921)
+    return pg
+
+def render_west(Y, out):
+    """outside the Founder's gate: Mocius' basilica among the fields (35), the Arian yard (52) and brick church (64)"""
+    c = Canvas(368, 428, 412, 484)
+    ground(c, Y); roads(c, Y)
+    ids = [k for k in ('church_mocius', 'arian_meeting', 'church_arian_brick') if phase(k, Y)[0]]
+    keep = unary_union([c.poly_local(ST[k]['geom']['coords']).buffer(12) for k in ids]) if ids else None
+    occ = [Point(c.P(h['cx'], h['cz'])).buffer(18) for h in D['houses'] if h['built'] <= Y and (h['destroyed'] is None or h['destroyed'] > Y) and c.x0 - 3 < h['cx'] < c.x0 + c.w / S + 3 and c.z0 - 3 < h['cz'] < c.z0 + c.h / S + 3]
+    occ += [c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2 + 4) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]
+    trees(c, Y, unary_union(occ + ([keep] if keep is not None else [])))
+    houses(c, Y, keep)
+    if phase('church_mocius', Y)[0]: basilica(c, ST['church_mocius']['geom']['coords'], Y, 'mocius', atrium=True, roof_h=22)
+    arian_yard(c, Y)
+    if phase('church_arian_brick', Y)[0]: basilica(c, ST['church_arian_brick']['geom']['coords'], Y, 'arian', atrium=False, roof_h=18)
+    if phase('wall_founder', Y)[0]: city_wall(c, Y, c.poly_local(ST['gate_founder']['geom']['coords']))
+    if phase('gate_founder', Y)[0]: gate(c, Y)
+    img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
+    d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
+    img.save(out, quality=88); return out
+
 if __name__ == '__main__':
     what = sys.argv[1]; ys = [int(v) for v in sys.argv[2:]]
     for Y in ys:
-        f = {'core': render_core, 'apostles': render_apostles, 'shore': render_shore, 'gate': render_gate, 'horn': render_horn, 'aqueduct': render_aqueduct, 'forum_theo': render_forum_theo}[what](Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)
+        f = {'core': render_core, 'apostles': render_apostles, 'shore': render_shore, 'gate': render_gate, 'horn': render_horn, 'aqueduct': render_aqueduct, 'forum_theo': render_forum_theo, 'west': render_west}[what](Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)
