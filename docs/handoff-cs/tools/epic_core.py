@@ -7,7 +7,7 @@ import json, math, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 from shapely.geometry import Polygon, LineString, Point, box
-from shapely.ops import unary_union
+from shapely.ops import substring, unary_union
 from shapely import affinity
 from scipy.ndimage import zoom as nd_zoom, gaussian_filter
 
@@ -585,7 +585,18 @@ def agora(c, Y):
     return pg
 
 def cistern(c, Y):
+    st, _, fr = phase('cistern_founder', Y)
+    if st is None: return None
     pg = c.poly_local(ST['cistern_founder']['geom']['coords'])
+    if st == 'site':   # open pit, brick stacks
+        site(c, pg.buffer(3), 861, 14, fill=(140, 112, 80)); return pg
+    if st == 'frame':  # pit with rows of brick piers and half-closed vaults
+        c.d.polygon(c.T(pg.exterior.coords), fill=(120, 96, 70, 255)); x0, y0, x1, y1 = pg.buffer(-6).bounds
+        for i in range(4):
+            for j in range(4):
+                x, y = x0 + i * (x1 - x0) / 3, y0 + j * (y1 - y0) / 3
+                c.d.rectangle([(x - 1.2) * SS, (y - 4) * SS, (x + 1.2) * SS, y * SS], fill=(176, 110, 80, 255))
+        scaffold(c, pg, 6); people(c, pg.buffer(6).difference(pg), 10, 862); return pg
     c.d.polygon(c.T(pg.exterior.coords), fill=(196, 188, 170, 255))
     x0, y0, x1, y1 = pg.buffer(-8).bounds
     for i in range(3):
@@ -970,7 +981,170 @@ def render_horn(Y, out):
     d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
     img.save(out, quality=88); return out
 
+# ---------- water: aqueduct channel, arcades, nymphaeum ----------
+WATER = (70, 140, 170)
+def arcade(c, ln, h, st, fr, seed):
+    """aqueduct bridge along local line ln: site = pier footings; frame = piers up with timber centering;
+    done = full arcade, arches dark, water in the channel on top"""
+    L = ln.length; step = 9
+    piers = [ln.interpolate(i * step) for i in range(int(L / step) + 1)]
+    if st == 'site':
+        site(c, ln.buffer(6, cap_style=2), seed, int(L / 12), stones=True)
+        for q in piers: c.d.rectangle([(q.x - 2) * SS, (q.y - 2) * SS, (q.x + 2) * SS, (q.y + 2) * SS], fill=(150, 136, 110, 255))
+        return
+    if st == 'frame':
+        ph = h * (0.45 + 0.4 * fr)
+        for q in sorted(piers, key=lambda q: q.y):
+            prism(c, box(q.x - 2, q.y - 2, q.x + 2, q.y + 2), ph, roof=(176, 160, 128), wall=(196, 168, 128), ridge=False)
+        for a, b in zip(piers, piers[1:]):   # timber centering for the next ring of arches
+            mx, my = (a.x + b.x) / 2, (a.y + b.y) / 2
+            c.d.arc([(a.x) * SS, (my - ph - 4) * SS, (b.x) * SS, (my - ph + 4) * SS], 180, 360, fill=(140, 100, 60, 255), width=SS)
+            c.d.line([mx * SS, (my - ph - 4) * SS, mx * SS, my * SS], fill=(140, 100, 60, 200), width=1)
+        people(c, ln.buffer(8), int(L / 6), seed + 1)
+        return
+    band = ln.buffer(2.6, cap_style=2)
+    prism(c, band, h, roof=(190, 176, 150), wall=(198, 170, 128), ridge=False)
+    for a, b in zip(piers, piers[1:]):   # two tiers of arches on the visible face
+        x0, x1 = min(a.x, b.x) + 1.6, max(a.x, b.x) - 1.6
+        if x1 - x0 < 2: continue
+        my = (a.y + b.y) / 2 + 2.6
+        for (lo, hi) in ((0.08, 0.5), (0.58, 0.86)):
+            top, bot = my - h * hi, my - h * lo
+            c.d.rectangle([x0 * SS, (top + (x1 - x0) / 2) * SS, x1 * SS, bot * SS], fill=(62, 48, 36, 255))
+            c.d.pieslice([x0 * SS, top * SS, x1 * SS, (top + (x1 - x0)) * SS], 180, 360, fill=(62, 48, 36, 255))
+    c.d.line(c.T(ln.coords, lift=h), fill=WATER + (255,), width=int(1.4 * SS))
+
+def aqueduct(c, Y):
+    st, _, fr = phase('aq_great', Y)
+    if st is None: return
+    ln = c.line_local(ST['aq_great']['geom']['coords'])
+    view = box(-40, -40, c.w + 40, c.h + 40); ln = ln.intersection(view)
+    bridges = {k: c.poly_local(ST[k]['geom']['coords']) for k in ('aqb_outer', 'aqb_middle', 'aqb_valley')}
+    onb = unary_union([b.buffer(3) for b in bridges.values()])
+    ground_run = ln.difference(onb)
+    segs = [g for g in getattr(ground_run, 'geoms', [ground_run]) if g.length > 1]
+    tot = sum(g.length for g in segs)
+    done_len = {'site': 0.0, 'frame': (0.3 + 0.6 * fr) * tot, 'done': tot}[st]; acc = 0.0
+    for g in segs:   # buried channel: a trench while digging, then a low vaulted conduit under cover slabs
+        if st != 'done': site(c, g.buffer(5, cap_style=2), 801 + int(acc), int(g.length / 20), stones=False)
+        part = g if acc + g.length <= done_len else (substring(g, 0, max(0, done_len - acc)) if done_len > acc else None)
+        acc += g.length
+        if part is not None and part.length > 1:
+            prism(c, part.buffer(2.4, cap_style=2), 2.5, roof=(176, 168, 150), wall=(160, 146, 120), ridge=False)
+            for i in range(int(part.length / 6)):
+                q = part.interpolate(i * 6); c.d.rectangle([(q.x - 0.4) * SS, (q.y - 3.4) * SS, (q.x + 0.4) * SS, (q.y - 1.6) * SS], fill=(140, 130, 112, 255))
+    for k, b in bridges.items():
+        seg = ln.intersection(b.buffer(3))
+        for g in getattr(seg, 'geoms', [seg]):
+            if g.geom_type == 'LineString' and g.length > 4:
+                bst, _, bfr = phase(k, Y); arcade(c, g, 26, bst, bfr, 820 + len(k))
+
+def nymphaeum(c, Y):
+    st, _, fr = phase('nymphaeum_great', Y)
+    if st is None: return
+    pg = c.poly_local(ST['nymphaeum_great']['geom']['coords']); cen = pg.centroid
+    if st == 'site': site(c, pg.buffer(6), 851, 20); return
+    if st == 'frame': site(c, pg.buffer(8), 851, 6); rising(c, pg, 24, fr, 852, wall=(214, 196, 166)); return
+    basin = Point(cen.x, cen.y + pg.bounds[3] - cen.y + 8).buffer(9, 24)
+    c.d.ellipse([(basin.bounds[0]) * SS, (basin.bounds[1]) * SS, basin.bounds[2] * SS, basin.bounds[3] * SS], fill=(196, 188, 168, 255))
+    c.d.ellipse([(basin.bounds[0] + 2) * SS, (basin.bounds[1] + 2) * SS, (basin.bounds[2] - 2) * SS, (basin.bounds[3] - 2) * SS], fill=WATER + (255,))
+    prism(c, pg, 24, roof=(196, 186, 166), wall=MARBLE, ridge=False, outline=MARBLE_D)
+    x0, y0, x1, y1 = pg.bounds
+    for i in range(3):   # niches with spouts on the facade
+        x = x0 + (i + 0.5) * (x1 - x0) / 3
+        c.d.pieslice([(x - 3) * SS, (y1 - 18) * SS, (x + 3) * SS, (y1 - 12) * SS], 180, 360, fill=(80, 70, 60, 255))
+        c.d.rectangle([(x - 3) * SS, (y1 - 15) * SS, (x + 3) * SS, (y1 - 6) * SS], fill=(80, 70, 60, 255))
+        c.d.line([x * SS, (y1 - 9) * SS, x * SS, (basin.centroid.y) * SS], fill=(170, 210, 226, 255), width=SS)
+    people(c, basin.buffer(10).difference(basin), 14, 853)
+
+def render_aqueduct(Y, out):
+    """the Great Aqueduct's last run: valley bridge, buried conduit, nymphaeum at its end"""
+    c = Canvas(484, 362, 590, 418)
+    ground(c, Y); roads(c, Y)
+    ln = c.line_local(ST['aq_great']['geom']['coords'])
+    keep = ln.buffer(12) if phase('aq_great', Y)[0] else None
+    ep = [c.poly_local(ST['nymphaeum_great']['geom']['coords']).buffer(22)] if phase('nymphaeum_great', Y)[0] else []
+    keep = unary_union(([keep] if keep is not None else []) + ep) if (keep is not None or ep) else None
+    occ = [Point(c.P(h['cx'], h['cz'])).buffer(18) for h in D['houses'] if h['built'] <= Y and (h['destroyed'] is None or h['destroyed'] > Y) and c.x0 - 3 < h['cx'] < c.x0 + c.w / S + 3 and c.z0 - 3 < h['cz'] < c.z0 + c.h / S + 3]
+    occ += [c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2 + 4) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]
+    trees(c, Y, unary_union(occ + ([keep] if keep is not None else [])))
+    houses(c, Y, keep)
+    aqueduct(c, Y); nymphaeum(c, Y)
+    img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
+    d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
+    img.save(out, quality=88); return out
+
+# ---------- Forum of Theodosius (57 laid out, 60 arch, 64 column topped) + Nymphaeum Maius (44) ----------
+def forum_theo(c, Y):
+    st, parts, fr = phase('forum_theodosius', Y)
+    if st is None: return
+    pg = c.poly_local(ST['forum_theodosius']['geom']['coords']); x0, y0, x1, y1 = pg.bounds; cx, cy = pg.centroid.x, pg.centroid.y
+    if st == 'site':
+        site(c, pg, 871, int(pg.area / 300), stones=True)
+    elif st == 'frame':
+        c.d.polygon(c.T(pg.exterior.coords), fill=(214, 204, 184, 255))
+        site(c, pg.buffer(-14), 871, int(pg.area / 500), stones=True, fill=(206, 196, 176))
+        rising(c, pg.difference(pg.buffer(-9, join_style=2)), 15, fr, 873, wall=MARBLE)
+    else:
+        c.d.polygon(c.T(pg.exterior.coords), fill=(222, 214, 196, 255))
+        for i in range(int((x1 - x0) / 10)):   # paving joints
+            c.d.line([(x0 + i * 10) * SS, y0 * SS, (x0 + i * 10) * SS, y1 * SS], fill=(204, 196, 178, 255), width=1)
+        band = pg.difference(pg.buffer(-9, join_style=2))
+        colonnade(c, band, 15, roof=TILE, edge=pg.buffer(-9, join_style=2).exterior)
+        people(c, pg.buffer(-14), int(pg.area / 140), 872)
+    # column of Theodosius: drums rise 57 -> 64, statue on top when done
+    H = 48; nd = 9 if st == 'done' else min(8, 1 + int((Y - 57) * 8 / 7))
+    x, y = cx + 4, cy + 4
+    prism(c, box(x - 6, y - 4, x + 6, y + 4), 8, roof=MARBLE, wall=(214, 206, 188), ridge=False)
+    for i in range(nd):
+        z0 = 8 + i * (H - 10) / 9; z1 = z0 + (H - 10) / 9
+        c.d.rectangle([(x - 3.2) * SS, (y - z1) * SS, (x + 3.2) * SS, (y - z0) * SS], fill=MARBLE + (255,))
+        c.d.line([(x - 3.2) * SS, (y - z0 - 0.5) * SS, (x + 3.2) * SS, (y - z1 + 1) * SS], fill=MARBLE_D + (255,), width=SS)   # spiral frieze
+    if st != 'done':
+        crane(c, x + 8, y + 3, 8 + nd * (H - 10) / 9 + 12)
+        for j in range(9 - nd): c.d.ellipse([(x - 20 + j * 4.2) * SS, (y + 9) * SS, (x - 16 + j * 4.2) * SS, (y + 12) * SS], fill=MARBLE_D + (255,))
+    else:
+        c.d.rectangle([(x - 1.3) * SS, (y - H - 5) * SS, (x + 1.3) * SS, (y - H + 2) * SS], fill=(196, 170, 96, 255))
+    # triumphal arch on the west side (part 'arch')
+    ax = x0 - 4
+    if 'arch' in parts:   # triple arch: solid marble block, attic band, gilt statue group on top, the road running under it
+        blk = box(ax - 4, cy - 13, ax + 4, cy + 13)
+        prism(c, blk, 28, roof=MARBLE, wall=(220, 212, 194), ridge=False, outline=MARBLE_D)
+        c.d.rectangle([(ax - 4) * SS, (cy + 13 - 28) * SS, (ax + 4) * SS, (cy + 13 - 23) * SS], fill=MARBLE_D + (255,))
+        for k in (-8, 0, 8):
+            c.d.rectangle([(ax - 1) * SS, (cy + k - 31.5) * SS, (ax + 1) * SS, (cy + k - 27) * SS], fill=(214, 176, 70, 255))
+        c.d.pieslice([(ax - 3) * SS, (cy + 13 - 18) * SS, (ax + 3) * SS, (cy + 13 - 12) * SS], 180, 360, fill=(70, 56, 44, 255))
+        c.d.rectangle([(ax - 3) * SS, (cy + 13 - 15) * SS, (ax + 3) * SS, (cy + 13) * SS], fill=(70, 56, 44, 255))
+    elif st != 'site':
+        site(c, box(ax - 7, cy - 15, ax + 7, cy + 15), 874, 6); rising(c, box(ax - 4, cy - 13, ax + 4, cy + 13), 28, fr, 875, wall=(220, 212, 194))
+
+def nymph_maius(c, Y):
+    if not phase('nymphaeum_maius', Y)[0]: return
+    pg = c.poly_local(ST['nymphaeum_maius']['geom']['coords']); cen = pg.centroid
+    r = max(8, min(pg.bounds[2] - pg.bounds[0], pg.bounds[3] - pg.bounds[1]) / 2)
+    rot = Point(cen.x, cen.y).buffer(r, 32)
+    c.d.ellipse([(cen.x - r - 5) * SS, (cen.y + r - 6) * SS, (cen.x + r + 5) * SS, (cen.y + r + 6) * SS], fill=WATER + (255,))
+    prism(c, rot, 16, roof=(200, 160, 120), wall=(204, 152, 110), ridge=False)
+    dome(c, cen.x, cen.y, r * 0.8, 16, col=LEAD)
+
+def render_forum_theo(Y, out):
+    c = Canvas(528, 420, 572, 452)
+    ground(c, Y); roads(c, Y)
+    ids = [k for k in ('forum_theodosius', 'nymphaeum_maius') if phase(k, Y)[0]]
+    ep = [c.poly_local(ST[k]['geom']['coords']).buffer(16) for k in ids]
+    if phase('forum_theodosius', Y)[0]:
+        x0, y0, x1, y1 = c.poly_local(ST['forum_theodosius']['geom']['coords']).bounds; ep.append(box(x0 - 14, y0, x0 + 2, y1))
+    keep = unary_union(ep) if ep else None
+    occ = [Point(c.P(h['cx'], h['cz'])).buffer(18) for h in D['houses'] if h['built'] <= Y and (h['destroyed'] is None or h['destroyed'] > Y) and c.x0 - 3 < h['cx'] < c.x0 + c.w / S + 3 and c.z0 - 3 < h['cz'] < c.z0 + c.h / S + 3]
+    occ += [c.line_local(s['geom']['coords']).buffer(s.get('width', 1.2) * S / 2 + 4) for s in W['structures'] if s['type'] == 'road' and alive(s, Y)]
+    trees(c, Y, unary_union(occ + ([keep] if keep is not None else [])))
+    houses(c, Y, keep)
+    aqueduct(c, Y); nymph_maius(c, Y); forum_theo(c, Y)
+    img = c.im.resize((c.w, c.h), Image.LANCZOS).convert('RGB')
+    d = ImageDraw.Draw(img); d.rectangle([8, 8, 128, 34], fill=(30, 24, 18)); d.text((16, 14), f'AF {Y}', fill=(240, 224, 190))
+    img.save(out, quality=88); return out
+
 if __name__ == '__main__':
     what = sys.argv[1]; ys = [int(v) for v in sys.argv[2:]]
     for Y in ys:
-        f = {'core': render_core, 'apostles': render_apostles, 'shore': render_shore, 'gate': render_gate, 'horn': render_horn}[what](Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)
+        f = {'core': render_core, 'apostles': render_apostles, 'shore': render_shore, 'gate': render_gate, 'horn': render_horn, 'aqueduct': render_aqueduct, 'forum_theo': render_forum_theo}[what](Y, f'/tmp/epic_{what}_af{Y}.jpg'); print(f)

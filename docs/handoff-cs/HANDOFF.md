@@ -107,3 +107,12 @@ main 底账又加了 11 座的 phases（城墙、城门、创城蓄水池、大�
 - `render_horn` 里的金角塔按 site/frame/done。
 - 命令：`python3 epic_core.py gate 1 2 3 5 12 13`、`python3 epic_core.py horn 24 25 26`。
 - 水道、石拱、喷泉楼、蓄水池、狄奥多西广场底账已有 phases，这个脚本还没画它们。
+
+## 补交 ⑦（2026-10-14 夜）：水道、蓄水池、狄奥多西广场按分期出图
+
+- `aqueduct()`：沿 `aq_great` 线，地面段先是渠沟（site），再按进度铺成低矮的盖板暗渠；与 `aqb_*` 多边形相交的段落交给 `arcade()`：site = 桥墩基础，frame = 桥墩升高 + 木拱架，done = 双层拱券 + 顶上蓝色水线。
+- `nymphaeum()`（大喷泉楼）：site / rising / done（三个壁龛出水落进圆池，人群）。
+- `cistern()`（创城蓄水池）：site 挖坑、frame 砖柱林 + 脚手架、done 原样。
+- `forum_theo()` + `nymph_maius()`：广场 57 工地 → 59 铺地、柱廊起墙 → 60 西侧三拱门（part=arch）→ 纪功柱逐段升高 → 64 柱顶镀金像、柱廊完工。底账为此多了一段 `59 frame`。
+- 命令：`python3 epic_core.py aqueduct 11 13 15 16`、`python3 epic_core.py forum_theo 57 60 62 64`。
+- 至此底账里有 phases 的 24 座都能出图了。
